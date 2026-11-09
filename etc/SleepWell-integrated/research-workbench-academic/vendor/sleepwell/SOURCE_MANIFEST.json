@@ -1,0 +1,433 @@
+{
+  "schema_version": 1,
+  "canonical_source": "work/dayone-personalization-20261027/web-app",
+  "source_policy": "exact-byte-copy",
+  "files": [
+    {
+      "bundled_path": "adaptive_personalization.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/adaptive_personalization.py",
+      "sha256": "2798129559a7336fde7d7b9b37adb37044a05c870d3d273b1563e313259b3244",
+      "size_bytes": 5606
+    },
+    {
+      "bundled_path": "daily_context.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/daily_context.py",
+      "sha256": "258303f849ac168b63ac4f28277279004b3aed45bbabcedd67821784f950e57a",
+      "size_bytes": 5691
+    },
+    {
+      "bundled_path": "engine.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/engine.py",
+      "sha256": "fc2d773b984c462cde40213fc100bd1173f098a0979ebb49aa8fa5738cf535d3",
+      "size_bytes": 31941
+    },
+    {
+      "bundled_path": "forecast_model.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/forecast_model.py",
+      "sha256": "a74767228279543744f5f27b64529402d3157d1b6279b1ef40b3a79bf114c074",
+      "size_bytes": 13735
+    },
+    {
+      "bundled_path": "full_validity_report.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/full_validity_report.py",
+      "sha256": "3f295e939682ef1f586f9ea30edc307fe136844b42d7448e87d694cb4d4dc515",
+      "size_bytes": 2770
+    },
+    {
+      "bundled_path": "fusion_forecast.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/fusion_forecast.py",
+      "sha256": "15591d72dedf55b0d9365bc57e13228f8847fff8902f12570cdd5e657c4fc34b",
+      "size_bytes": 19214
+    },
+    {
+      "bundled_path": "habit_outcomes.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/habit_outcomes.py",
+      "sha256": "3d9024d7c06dc4a3e9f5e60c35a6401f6e5926fe95190566fc6912307ac24605",
+      "size_bytes": 11081
+    },
+    {
+      "bundled_path": "measurement_audit.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/measurement_audit.py",
+      "sha256": "6e0963c103e73d6ca876e3c20adcc040c162dd799ca12c12a7ff4ea575027bdd",
+      "size_bytes": 24945
+    },
+    {
+      "bundled_path": "mobile_backup.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/mobile_backup.py",
+      "sha256": "18e153f05d7e8339d5b98258520366ff1f47f53766ffcd5a37c06f5611174bf6",
+      "size_bytes": 7872
+    },
+    {
+      "bundled_path": "mobile_context_store.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/mobile_context_store.py",
+      "sha256": "07dceb841b02781698a952b8d57647d038e301f356c8b0b92dda366545554f18",
+      "size_bytes": 14431
+    },
+    {
+      "bundled_path": "mobile_store.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/mobile_store.py",
+      "sha256": "e66d7b1cb208272040d228153b9aea14910c9cbc0733a69bdbd6ce7399e2cc62",
+      "size_bytes": 18639
+    },
+    {
+      "bundled_path": "models/cmi_night_model.json",
+      "source_path": "work/dayone-personalization-20261027/web-app/models/cmi_night_model.json",
+      "sha256": "c8455251197c545855a2211def0e29e2e86e8eb607d8c63d0d56936805a8052a",
+      "size_bytes": 11265
+    },
+    {
+      "bundled_path": "models/continuous_constants_validation_v2.json",
+      "source_path": "work/dayone-personalization-20261027/web-app/models/continuous_constants_validation_v2.json",
+      "sha256": "43e6c0834687c4ac7f2f165e575f8246c0fff1c4fa76f088520b59332df0e23d",
+      "size_bytes": 2954
+    },
+    {
+      "bundled_path": "models/full_validity_tables_v1.json",
+      "source_path": "work/dayone-personalization-20261027/web-app/models/full_validity_tables_v1.json",
+      "sha256": "9884507b701df5eaf564ca2870c14155c45bd6a2af3f5e10bbd7c8753ba34b32",
+      "size_bytes": 46577
+    },
+    {
+      "bundled_path": "models/personalization_validation_v1.json",
+      "source_path": "work/dayone-personalization-20261027/web-app/models/personalization_validation_v1.json",
+      "sha256": "b1518c8a9b8cd2647ca3a0bf587ea7d5f59b26f06b70e49041cd381bbe6d5d0c",
+      "size_bytes": 169625
+    },
+    {
+      "bundled_path": "models/population_prior.json",
+      "source_path": "work/dayone-personalization-20261027/web-app/models/population_prior.json",
+      "sha256": "5cd8cc62078ee0a1b44d029513090e82588b5e71c46e6bd98dac54220ef7d396",
+      "size_bytes": 6775
+    },
+    {
+      "bundled_path": "models/robust_cmi_v2.json",
+      "source_path": "work/dayone-personalization-20261027/web-app/models/robust_cmi_v2.json",
+      "sha256": "add8ba4e23f9c4c9337b821406386664a054580d86c6e53c9b5e6f189bdfa2c7",
+      "size_bytes": 408407
+    },
+    {
+      "bundled_path": "models/robust_mesa_v2.json",
+      "source_path": "work/dayone-personalization-20261027/web-app/models/robust_mesa_v2.json",
+      "sha256": "757b939d756c9174eab9304e0d8e872f4ed9eeae34e99a3d921f29284207c620",
+      "size_bytes": 355561
+    },
+    {
+      "bundled_path": "models/samsung_night_model.json",
+      "source_path": "work/dayone-personalization-20261027/web-app/models/samsung_night_model.json",
+      "sha256": "a148b052a7177d40a1ee42b18a39e77b50baed6e5ceb78bdc5de156930f71e3a",
+      "size_bytes": 11319
+    },
+    {
+      "bundled_path": "models/target_validity_validation_v1.json",
+      "source_path": "work/dayone-personalization-20261027/web-app/models/target_validity_validation_v1.json",
+      "sha256": "0706db67d6b121cc55a7ad27614bbfef3b6cf6ca9a8f61db8fcabde8299617b9",
+      "size_bytes": 15800
+    },
+    {
+      "bundled_path": "night_core.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/night_core.py",
+      "sha256": "5796482afa85fdfd2a378d258b41fc83b18f46891d3b389ca590f021b629432b",
+      "size_bytes": 10730
+    },
+    {
+      "bundled_path": "night_forecast.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/night_forecast.py",
+      "sha256": "1c3a24e58dd07414d2026a21bf67876077d4720b6c0226d9ab4c9516517ee6f2",
+      "size_bytes": 9429
+    },
+    {
+      "bundled_path": "online_trial.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/online_trial.py",
+      "sha256": "bb3825960933f85f1e67f2037cff7d37a5747dd97945cc5bfd772b3a9ba2b529",
+      "size_bytes": 8155
+    },
+    {
+      "bundled_path": "personalization.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/personalization.py",
+      "sha256": "531f6632d6761ca36e236769a2ed5fe8b2d84e678ad97b90538dfc1c009f32de",
+      "size_bytes": 7440
+    },
+    {
+      "bundled_path": "phone_baseline_evaluation.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/phone_baseline_evaluation.py",
+      "sha256": "c9c670abad1014555185dc59e3bce9ad8a62bde45fac34a04f7ff4c5e5401901",
+      "size_bytes": 13559
+    },
+    {
+      "bundled_path": "prospective.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/prospective.py",
+      "sha256": "79b293fe67646ff7054cf961ad07233d83cea2aff3167e3614da307063b387ef",
+      "size_bytes": 32421
+    },
+    {
+      "bundled_path": "research_console.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/research_console.py",
+      "sha256": "0a66619633a00b4a988d1feb34c24d31bfa3340978aec43b3f12cc31bfa5eec8",
+      "size_bytes": 48431
+    },
+    {
+      "bundled_path": "research_lab_charts.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/research_lab_charts.py",
+      "sha256": "e5f9efe166161373c2aae26ec870a2a8cbdc532595bf7d15dd7ffd850083e523",
+      "size_bytes": 68134
+    },
+    {
+      "bundled_path": "research_lab_cli.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/research_lab_cli.py",
+      "sha256": "e3aa8e7513e63be07122716cf95c767c4bbf0ad383de31a82acb6e0b3f329789",
+      "size_bytes": 3954
+    },
+    {
+      "bundled_path": "research_lab_context.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/research_lab_context.py",
+      "sha256": "d2c65f7a4ad0fe9af5835f4cba7d52ef3ef0f8101ef62e35ebb23cbdfa68edde",
+      "size_bytes": 5393
+    },
+    {
+      "bundled_path": "research_lab_import.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/research_lab_import.py",
+      "sha256": "c873e90b6bce3f7da26f482b38d378cc1b8b8cd7955d978f7be9703d2a24f726",
+      "size_bytes": 11811
+    },
+    {
+      "bundled_path": "research_lab_server.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/research_lab_server.py",
+      "sha256": "5b1ec6cdcccd25670cf33faf75131c49277b78ba2ddcc84c58c64639e55820bc",
+      "size_bytes": 16844
+    },
+    {
+      "bundled_path": "research_lab.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/research_lab.py",
+      "sha256": "46ed517edff29a2b34dff11ab5c0cc04312b763dcedac9119cfd32c931918378",
+      "size_bytes": 35418
+    },
+    {
+      "bundled_path": "research.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/research.py",
+      "sha256": "e1dfedae21dbedfdaefb47539f05e6871b6afa4d8c355b7104f643726b894fbe",
+      "size_bytes": 19790
+    },
+    {
+      "bundled_path": "robust_features.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/robust_features.py",
+      "sha256": "9395964e91c816b0832650a2a3dde203fff1acedf835af48fcddf5073fb2853e",
+      "size_bytes": 3919
+    },
+    {
+      "bundled_path": "server.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/server.py",
+      "sha256": "d46d1ec5625f371abbc06c4a12b343456cd9bd6e25df350a1e0c78f085de3c35",
+      "size_bytes": 33210
+    },
+    {
+      "bundled_path": "target_validity.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/target_validity.py",
+      "sha256": "76125b62e0625caa614f2c7c7b432a42b37b64ad2066855dd6e30a7b2131e9ec",
+      "size_bytes": 12275
+    },
+    {
+      "bundled_path": "tests/test_adaptive_personalization.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_adaptive_personalization.py",
+      "sha256": "be224246c28eeb55ae18a4df905dec5ded36a98e20cc1fb613d948cf0ae658d5",
+      "size_bytes": 4831
+    },
+    {
+      "bundled_path": "tests/test_archive_units.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_archive_units.py",
+      "sha256": "1b6224767cd0b927df2352325cad2b7be6bbfb7e303357075020996a97e440a7",
+      "size_bytes": 3155
+    },
+    {
+      "bundled_path": "tests/test_daily_context.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_daily_context.py",
+      "sha256": "52ad850644acec732dfaed0d9858f0c29e7ba1836ea2b966a2259f82f817a082",
+      "size_bytes": 7775
+    },
+    {
+      "bundled_path": "tests/test_forecast_model.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_forecast_model.py",
+      "sha256": "02708f081dfbcfd5bdcde66d3f6836e944861445aa8b909eb1eba387d686b4e9",
+      "size_bytes": 14790
+    },
+    {
+      "bundled_path": "tests/test_full_validity_report.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_full_validity_report.py",
+      "sha256": "63c2eed0c160dfbfe9e78c64fc5ab0a70cca84e005759e2189221fcc20c494be",
+      "size_bytes": 1864
+    },
+    {
+      "bundled_path": "tests/test_fusion_application.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_fusion_application.py",
+      "sha256": "d6b75c4bef8040320638c2df38cca5c9f5ee139cf0aa26f905a7beb7d8ff02bb",
+      "size_bytes": 4971
+    },
+    {
+      "bundled_path": "tests/test_fusion_forecast.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_fusion_forecast.py",
+      "sha256": "9880897d0f6248485d8b971398454e5fde8e5efec670e995300a65f8caf4f0b5",
+      "size_bytes": 11652
+    },
+    {
+      "bundled_path": "tests/test_fusion_prospective.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_fusion_prospective.py",
+      "sha256": "f25315465dbe277861a58c72dfa2a530b46cc08a85605c70c8d77f4f8405077d",
+      "size_bytes": 5177
+    },
+    {
+      "bundled_path": "tests/test_habit_outcomes.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_habit_outcomes.py",
+      "sha256": "742f3bd7ed233a2c03a4296b57a93958bfa351686cfe8e6ffc0663ba9de0a81b",
+      "size_bytes": 7616
+    },
+    {
+      "bundled_path": "tests/test_http.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_http.py",
+      "sha256": "fc9daafe58239d016ec8341722125689414b11b5002eb51d0d03f58d7c89bf43",
+      "size_bytes": 3166
+    },
+    {
+      "bundled_path": "tests/test_measurement_audit.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_measurement_audit.py",
+      "sha256": "e56cc56925f96da1f29275bdc3b3cd57871f95b4704d9a6844b4af6c9b4b1b41",
+      "size_bytes": 8909
+    },
+    {
+      "bundled_path": "tests/test_mobile_backup.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_mobile_backup.py",
+      "sha256": "519b37d52b30ab5819959388f7670b5eeae4d3617ce80b412e4f1205e5ad48ac",
+      "size_bytes": 4266
+    },
+    {
+      "bundled_path": "tests/test_mobile_context_store.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_mobile_context_store.py",
+      "sha256": "50536760bfcdc505eb713a8077ee1c10f56462bc76b02db3d9ec8c8e8bd9e8ca",
+      "size_bytes": 7485
+    },
+    {
+      "bundled_path": "tests/test_mobile_store.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_mobile_store.py",
+      "sha256": "efa1b6d08df4996b85dbaa1e5deda8aea449d2af751c1b6c7ac5dbbfce9102ed",
+      "size_bytes": 16842
+    },
+    {
+      "bundled_path": "tests/test_night_core.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_night_core.py",
+      "sha256": "27eac135eb1e3ea5b89041e40c2dab04a895f42f4a007b625a615e888fe15fb1",
+      "size_bytes": 5556
+    },
+    {
+      "bundled_path": "tests/test_night_forecast.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_night_forecast.py",
+      "sha256": "56ee2c4345bd8f4fb55c4c38ef8fc548adf55e21cf75cdd5569f25365ac85d39",
+      "size_bytes": 8331
+    },
+    {
+      "bundled_path": "tests/test_online_trial.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_online_trial.py",
+      "sha256": "87c7bc3c3f27e5badaef7c9b065ad60b4dca9c03ee8b2e85953c4c9eef6136e5",
+      "size_bytes": 5927
+    },
+    {
+      "bundled_path": "tests/test_personalization.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_personalization.py",
+      "sha256": "56d5b88997e9a0b5bfc6c18a6e5e779acbae4d434328a834c8df474bdfc32e51",
+      "size_bytes": 10540
+    },
+    {
+      "bundled_path": "tests/test_phone_baseline_evaluation.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_phone_baseline_evaluation.py",
+      "sha256": "2e19ed61805d325b22983a057cdcf317395c6f213824f2803e9886d1534184ac",
+      "size_bytes": 7233
+    },
+    {
+      "bundled_path": "tests/test_prospective_store.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_prospective_store.py",
+      "sha256": "07a6251882daf930b83c16f8fa1fad4cf8f1c09a4b7171d71dbca4adc542a534",
+      "size_bytes": 16344
+    },
+    {
+      "bundled_path": "tests/test_prospective.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_prospective.py",
+      "sha256": "ed27e74149422c60ba3eee8e964f1939f697544e1ce5def9f50e0975b6a732eb",
+      "size_bytes": 10893
+    },
+    {
+      "bundled_path": "tests/test_recent_personalization.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_recent_personalization.py",
+      "sha256": "c2b7accd1acdc00df7a1ad7b899c09d1a1269f99132fe2882fc78cfe733ebe54",
+      "size_bytes": 7990
+    },
+    {
+      "bundled_path": "tests/test_research_console.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_research_console.py",
+      "sha256": "fa327376e669791b037fa89c82756e8a6a1fee4cc522388aafbc2203835f675b",
+      "size_bytes": 20142
+    },
+    {
+      "bundled_path": "tests/test_research_lab_baseline_window.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_research_lab_baseline_window.py",
+      "sha256": "5a76f9eb0dcc4dbaa0f005430035953d6df5580385ed0ddde91aadce045149dc",
+      "size_bytes": 1809
+    },
+    {
+      "bundled_path": "tests/test_research_lab_charts.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_research_lab_charts.py",
+      "sha256": "3a7db2dfe1ffbfcb333a205e8eb2b08986a2d1fe5dcc53d7bb0b66f3115639cd",
+      "size_bytes": 22835
+    },
+    {
+      "bundled_path": "tests/test_research_lab_context.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_research_lab_context.py",
+      "sha256": "28a85c2188bd6efaca3b801ee87b7f50f3af8b69624340c9e3258a3bc082bb2e",
+      "size_bytes": 3893
+    },
+    {
+      "bundled_path": "tests/test_research_lab_import.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_research_lab_import.py",
+      "sha256": "8c60dd4522216389c8c594b07f72526beef53ede55da046d109e5df6d8882cf4",
+      "size_bytes": 4241
+    },
+    {
+      "bundled_path": "tests/test_research_lab_json_limits.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_research_lab_json_limits.py",
+      "sha256": "d2d1fd380d5b84f5f90759a00d3827b4f5883cc1e71a1a8cce9c945f05631cf8",
+      "size_bytes": 2264
+    },
+    {
+      "bundled_path": "tests/test_research_lab_server.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_research_lab_server.py",
+      "sha256": "75dbb98fde50eefdc829535a71b834a40b6c9b8a3cafc7057dcb03e83ea92a8e",
+      "size_bytes": 19965
+    },
+    {
+      "bundled_path": "tests/test_research_lab.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_research_lab.py",
+      "sha256": "0557e64c514b1f329fadb4bb5f6988aaa7a6097ca1872192443fe1cb4399c71e",
+      "size_bytes": 16823
+    },
+    {
+      "bundled_path": "tests/test_research_personalization.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_research_personalization.py",
+      "sha256": "adadf921b50a35365f1993f00d4cb7d55a41fc454dd41c03f989a9addf10afe8",
+      "size_bytes": 2494
+    },
+    {
+      "bundled_path": "tests/test_target_validity.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_target_validity.py",
+      "sha256": "773cd740ac57a6cb704173229ff2b57609b05a94859eed9e14630e9418ea111b",
+      "size_bytes": 8131
+    },
+    {
+      "bundled_path": "tests/test_validity_console.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_validity_console.py",
+      "sha256": "2a1d89ae0c1b84ce457af43b38e5e1863d923943eaf36127c484a8955fd04799",
+      "size_bytes": 6818
+    },
+    {
+      "bundled_path": "tests/test_workflow.py",
+      "source_path": "work/dayone-personalization-20261027/web-app/tests/test_workflow.py",
+      "sha256": "085ca723170d40d0c2f94170ea56284eb44b89d146e888d2ed276b6cd7421bc8",
+      "size_bytes": 5078
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "schema": "sleepwell.bayes_long_history_selection_lock.v1",
+  "locked_before_test_replay": true,
+  "selected_validation_alternative": "kalman_qr_0_001",
+  "protocol_sha256": "048becbff304d636b09c72a27c2c6bf3f2f1ae5ba119af1d05e1251bb80ae87e",
+  "input_sha256": "750c8c59af079db08f0ba47d0e93f1924f724a715526881f7a201ac2a4bad1cb"
+}

@@ -1,0 +1,2 @@
+# Local stateless researcher lab; frozen model inference uses the standard library.
+matplotlib>=3.8,<4

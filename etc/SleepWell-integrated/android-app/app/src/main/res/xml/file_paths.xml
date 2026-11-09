@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- FileProvider 가 공유를 허용하는 경로. exports 폴더만 노출한다. -->
+<paths>
+    <external-files-path name="exports" path="exports/" />
+</paths>

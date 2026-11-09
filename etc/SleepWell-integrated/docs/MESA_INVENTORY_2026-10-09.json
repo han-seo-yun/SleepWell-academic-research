@@ -1,0 +1,160 @@
+{
+  "headers": {
+    "eligible_csv_files": 1682,
+    "scan_limit": 10000,
+    "scanned_files": 1682,
+    "truncated": false,
+    "variants": [
+      {
+        "columns": [
+          "mesaid",
+          "line",
+          "linetime",
+          "offwrist",
+          "activity",
+          "marker",
+          "whitelight",
+          "redlight",
+          "greenlight",
+          "bluelight",
+          "wake",
+          "interval",
+          "dayofweek",
+          "daybymidnight",
+          "daybynoon",
+          "date_shifted",
+          "actigraphy_month_start"
+        ],
+        "files": 1681
+      },
+      {
+        "columns": null,
+        "files": 1
+      }
+    ]
+  },
+  "interpretation": {
+    "psg_matched_file_candidates": 0,
+    "psg_matched_file_candidates_present": false,
+    "psg_readiness_requires": [
+      "EDF and annotation content validation",
+      "recording and epoch alignment validation",
+      "sleep-stage label mapping validation",
+      "signal and annotation quality validation"
+    ],
+    "psg_supervised_stage_training_ready": false,
+    "sixty_second_features_require_separate_causal_aggregation": true,
+    "source_epoch_seconds_expected": 30,
+    "wake_and_interval_are_derived_actigraphy_labels_not_psg_sleep_stages": true
+  },
+  "inventory": {
+    "extension_counts": {
+      ".csv": 1682
+    },
+    "modalities": {
+      "actigraphy": {
+        "files": 1682,
+        "files_without_detectable_participant_id": 0,
+        "unique_participant_ids": 1682
+      },
+      "heart_rate": {
+        "files": 0,
+        "files_without_detectable_participant_id": 0,
+        "unique_participant_ids": 0
+      },
+      "other": {
+        "files": 0,
+        "files_without_detectable_participant_id": 0,
+        "unique_participant_ids": 0
+      },
+      "psg_annotation": {
+        "files": 0,
+        "files_without_detectable_participant_id": 0,
+        "unique_participant_ids": 0
+      },
+      "psg_edf": {
+        "files": 0,
+        "files_without_detectable_participant_id": 0,
+        "unique_participant_ids": 0
+      },
+      "steps": {
+        "files": 0,
+        "files_without_detectable_participant_id": 0,
+        "unique_participant_ids": 0
+      }
+    },
+    "participant_intersections": {
+      "actigraphy&heart_rate": 0,
+      "actigraphy&psg_annotation": 0,
+      "actigraphy&psg_edf": 0,
+      "actigraphy&steps": 0,
+      "all_named_modalities": 0,
+      "heart_rate&psg_annotation": 0,
+      "heart_rate&psg_edf": 0,
+      "heart_rate&steps": 0,
+      "psg_edf&psg_annotation": 0,
+      "steps&psg_annotation": 0,
+      "steps&psg_edf": 0
+    },
+    "total_bytes_at_discovery": 2846410406
+  },
+  "schema_version": 1,
+  "scope": {
+    "active_ingestion_detected": true,
+    "completed_at_utc": "2026-10-09T01:36:37Z",
+    "discovered_at_utc": "2026-10-09T01:36:30Z",
+    "ending_file_count": 1682,
+    "files_added_during_scan": 0,
+    "files_disappeared_during_scan": 0,
+    "integrity_claim": "bounded_inventory_not_exhaustive_file_integrity_validation",
+    "skipped_at_completion": {},
+    "skipped_at_discovery": {},
+    "snapshot_file_count": 1682,
+    "snapshot_files_changed_during_scan": 1
+  },
+  "semantic_qc": {
+    "cadence_seconds": {
+      "30": 610907
+    },
+    "categories": {
+      "interval": {
+        "ACTIVE": 295288,
+        "EXCLUDED": 161760,
+        "REST": 2450,
+        "REST-S": 151432
+      },
+      "offwrist": {
+        "0": 449170,
+        "1": 161760
+      },
+      "wake": {
+        "0": 198768,
+        "1": 250931,
+        "<missing>": 161231
+      }
+    },
+    "invalid_fields": {},
+    "missing_by_column": {
+      "activity": 161781,
+      "bluelight": 161781,
+      "greenlight": 161781,
+      "marker": 161760,
+      "redlight": 161781,
+      "wake": 161231,
+      "whitelight": 161802
+    },
+    "offwrist_flagged_fraction": 0.26477665198958966,
+    "rows": 610930,
+    "sampling": {
+      "max_rows_per_file": 100000,
+      "read_error_files_excluded": 0,
+      "requested_files": 24,
+      "row_limit_exceeded_files_excluded": 0,
+      "selected_files": 24,
+      "stable_complete_files_in_aggregate": 23,
+      "strategy": "deterministic_even_spacing_over_sorted_actigraphy_csv_snapshot",
+      "unstable_files_excluded": 1
+    },
+    "thirty_second_cadence_fraction": 1.0
+  }
+}

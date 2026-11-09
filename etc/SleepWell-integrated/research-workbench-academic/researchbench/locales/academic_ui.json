@@ -1,0 +1,619 @@
+{
+  "title": [
+    "SleepWell 연구자용 소프트웨어",
+    "SleepWell Research Software"
+  ],
+  "guidelines": ["TRIPOD·PROBAST 점검", "TRIPOD·PROBAST assessment"],
+  "overview": [
+    "프로젝트 개요",
+    "Project overview"
+  ],
+  "design": [
+    "데이터·실험 설정",
+    "Data & experiments"
+  ],
+  "queue": [
+    "실행 대기열",
+    "Run queue"
+  ],
+  "results": [
+    "모델 성능 비교",
+    "Model comparison"
+  ],
+  "prospective": [
+    "전향 예측·관측 기록",
+    "Prospective journal"
+  ],
+  "evidence": [
+    "원본 모델·검증 범위",
+    "Models & evidence"
+  ],
+  "settings": [
+    "그림·언어 설정",
+    "Figures & language"
+  ],
+  "new": [
+    "새 프로젝트",
+    "New project"
+  ],
+  "open": [
+    "프로젝트 열기",
+    "Open project"
+  ],
+  "save": [
+    "저장",
+    "Save"
+  ],
+  "general": [
+    "일반 정형 데이터 실험",
+    "General tabular experiments"
+  ],
+  "import": [
+    "CSV·Excel·JSON 불러오기",
+    "Import CSV / Excel / JSON"
+  ],
+  "sample": [
+    "50일 일주기 샘플",
+    "50-night sample"
+  ],
+  "run": [
+    "선택 실험 실행",
+    "Run selected experiment"
+  ],
+  "suite": [
+    "후향·개인화·전향 시연 실행",
+    "Run retrospective / personalization / prospective demo"
+  ],
+  "cancel": [
+    "선택 작업 취소",
+    "Cancel selected run"
+  ],
+  "retry": [
+    "새 실험으로 다시 실행",
+    "Rerun as new experiment"
+  ],
+  "details": [
+    "설정·원본 결과 보기",
+    "Configuration & original result"
+  ],
+  "retrospective": [
+    "후향 평가 · 원본 모델 9개",
+    "Retrospective · 9 original models"
+  ],
+  "personalization": [
+    "개인화 추이 · 원본 정책",
+    "Personalization · original policy"
+  ],
+  "prospective_demo": [
+    "전향 절차 합성 시연 · 13개 비교군",
+    "Synthetic prospective workflow · 13 arms"
+  ],
+  "report": [
+    "원본 진단·검증 보고서",
+    "Original diagnostics & evidence"
+  ],
+  "prospective_commit": [
+    "실제 시각으로 예측 고정",
+    "Commit forecast at actual current time"
+  ],
+  "prospective_outcome": [
+    "관측 결과 등록·평가",
+    "Register outcome & evaluate"
+  ],
+  "prospective_summary": [
+    "전향 기록 집계",
+    "Summarize prospective journal"
+  ],
+  "name": [
+    "실험 이름",
+    "Experiment name"
+  ],
+  "mode": [
+    "평가 방식",
+    "Evaluation mode"
+  ],
+  "report_type": [
+    "원본 보고서 종류",
+    "Original report"
+  ],
+  "cohorts": [
+    "기준 코호트",
+    "Reference cohorts"
+  ],
+  "input_file": [
+    "저장된 입력 파일",
+    "Saved input file"
+  ],
+  "input_mode": [
+    "입력 방식",
+    "Input method"
+  ],
+  "file": [
+    "불러온 기록",
+    "Imported records"
+  ],
+  "synthetic": [
+    "설정으로 샘플 생성",
+    "Generate smaple records"
+  ],
+  "input_synthetic": [
+    "이 입력은 샘플 자료입니다",
+    "These records are sample data"
+  ],
+  "synthetic_badge": [
+    "합성 시연",
+    "SYNTHETIC DEMO"
+  ],
+  "real_badge": [
+    "사용자 입력 · 후향 자료의 출처를 확인하세요",
+    "User input · verify retrospective data provenance"
+  ],
+  "scope_note": [
+    "수리·데이터·융합 모델의 원본 예측 및 평가를 호출합니다. 재학습하거나 일반 분류·회귀 점수와 합산하지 않습니다. CMI와 MESA는 별도 기준 코호트입니다.",
+    "Calls the original physical, data and fusion prediction/evaluation code. No retraining or aggregation with generic classification/regression scores. CMI and MESA remain separate reference cohorts."
+  ],
+  "data_help": [
+    "필수 열: participant_id, cutoff, sleep_start, sleep_end, observed_at. 시각에는 시간대를 포함합니다. 원본 파일은 변경하지 않고 프로젝트에 스냅샷을 보관합니다. 원본 평가의 365행·10명 제한을 유지합니다.",
+    "Required columns: participant_id, cutoff, sleep_start, sleep_end, observed_at. Include timezone offsets. The project stores a snapshot without modifying the source. Original limits of 365 rows / 10 participants apply."
+  ],
+  "preview_note": [
+    "데이터 미리보기 · 최대 100행",
+    "Data preview · first 100 rows"
+  ],
+  "n_nights": [
+    "야간 수",
+    "Nights"
+  ],
+  "seed": [
+    "랜덤 시드",
+    "Random seed"
+  ],
+  "start_date": [
+    "시작일",
+    "Start date"
+  ],
+  "jitter_minutes": [
+    "변동 폭 (분)",
+    "Jitter (min)"
+  ],
+  "phase_shift_minutes": [
+    "위상 이동 (분)",
+    "Phase shift (min)"
+  ],
+  "shift_after_night": [
+    "이동 전 야간 수",
+    "Nights before shift"
+  ],
+  "max_seconds": [
+    "실험당 제한 (초)",
+    "Per-run budget (s)"
+  ],
+  "max_experiments": [
+    "묶음 최대 실험 수",
+    "Batch run cap"
+  ],
+  "profile": [
+    "전향·진단 프로필 (JSON 설정)",
+    "Prospective / diagnostic profile (JSON settings)"
+  ],
+  "report_help": [
+    "원본 진단 함수를 실행하거나 동봉된 검증표를 조회합니다. 저장된 검증표는 과거 근거이며, 원시 코호트로 새로 학습·검증한 결과가 아닙니다.",
+    "Runs original diagnostic functions or reads bundled validation tables. Stored tables are historical evidence, not newly trained or re-evaluated raw cohorts."
+  ],
+  "research_diagnostics": [
+    "수리모델 진단",
+    "Physical-model diagnostics"
+  ],
+  "measurement_audit": [
+    "측정·데이터 품질 감사",
+    "Measurement audit"
+  ],
+  "target_validity": [
+    "타깃 타당성",
+    "Target validity"
+  ],
+  "phone_baseline": [
+    "휴대전화 기준선 평가",
+    "Phone baseline evaluation"
+  ],
+  "night_model": [
+    "기존 CMI·Samsung 야간 모델",
+    "Legacy CMI / Samsung night models"
+  ],
+  "population_prior": [
+    "집단 사전분포 선택",
+    "Population prior selection"
+  ],
+  "continuous_constants_validation_v2": [
+    "저장된 생리 상수 검증표",
+    "Stored physiological-constant validation"
+  ],
+  "full_validity_tables_v1": [
+    "저장된 전체 타당성 검증표",
+    "Stored full validity tables"
+  ],
+  "personalization_validation_v1": [
+    "저장된 개인화 검증표",
+    "Stored personalization validation"
+  ],
+  "target_validity_validation_v1": [
+    "저장된 타깃 검증표",
+    "Stored target validity tables"
+  ],
+  "queued": [
+    "대기",
+    "Queued"
+  ],
+  "running": [
+    "실행 중",
+    "Running"
+  ],
+  "starting": [
+    "프로세스 시작",
+    "Starting process"
+  ],
+  "completed": [
+    "완료",
+    "Completed"
+  ],
+  "failed": [
+    "실패",
+    "Failed"
+  ],
+  "cancelling": [
+    "취소 요청 · 종료 대기",
+    "Cancellation requested · awaiting exit"
+  ],
+  "cancelled": [
+    "취소됨",
+    "Cancelled"
+  ],
+  "interrupted": [
+    "중단됨",
+    "Interrupted"
+  ],
+  "status": [
+    "상태",
+    "Status"
+  ],
+  "stage": [
+    "현재 단계",
+    "Current stage"
+  ],
+  "duration": [
+    "경과 시간 (초)",
+    "Elapsed (s)"
+  ],
+  "progress": [
+    "진행",
+    "Progress"
+  ],
+  "idle": [
+    "대기 중",
+    "Idle"
+  ],
+  "saved": [
+    "저장됨",
+    "Saved"
+  ],
+  "error": [
+    "실행 오류",
+    "Execution error"
+  ],
+  "run_select": [
+    "저장된 실험",
+    "Saved run"
+  ],
+  "model": [
+    "모델 / 비교군",
+    "Model / arm"
+  ],
+  "metric": [
+    "표시 지표",
+    "Metric"
+  ],
+  "onset_mae_min": [
+    "입면 MAE (분)",
+    "Onset MAE (min)"
+  ],
+  "wake_mae_min": [
+    "기상 MAE (분)",
+    "Wake MAE (min)"
+  ],
+  "joint_mae_min": [
+    "입면·기상 공동 MAE (분)",
+    "Joint onset/wake MAE (min)"
+  ],
+  "n_participants": [
+    "참여자 수",
+    "Participants"
+  ],
+  "source": [
+    "평가 대상 / 출처",
+    "Evaluation scope / source"
+  ],
+  "plot_kind": [
+    "그림 종류",
+    "Figure type"
+  ],
+  "comparison": [
+    "모델 성능 비교",
+    "Model comparison"
+  ],
+  "predictions": [
+    "실제값·예측값",
+    "Actual & predicted"
+  ],
+  "personalization_plot": [
+    "개인화 추이",
+    "Personalization trajectory"
+  ],
+  "errors": [
+    "야간별 오차 분포",
+    "Night-level error distribution"
+  ],
+  "source_report": [
+    "원본 보고서",
+    "Source report"
+  ],
+  "export_png": [
+    "PNG·PDF·SVG 저장",
+    "Save PNG / PDF / SVG"
+  ],
+  "export_table": [
+    "CSV·Excel 저장",
+    "Save CSV / Excel"
+  ],
+  "export_json": [
+    "전체 원본 결과 JSON 저장",
+    "Save full original result JSON"
+  ],
+  "no_results": [
+    "완료된 실험이 없습니다. 데이터·실험 설정에서 실행하세요.",
+    "No completed run. Start an experiment from Data & experiments."
+  ],
+  "no_selection": [
+    "먼저 실험 또는 예측 기록을 선택하세요.",
+    "Select a run or forecast first."
+  ],
+  "results_note": [
+    "원본 평가의 공통 대상·출처별 분모를 유지합니다. 낮은 MAE가 좋습니다. 신뢰구간을 새로 만들지 않으며, 후향·실제 전향·샘플 결과를 섞어 순위를 매기지 않습니다.",
+    "Preserves original common targets and source-specific denominators. Lower MAE is better. No invented confidence intervals or ranking across retrospective, actual prospective and sample evidence."
+  ],
+  "prospective_help": [
+    "1. 현재 시각으로 예측을 먼저 고정합니다. 2. 실제 수면이 끝난 뒤 관측값을 등록합니다. 원본 20:00~20:15 수집 적격성 규칙을 유지하며 시간을 소급하지 않습니다..",
+    "1. Freeze the forecast at the actual current time. 2. Register observations after sleep ends. Preserves the original 20:00–20:15 eligibility rule; no backdating."
+  ],
+  "cutoff": [
+    "예측 대상 날짜 (20시)",
+    "Forecast date (20:00)"
+  ],
+  "forecast_id": [
+    "고정 예측 ID",
+    "Frozen forecast ID"
+  ],
+  "generated_at": [
+    "실제 생성 시각",
+    "Actual creation time"
+  ],
+  "eligible_capture": [
+    "수집 적격성",
+    "Capture eligibility"
+  ],
+  "has_outcome": [
+    "관측값 등록",
+    "Outcome registered"
+  ],
+  "sleep_start": [
+    "관측 입면 시각 (ISO)",
+    "Observed sleep onset (ISO)"
+  ],
+  "wake": [
+    "관측 기상 시각 (ISO)",
+    "Observed wake time (ISO)"
+  ],
+  "observed_at": [
+    "관측 확보 시각 (ISO)",
+    "Observation availability (ISO)"
+  ],
+  "outcome_source": [
+    "관측 출처",
+    "Observation source"
+  ],
+  "refresh": [
+    "새로 고침",
+    "Refresh"
+  ],
+  "online_personalization": [
+    "과거 잔차 기반 온라인 개인화 비교 포함",
+    "Include online personalization based on past residuals"
+  ],
+  "evidence_note": [
+    "원본 코드와 모델 파일의 SHA-256을 검사합니다. 원본 코호트가 없는 검증표는 저장된 근거로만 제공합니다. 외부 검증 계획을 완료된 실험으로 표시하지 않습니다.",
+    "Checks source and model SHA-256. Validation tables without raw cohorts are stored evidence only. Planned external validation is not presented as completed work."
+  ],
+  "coverage": [
+    "통합 범위·원본 출처",
+    "Coverage & original provenance"
+  ],
+  "title_label": [
+    "사용자 제목 (빈칸: 자동)",
+    "Custom title (empty: automatic)"
+  ],
+  "annotation": [
+    "사용자 주석",
+    "Custom annotation"
+  ],
+  "font_size": [
+    "그림 글꼴 크기",
+    "Figure font size"
+  ],
+  "width": [
+    "그림 너비 (인치)",
+    "Figure width (in)"
+  ],
+  "height": [
+    "그림 높이 (인치)",
+    "Figure height (in)"
+  ],
+  "dpi": [
+    "출력 해상도 (DPI)",
+    "Export resolution (DPI)"
+  ],
+  "reset_labels": [
+    "제목·주석을 자동 문구로 복원",
+    "Reset title & annotation to automatic"
+  ],
+  "busy": [
+    "실행 작업이 끝나거나 취소된 뒤 프로젝트를 전환하세요.",
+    "Wait for or cancel active jobs before switching projects."
+  ],
+  "project": [
+    "프로젝트",
+    "Project"
+  ],
+  "input_missing": [
+    "입력 파일을 불러오거나 합성 생성을 선택하세요.",
+    "Import records or select synthetic generation."
+  ],
+  "budget_error": [
+    "묶음 실행에는 최소 3개의 실험 예산이 필요합니다.",
+    "The batch requires a budget of at least 3 experiments."
+  ],
+  "saved_file": [
+    "파일 저장 완료",
+    "File saved"
+  ],
+  "warning": [
+    "평가 범위와 제한",
+    "Evaluation scope & limitations"
+  ],
+  "demo_synthetic_required": [
+    "전향 시연에는 샘플 자료만 사용할 수 있습니다. 실제 자료는 전향 예측·관측 기록에서 처리하세요.",
+    "Prospective demo accepts only declared sample data. Use the prospective journal for actual records."
+  ],
+  "actual_requires_real": [
+    "실제 전향 기록에는 실제 입력 자료가 필요합니다. 현재 샘플은 실제 기록부에 등록할 수 없습니다.",
+    "Actual prospective commits require real input. The current sample cannot be committed to the actual journal."
+  ],
+  "as_of": [
+    "진단 기준 시각 (시간대 포함 ISO)",
+    "Diagnostic as-of time (ISO with timezone)"
+  ],
+  "cohort": [
+    "기존 야간 모델 코호트",
+    "Legacy night-model cohort"
+  ],
+  "record_source": [
+    "진단용 기록 출처 (원본 열 없을 때)",
+    "Diagnostic source (when absent from input)"
+  ],
+  "cmi": [
+    "CMI",
+    "CMI"
+  ],
+  "samsung": [
+    "Samsung",
+    "Samsung"
+  ],
+  "import_report": [
+    "원본 보고서 입력 JSON 불러오기",
+    "Import original report request JSON"
+  ],
+  "clear_report": [
+    "추가 보고서 입력 해제",
+    "Clear additional report input"
+  ],
+  "invalid_report": [
+    "지원되는 원본 보고서 입력 객체가 아닙니다. 사용 안내를 확인하세요.",
+    "Unsupported original report request object. See the user guide."
+  ],
+  "phone_input_required": [
+    "휴대전화 기준선은 사전에 고정된 Android outcomes가 필요합니다. 원본 보고서 입력 JSON을 불러오세요.",
+    "Phone baselines require previously frozen Android outcomes. Import the original report request JSON."
+  ],
+  "common_nights": [
+    "공통 야간",
+    "Common nights"
+  ],
+  "diary_primary": [
+    "일지 · 주 분석",
+    "Diary · primary"
+  ],
+  "wearable_auxiliary": [
+    "웨어러블 · 보조 분석",
+    "Wearable · auxiliary"
+  ],
+  "diary": [
+    "수면 일지",
+    "Sleep diary"
+  ],
+  "healthkit": [
+    "HealthKit",
+    "HealthKit"
+  ],
+  "health_connect": [
+    "Health Connect",
+    "Health Connect"
+  ],
+  "prepare": [
+    "입력 확인",
+    "Validating input"
+  ],
+  "evaluate": [
+    "원본 평가 실행",
+    "Running original evaluation"
+  ],
+  "summarize": [
+    "결과 집계",
+    "Summarizing"
+  ],
+  "complete": [
+    "완료",
+    "Complete"
+  ],
+  "time_budget": [
+    "시간 예산 도달",
+    "Time budget reached"
+  ],
+  "user_reported_primary": [
+    "자가 보고 · 주 분석",
+    "User reported · primary"
+  ],
+  "automatic_wearable_auxiliary": [
+    "자동·웨어러블 · 보조 분석",
+    "Automatic / wearable · auxiliary"
+  ],
+  "gradual_note": [
+    "원본 gradual_v1: 첫 유효 기록부터 점진적으로 개인화합니다. 저장된 legacy14 점수와 현재 입력의 재실행 점수를 구분합니다.",
+    "Original gradual_v1: personalization starts with the first valid record. Stored legacy14 scores are distinct from this replay."
+  ],
+  "privacy_note": [
+    "가명 ID를 사용하세요. 입력·설정·결과는 이 로컬 프로젝트에 저장됩니다.",
+    "Use pseudonymous IDs. Inputs, settings and results are saved in this local project."
+  ],
+  "research_note": [
+    "연구용 비교 결과이며, 치료 효과나 실제 전향 검증의 근거가 아닙니다.",
+    "Research comparison; not evidence of treatment effects or genuine prospective validation."
+  ],
+  "playback_note": [
+    "시간순 합성 재생이며 실제 미래 관측 검증이 아닙니다.",
+    "Chronological synthetic playback; not genuine future validation."
+  ],
+  "correlation": ["관측 데이터 상관관계", "Observed-data correlation"],
+  "personalization_field": ["개인화 변수", "Personalization variable"],
+  "personal_weight": ["개인화 가중치", "Personalization weight"],
+  "sleep_threshold": ["입면 임계값", "Sleep-onset threshold"],
+  "wake_threshold": ["기상 임계값", "Wake threshold"],
+  "phase_min": ["개인 위상 (분)", "Personal phase (min)"],
+  "habit_bed_offset": ["습관 입면 오프셋 (분)", "Habitual bedtime offset (min)"],
+  "habit_wake_offset": ["습관 기상 오프셋 (분)", "Habitual wake offset (min)"],
+  "corr_method": ["상관계수", "Correlation coefficient"],
+  "pearson": ["Pearson · 선형 상관", "Pearson · linear correlation"],
+  "spearman": ["Spearman · 순위 상관", "Spearman · rank correlation"],
+  "show_table": ["결과 표 함께 보기", "Show results table"],
+  "online_metric_note": [
+    "—: 원본 온라인 개인화 요약은 공동 MAE만 제공합니다.",
+    "—: The original online-personalization summary supplies joint MAE only."
+  ]
+}

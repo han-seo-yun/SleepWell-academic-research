@@ -1,0 +1,81 @@
+{
+  "inventory": {
+    "ACT_files": 2159,
+    "PSG_XML_files": 1157,
+    "included_subjects": 1034,
+    "matched_candidates": 1036,
+    "new_vs_previous_ACT_snapshot": 0,
+    "overlap_participants": 1835
+  },
+  "split": {
+    "test": 151,
+    "train": 739,
+    "validation": 144
+  },
+  "rows_by_split": {
+    "test": 184520,
+    "train": 909820,
+    "validation": 178080
+  },
+  "selected": "300s:activity_light_hgb",
+  "test_selected": {
+    "accuracy": 0.8171634511164102,
+    "aggregate_balanced_accuracy": 0.800848686543272,
+    "confusion": {
+      "fn": 9435,
+      "fp": 24302,
+      "tn": 54285,
+      "tp": 96498
+    },
+    "macro_f1": 0.8070659373713422,
+    "rows": 184520,
+    "sleep_sensitivity": 0.9109342697742913,
+    "subject_macro_balanced_accuracy": 0.7914286717888245,
+    "subjects": 151,
+    "subjects_with_both_classes": 151,
+    "wake_specificity": 0.6907631033122527
+  },
+  "same_PSG_test_ACT_baseline": {
+    "accuracy": 0.7528506394970735,
+    "aggregate_balanced_accuracy": 0.7173626173699517,
+    "confusion": {
+      "fn": 4574,
+      "fp": 41030,
+      "tn": 37557,
+      "tp": 101359
+    },
+    "macro_f1": 0.7192891793313533,
+    "rows": 184520,
+    "sleep_sensitivity": 0.9568217647003294,
+    "subject_macro_balanced_accuracy": 0.7110279321736582,
+    "subjects": 151,
+    "subjects_with_both_classes": 151,
+    "wake_specificity": 0.47790347003957395
+  },
+  "paired_difference": {
+    "ci95": [
+      0.07136742600676557,
+      0.089148210314297
+    ],
+    "draws": 2000,
+    "mean_difference": 0.08040073961516636,
+    "probability_gt_zero": 1.0,
+    "random_seed": 42,
+    "subjects": 151
+  },
+  "verification": {
+    "status": "passed",
+    "standard_verification": "MESA: unique subjects, validation selection, all Test confusions/common support, artifact hash and three-subject prediction reproduction",
+    "subjects_archives_verified": 1034,
+    "raw_source_hashes_verified": 2068,
+    "retained_PSG_labels_verified": 1272420,
+    "selected_model_test_subjects_reproduced": 151,
+    "selected_model_test_predictions_reproduced": 184520,
+    "prediction_mismatches": 0,
+    "prior_participant_splits_preserved": true,
+    "baseline_metrics_and_paired_bootstrap_reproduced": true,
+    "all_exclusion_reasons_rechecked": true,
+    "protocol_and_source_hashes_matched": true,
+    "verified_at_utc": "2026-10-20T02:57:03Z"
+  }
+}

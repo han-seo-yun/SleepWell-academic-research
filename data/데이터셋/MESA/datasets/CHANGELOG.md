@@ -1,0 +1,77 @@
+## 0.8.0 (September 25, 2025)
+
+- Add additional harmonized PSG variables
+- Revise folder structure for tabular data
+- The CSV datasets generated from a SAS export is located here:
+  - `\\rfawin\bwh-sleepepi-mesa\nsrr-prep\_releases\0.8.0\`
+  
+## 0.7.0 (February 21, 2024)
+
+- Revise variable units
+- Add quantitative respiratory analysis variables
+- Add additional harmonized covariates
+- The CSV datasets generated from a SAS export is located here:
+  - `\\rfawin\bwh-sleepepi-mesa\nsrr-prep\_releases\0.7.0\`
+
+## 0.6.0 (May 2, 2023)
+
+- Add harmonized sleep architecture variables
+- Add annotated PSG quality summary forms
+- Update metdata for MEQ variables
+- The CSV datasets generated from a SAS export is located here:
+  - `\\rfawin\bwh-sleepepi-mesa\nsrr-prep\_releases\0.6.0\`
+
+
+## 0.5.0 (February 4, 2022)
+
+- Add harmonized core covariates
+- Add harmonized PSG variables
+- The CSV datasets generated from a SAS export is located here:
+  - `\\rfawin\bwh-sleepepi-mesa\nsrr-prep\_releases\0.5.0\`
+
+## 0.4.0(March 22, 2021)
+
+- Update many variable display names and labels
+- Add Sleep Questionnaire PDF form link
+- The CSV datasets generated from a SAS export is located here:
+  - `\\rfawin\bwh-sleepepi-mesa\nsrr-prep\_releases\0.4.0\`
+- **Gem Changes**
+  - Update to ruby 2.6.1
+  - Update to spout 1.0.0
+
+## 0.3.0 (January 11, 2018)
+
+- Create HRV variables
+- Update ICSD variable definitions
+- The CSV datasets generated from a SAS export is located here:
+  - `\\rfawin\bwh-sleepepi-mesa\nsrr-prep\_releases\0.3.0\`
+
+## 0.2.0 (April 10, 2017)
+
+- Add ICSD AHI variables
+- Add indicator variable for commercial use (cucmcn1c)
+- The CSV datasets generated from a SAS export is located here:
+  - `\\rfawin\bwh-sleepepi-mesa\nsrr-prep\_releases\0.2.0\`
+- **Gem Changes**
+  - Updated to spout 0.12.1
+
+## 0.1.1 (October 11, 2016)
+
+- Add more commonly used variables
+- Correct typo for time variables
+
+## 0.1.0 (October 4, 2016)
+
+- Add `SleepQ` (Sleep Questionnaire) dataset
+- Add `SleepActigraphy` (Actigraphy results) dataset
+- Add `SleepPolysomn` (Polysomnography results) dataset
+- Incorporate BioLINCC ID to replace primary MESA subject identifier
+- Include race/ethnicity and gender variables from Exam 1
+- The CSV datasets generated from a SAS export is located here:
+  - `\\rfawin\bwh-sleepepi-mesa\nsrr-prep\_releases\0.1.0\`
+    - `mesa-sleep-dataset-0.1.0.csv`
+
+### Changes
+- **Gem Changes**
+  - Use of Ruby 2.3.0 is now recommended
+  - Updated to spout 0.11.1

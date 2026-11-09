@@ -1,0 +1,5 @@
+# 모델 파일은 줄바꿈을 바꾸지 않는다 (엔진이 파일 해시로 검사 — population_prior.json 은 CRLF 그대로여야 함)
+app/src/main/assets/models/*.json -text
+
+# Keep the Unix wrapper executable on macOS/Linux checkouts.
+gradlew text eol=lf

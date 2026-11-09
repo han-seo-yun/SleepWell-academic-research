@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    XML 테마는 앱 실행 초기 화면(스플래시)에만 영향을 준다.
+    실제 화면 색·글꼴은 Compose 의 MaterialTheme 이 담당하므로 여기는 최소로 둔다.
+    플랫폼 기본 테마를 상속해서 추가 의존성이 필요 없다.
+-->
+<resources>
+    <style name="Theme.Sleepwell" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

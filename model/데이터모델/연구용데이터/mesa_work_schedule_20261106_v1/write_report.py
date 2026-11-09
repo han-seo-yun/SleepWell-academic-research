@@ -1,0 +1,133 @@
+"""Create aggregate-only report and figure from the locked evaluation."""
+import json
+from pathlib import Path
+import shutil
+
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+import experiment as e
+
+out = e.ROOT / "데이터모델/연구용데이터/mesa_work_schedule_20261106_v1"
+result = json.loads((out / "evaluation.json").read_text(encoding="utf-8"))
+support = json.loads((out / "support_lock.json").read_text(encoding="utf-8"))
+linkage = json.loads((out / "linkage_audit.json").read_text(encoding="utf-8"))
+selected = result["selected"]
+e.verify_sources(out)
+labels = {"current_v8": "기존 통합 v8", "control": "동일 구조 재학습 · 근무 정보 없음",
+          "schedule": "근무 일정 추가", "schedule_extra": "근무 일정 + 추가 근무일 수"}
+table = ["| 모델 | 검증 299명 · 2,062밤 | 시험 315명 · 2,175밤 |", "|---|---:|---:|"]
+for arm in labels:
+    table.append(f"| {labels[arm]} | {result['splits']['validation'][arm]['joint']:.4f}분 | {result['splits']['test'][arm]['joint']:.4f}분 |")
+comparisons = ["| 비교 | 평균 오차 감소 | 참가자 부트스트랩 95% 구간 |", "|---|---:|---:|"]
+for split, name in (("validation", "검증: 기존 v8 대비"), ("test", "시험: 기존 v8 대비")):
+    p = result["comparisons"][split][selected]["current_v8"]
+    comparisons.append(f"| {name} | {p['improvement_min']:.4f}분 ({p['improvement_min']*60:.2f}초) | {p['ci95'][0]:.4f} ~ {p['ci95'][1]:.4f}분 |")
+p = result["comparisons"]["test"][selected]["control"]
+comparisons.append(f"| 시험: 동일 구조 재학습 대비 | {p['improvement_min']:.4f}분 | {p['ci95'][0]:.4f} ~ {p['ci95'][1]:.4f}분 |")
+
+plot_comparisons = [("검증 · 기존 앱 대비", result['comparisons']['validation'][selected]['current_v8']),
+                    ("시험 · 기존 앱 대비", result['comparisons']['test'][selected]['current_v8']),
+                    ("시험 · 근무 정보 없는 재학습 대비", result['comparisons']['test'][selected]['control'])]
+plt.rcParams.update({"font.family": "Malgun Gothic", "axes.unicode_minus": False, "font.size": 11})
+fig, ax = plt.subplots(figsize=(9.2, 3.7))
+for y, (name, p) in enumerate(plot_comparisons):
+    center = p['improvement_min'] * 60
+    low, high = np.array(p['ci95']) * 60
+    ax.errorbar(center, y, xerr=np.array([[center-low], [high-center]]), fmt='o', color='#344B82', capsize=5)
+ax.axvline(0, color='#777777', linestyle='--', linewidth=1)
+ax.set_yticks(range(3), [x[0] for x in plot_comparisons])
+ax.invert_yaxis()
+ax.set_xlabel('오차 감소(초) · 양수는 개선 / 음수는 악화')
+ax.set_title('근무 일정 추가 효과 — 평균 차이와 95% 구간')
+ax.spines[['top', 'right']].set_visible(False)
+ax.grid(axis='x', alpha=.18)
+fig.text(.5, .02, '5,000회 참가자 단위 재표집 · 재사용 시험 자료의 후향 평가 · 사전 최소 개선 기준: 60초', ha='center', fontsize=9)
+fig.tight_layout(rect=[0, .06, 1, 1])
+fig.savefig(out / 'work_schedule_effect.png', dpi=180)
+plt.close(fig)
+
+summary = f"""# MESA 근무 일정 예측 검증 결과
+
+확인일: 2026-11-06, Asia/Seoul. **앱 반영 기준 미통과: 통합 v8 모델과 사용자 입력 항목 유지.**
+
+근무 일정이 들어 있는 원본을 기존 수면 자료에 연결하고, 현재 앱과 같은 점진 개인화(`gradual_v1`) 및 CMI/MESA 50:50 융합 예측으로 비교했다. 근무 일정을 추가한 모델의 시험 평균 오차 감소는 약 4.3초였으며 95% 구간이 0을 포함했다. 이번 고정 절차에서는 앱에 반영할 만큼의 개선을 확인하지 못했다. 이는 근무 일정과 수면이 무관하다는 결론이 아니다.
+
+## 연결과 자료 보존
+
+- 원본: `E:\\학술제\\데이터셋\\MESA\\datasets\\mesa-sleep-dataset-0.8.0.csv`.
+- 기존 MESA 2,139명 · 14,761밤 중 **2,136명 · 14,741밤 연결**. 미연결 3명 · 20밤을 삭제하지 않았다.
+- 연결 대상에서 근무 일정 응답 2,110명, 설문 결측 26명, 미연결 3명. CMI 269명 · 4,627밤에는 MESA 근무 정보를 붙이지 않았다.
+- 기존 전체 19,388행의 순서·열·값·참가자별 split 유지. 원본 통합 manifest의 SHA-256과 재확인했다.
+- 분할: 학습 1,525명/10,524밤, 검증 299명/2,062밤, 시험 315명/2,175밤. 참가자 분할 중복 없음.
+- 연결 결과는 `private_linked_episodes.parquet`에 별도 보존. 원본 CSV/SQLite, 앱 모델, 사용자 저장소를 수정하지 않았다. 모든 개인별 산출물은 로컬 연구 폴더에만 보관한다.
+
+## 비교 절차
+
+- 정답: 기존 ACT 기반 주수면 시작·종료 시각. 예측 시점은 현지 벽시계 20시, 해당 밤을 이력에 추가하기 전에 예측한다. DATA33, 물리6 특징과 기존 수면 제외 기준 유지.
+- 기존 앱: 배포된 JSON 두 개를 각자의 사전값으로 재생한 CMI/MESA hybrid 평균. 근무 정보 없는 동일 구조 재학습 대조군을 두어 재학습 효과와 맥락 추가 효과를 구분했다.
+- 같은 HGB 설정·Train 자료·가중치로 3개 모델만 학습했다. 근무 일정은 명목형 one-hot, 추가 근무일은 0~31일/월 및 결측 지시자로 처리했다. 결측 중앙값·연속 특징 절단값은 Train에서만 계산했다. 전처리의 분위수는 밤 단위, 학습 손실과 최종 평가는 참가자 균형이다.
+- 검증 자료에서 `근무 일정 추가`를 선택하고 파일 해시로 고정한 뒤 시험 결과를 계산했다. 시험에서 다른 후보가 소폭 낮아도 선택을 바꾸지 않았다.
+- 앱 적용을 가정한 주분석: **60~80세**, 해당 연령 Train에서 50명 이상인 **주간·불규칙/호출·일하지 않음**. 해당하지 않는 사람은 기존 앱 예측을 그대로 사용했다. 후보와 대조군 모두 같은 적용 마스크다. 적격자는 총 {support['eligible_people']:,}명 · {support['eligible_rows']:,}밤이며 검증 199명, 시험 201명이다.
+- 평균 오차는 각 사람 안에서 입면·기상 절대오차를 평균한 뒤 사람별로 동일 가중 평균한다. 신뢰구간은 참가자 단위 paired bootstrap 5,000회, seed 20261106이다.
+- 기준은 최소 1분 개선, 재학습 대조군 대비 추가 효과, 신뢰구간 및 전체·적격자·초기기록·근무 집단의 악화 방지다. 최초 기준과 학습 전 검토 보완은 `PROTOCOL.md`, `prefit_initial/`, `prefit_amendment.json`에 남겼다. 기준 보완 시 성능 결과는 계산되지 않았다.
+
+## 주 결과
+
+낮을수록 좋다. 단위는 **입면·기상 시각의 참가자 평균 절대오차(분)**이며 수면시간 자체 오차나 정확도 백분율이 아니다.
+
+{chr(10).join(table)}
+
+{chr(10).join(comparisons)}
+
+양수 차이는 개선이다. 시험의 입면 오차는 기존 70.6535 → 70.6597분, 기상 오차는 67.3973 → 67.2491분이다. 근무 일정 후보는 주로 기상 쪽에서 작은 차이를 보였지만, 전체 추가 효과를 확정할 수 없다.
+
+![근무 일정 추가 효과](work_schedule_effect.png)
+
+실제 적용 적격자만 봐도 시험 평균 오차 감소는 0.1113분(약 6.7초), 95% 구간 −0.0428~0.2689분으로 결론은 같다. 연령·희소 집단 제한 없이 알려진 근무 일정 전체에 적용한 기술용 비교도 시험 감소 0.1867분(약 11.2초)으로 사전 1분 기준에 못 미친다. 이 보조 비교를 선택이나 배포 판단으로 대체하지 않았다.
+
+## 사전 정의한 보조 결과와 한계
+
+- 첫 유효 이력 이전 밤의 시험 감소는 0.3983분(95% 0.1419~0.6553)이다. 그러나 검증에서는 0.1873분(95% −0.0682~0.4480)이며 최소 1분에도 못 미친다. 이 하위집단 결과만 골라 앱에 반영하지 않았다. 여러 하위집단 구간은 기술용이며 다중 비교 보정한 유의성 주장에 사용하지 않는다.
+- 불규칙/호출 적격자는 검증 17명, 시험 13명으로 집단 자체의 안정적인 효과를 판정하기에 부족하다. 오후·야간·분할·순환 근무는 적격 Train 표본이 각 31·19·11·8명이라 배포 가정에서 기존 예측으로 돌아갔다.
+- 자료의 관측 연령은 54~90세이며 연령 결측도 있다. 학생·젊은 직장인에 일반화할 근거가 아니다. `일하지 않음`을 학생이나 은퇴로 재분류하지 않았다.
+- 기존 Test는 과거 연구에서 반복 사용되었다. 이번 구간은 재사용 자료에서의 조건부 후향 불확실성이지 새로운 외부 검증이 아니다.
+- 설문과 각 밤 사이의 정확한 수집 시각을 알 수 없어, 평소 근무 일정이 가입 시 알려졌다고 가정했다. `observed_at=wake`도 후향 가정이며 실기기의 가져오기 시각을 검증한 것이 아니다.
+- 기존 주수면/시각 범위에서 제외된 낮 수면을 복원하지 않았다. 주간에 자는 야간 근무자의 전체 수면을 대표한다고 해석할 수 없다.
+- 이 예측은 관측 행동 시각에 관한 것이다. 최적 수면량, 직업별 생리 상수, 추천 정책이나 건강효과를 검증하지 않았다. 모델 재학습과 개인별 기록 축적도 구분한다.
+
+## 검증 및 앱 처리
+
+- 연결·명목 인코딩·학습 중앙값 재사용·참가자 평균·정확한 fallback·미래 기록 제외 회귀 테스트 **12개 통과**.
+- Python 구문 컴파일 통과.
+- 기존 Android golden fixture **9개, 수치 1,008개**와 Python 재생 비교: 최대 절대차 **0.0**(허용오차 1e-7). 실제 Kotlin을 새로 실행한 결과와는 구분한다.
+- 입력/provider/모델 해시, 원본 split, 모델 선택 잠금, 원본 보존 검증 완료. 상세는 JSON 감사 파일과 `baseline_parity.json` 참조.
+- **통합 v8 변경 없음.** 효과 확인 조건을 충족하지 않아 모델 교체와 근무 입력 추가를 하지 않았다. Android 소스 변경이 없어 이번 작업에서 Android 빌드·lint·설치·실기기 동기화 검증은 수행하지 않았다. 현재 APK를 새 실험 모델이 반영된 앱이라고 표시하지 않는다.
+
+## 산출물과 재현
+
+- `private_linked_episodes.parquet`: 원행 보존 + 근무 정보 연결.
+- `private_replay.parquet`: 과거 이력으로 계산한 39개 특징 및 기존 모델 예측.
+- `research_models.joblib`: 연구 전용 3개 모델. 앱 배포물 아님.
+- `selection_lock.json`, `evaluation.json`: 검증 후보 선택과 모든 시험/하위집단 결과.
+- `private_predictions.parquet`: 검증·시험의 참가자별 예측. 외부 공유/앱 패키징 대상 아님.
+- `experiment.py`, `linkage.py`, `test_*.py`, `verify_baseline.py`: 코드와 회귀 검증.
+- `input_manifest.json`, `prefit_seal.json`, `output_manifest.json`, `delivery_manifest.json`: 무결성·판정 절차·최종 산출물 해시.
+
+재실행 명령은 `python run_reproduction.py --output "E:\\학술제\\데이터모델\\연구용데이터\\mesa_work_schedule_reproduction_새이름"`이다. 새로 존재하지 않는 출력 폴더만 허용하며 최종 고정 절차의 prepare → seal → fit → evaluate를 실행한다. 새로운 후보 탐색은 하지 않는다. 이번 최초 실행은 특징 재생 이후 학습 전 검토 보완을 `seal_prefit.py`로 기록했다. 기존 실행의 script 경로도 입력 manifest에 고정되어 있으므로, 파일을 옮겨서 기존 실행에 이어 쓰지 않는다.
+
+## 자료·방법 출처
+
+- NSRR [MESA 설문 변수 설명](https://www.sleepdata.org/datasets/mesa/files/documentation/dataset-descriptions/MESAe5a113SleepQuestionnaire_20140617.pdf): 평소 근무 일정과 월간 추가 근무일.
+- scikit-learn [Cross-validation](https://scikit-learn.org/stable/modules/cross_validation.html): 그룹 분리와 학습 자료에 한정한 전처리.
+- Kassis, T., Agarwal, V., He, Y., Patel, D., & Brueckner, A. M. (2026). [Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents](https://doi.org/10.48550/arXiv.2609.00065). `statistical-analysis` 절차를 참가자 단위 비교·효과 크기·빠짐없는 보고에 참고했다.
+"""
+(out / "검증결과.md").write_text(summary, encoding="utf-8")
+for name in ("verify_baseline.py", "baseline_parity.json", "test_experiment.py", "test_linkage.py", "write_report.py", "run_reproduction.py"):
+    shutil.copy2(Path(__file__).with_name(name), out / name)
+pd.DataFrame([{"split": split, "model": arm, **values} for split, arms in result["splits"].items()
+              for arm, values in arms.items()]).to_csv(out / "aggregate_metrics.csv", index=False)
+print("Aggregate report, figure, metrics and verification sources saved.")

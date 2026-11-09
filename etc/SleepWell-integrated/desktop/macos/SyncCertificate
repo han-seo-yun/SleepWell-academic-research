@@ -1,0 +1,65 @@
+#!/bin/bash
+# macOS counterpart of SyncCertificate.exe: local self-signed TLS pair for phone sync.
+# No keychain, trust store or admin changes. Uses the system /usr/bin/openssl.
+#   SyncCertificate DIR          create DIR/sync-cert.pem + DIR/sync-key.pem (exit 3 if present)
+#   SyncCertificate --check DIR  0 if valid now and for more than 7 more days, else 4
+set -u
+umask 077
+OPENSSL=/usr/bin/openssl
+
+if [ $# -eq 2 ] && [ "$1" = "--check" ]; then
+    cert="$2/sync-cert.pem"
+    [ -f "$cert" ] || exit 1
+    "$OPENSSL" x509 -in "$cert" -noout -checkend 604800 >/dev/null 2>&1 || exit 4
+    start=$("$OPENSSL" x509 -in "$cert" -noout -startdate 2>/dev/null | sed 's/^notBefore=//')
+    start_epoch=$(LC_ALL=C date -j -u -f "%b %e %T %Y GMT" "$start" +%s 2>/dev/null) || exit 1
+    [ "$start_epoch" -le "$(date -u +%s)" ] || exit 4
+    exit 0
+fi
+
+[ $# -eq 1 ] || exit 2
+mkdir -p "$1" || exit 1
+directory=$(cd "$1" && pwd -P) || exit 1
+cert="$directory/sync-cert.pem"
+key="$directory/sync-key.pem"
+[ -e "$cert" ] || [ -e "$key" ] && exit 3
+
+work=$(mktemp -d "${TMPDIR:-/tmp}/sleepwell-cert.XXXXXX") || exit 1
+trap 'rm -rf "$work"' EXIT
+touch "$work/index.txt"
+cat > "$work/ca.cnf" <<EOF
+[ ca ]
+default_ca = local
+[ local ]
+dir = $work
+database = $work/index.txt
+new_certs_dir = $work
+serial = $work/serial
+default_md = sha256
+policy = anything
+unique_subject = no
+copy_extensions = none
+[ anything ]
+commonName = supplied
+[ req ]
+distinguished_name = dn
+prompt = no
+[ dn ]
+CN = SleepWell Local Sync
+[ server ]
+basicConstraints = critical,CA:FALSE
+keyUsage = critical,digitalSignature,keyEncipherment
+extendedKeyUsage = critical,serverAuth
+EOF
+"$OPENSSL" rand -hex 16 > "$work/serial" || exit 1
+"$OPENSSL" genrsa -out "$work/key.pem" 2048 >/dev/null 2>&1 || exit 1
+"$OPENSSL" req -new -key "$work/key.pem" -config "$work/ca.cnf" -out "$work/req.pem" >/dev/null 2>&1 || exit 1
+# Backdate one day like the Windows helper so a phone with a slow clock still accepts it.
+startdate=$(date -u -v-1d +%y%m%d%H%M%SZ)
+enddate=$(date -u -v+3y +%y%m%d%H%M%SZ)
+"$OPENSSL" ca -batch -selfsign -config "$work/ca.cnf" -keyfile "$work/key.pem" \
+    -in "$work/req.pem" -out "$work/cert.pem" -extensions server \
+    -startdate "$startdate" -enddate "$enddate" -notext >/dev/null 2>&1 || exit 1
+"$OPENSSL" x509 -in "$work/cert.pem" -out "$work/cert-clean.pem" >/dev/null 2>&1 || exit 1
+mv "$work/key.pem" "$key" && mv "$work/cert-clean.pem" "$cert" || exit 1
+exit 0

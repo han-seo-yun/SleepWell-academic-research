@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SleepWell 아침 수면일지</title>
+  <style>
+    :root{font-family:system-ui,"Malgun Gothic",sans-serif;color:#172b3a;background:#eef3f6}
+    body{margin:0}.card{max-width:36rem;margin:1rem auto;padding:1.1rem;background:white;border-radius:14px;box-shadow:0 3px 16px #18384b18}
+    h1{font-size:1.45rem}label{display:block;margin:.85rem 0 .25rem;font-weight:650}input,select,button{box-sizing:border-box;width:100%;font:inherit;padding:.72rem;border:1px solid #9fb1bc;border-radius:8px}
+    button{margin-top:1.2rem;background:#17668a;color:white;border:0;font-weight:700}.hint{font-size:.9rem;color:#526874}.status{padding:.7rem;border-radius:8px;background:#edf6fa}.optional{font-weight:400;color:#60747f}
+  </style>
+</head>
+<body><main class="card">
+  <h1>아침 수면일지</h1>
+  <p id="study" class="status">연구 상태를 확인하고 있습니다.</p>
+  <p class="hint">이 일지는 자기보고 수면 시각을 기록합니다. 예측값은 정확도 평가 중 표시되지 않습니다.</p>
+  <p id="timezone" class="hint">모든 날짜와 시각은 대한민국 표준시(Asia/Seoul, UTC+9) 기준입니다.</p>
+  <form id="diary">
+    <label for="token">참여자 토큰</label><input id="token" type="password" autocomplete="off" required>
+    <label for="night_date">예측 기준 저녁 날짜 <span class="optional">예: 11/3 밤~11/4 아침은 11/3</span></label><input id="night_date" type="date" required>
+    <label for="missing_reason">기록할 수 없는 경우 <span class="optional">선택</span></label>
+    <select id="missing_reason"><option value="">기록 가능</option><option>기억나지 않음</option><option>일지를 늦게 확인함</option><option>주 수면이 없었음</option><option>기타</option></select>
+    <section id="times">
+      <label for="bed_entry">침대에 들어간 시각 <span class="optional">선택</span></label><input id="bed_entry" type="datetime-local">
+      <label for="sleep_attempt">잠들려고 시도한 시각</label><input id="sleep_attempt" type="datetime-local" required>
+      <label for="latency_min">잠드는 데 걸린 시간(분)</label><input id="latency_min" type="number" min="0" max="480" step="1" required>
+      <label for="final_wake">마지막으로 깬 시각</label><input id="final_wake" type="datetime-local" required>
+      <label for="out_of_bed">침대에서 나온 시각 <span class="optional">선택</span></label><input id="out_of_bed" type="datetime-local">
+      <label for="awakenings_count">밤중에 깬 횟수 <span class="optional">선택</span></label><input id="awakenings_count" type="number" min="0" max="100">
+      <label for="waso_min">밤중에 깨어 있던 총 시간(분) <span class="optional">선택</span></label><input id="waso_min" type="number" min="0" max="960">
+      <label for="quality">수면의 질(1–5) <span class="optional">1 매우 나쁨, 5 매우 좋음</span></label><input id="quality" type="number" min="1" max="5">
+      <label for="flags">특이사항 <span class="optional">쉼표로 구분: 교대근무, 여행, 질병, 음주, 수면약 등</span></label><input id="flags" maxlength="500">
+    </section>
+    <button type="submit">안전하게 제출</button>
+  </form>
+  <p id="result" role="status" aria-live="polite"></p>
+</main>
+<script>
+const $=id=>document.getElementById(id), form=$('diary'), result=$('result');
+const fragment=new URLSearchParams(location.hash.slice(1)); if(fragment.get('token')) $('token').value=fragment.get('token'); history.replaceState(null,'',location.pathname);
+const koreaYesterday=new Date(Date.now()+9*3600000-86400000); $('night_date').value=koreaYesterday.toISOString().slice(0,10);
+const deviceZone=Intl.DateTimeFormat().resolvedOptions().timeZone; if(deviceZone!=='Asia/Seoul') $('timezone').textContent+=' 현재 기기의 시간대('+deviceZone+')가 다릅니다. 입력란에는 반드시 한국 시각을 적어 주세요.';
+function offsetISO(value){if(!value)return ''; return value+(value.length===16?':00':'')+'+09:00'}
+$('missing_reason').addEventListener('change',()=>{const missing=!!$('missing_reason').value; $('times').hidden=missing; for(const id of ['sleep_attempt','latency_min','final_wake']) $(id).required=!missing});
+fetch('/health',{cache:'no-store'}).then(r=>r.json()).then(v=>{let message=v.study_state==='active'?'연구가 진행 중입니다.':v.study_state==='closed'?'연구가 종료되었습니다.':v.study_state==='synthetic'?'가상 시험입니다. 실제 연구 자료로 사용할 수 없습니다.':'연구 준비 중입니다. 활성화 전에는 제출할 수 없습니다.'; if(v.scheduler_error_type)message+=' 예측 스케줄러 오류 기록이 있어 연구자 확인이 필요합니다.'; $('study').textContent=message}).catch(()=>{$('study').textContent='연구 상태를 확인할 수 없습니다.'});
+form.addEventListener('submit',async event=>{event.preventDefault(); result.textContent='저장 중…'; const missing=$('missing_reason').value; let body={night_date:$('night_date').value}; if(missing){body.missing_reason=missing}else{for(const id of ['bed_entry','sleep_attempt','final_wake','out_of_bed'])if($(id).value)body[id]=offsetISO($(id).value); for(const id of ['latency_min','awakenings_count','waso_min','quality'])if($(id).value!=='')body[id]=Number($(id).value); body.flags=$('flags').value.split(',').map(x=>x.trim()).filter(Boolean)} try{const response=await fetch('/api/diary',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+$('token').value},body:JSON.stringify(body)}); const value=await response.json(); if(!response.ok){result.textContent=value.message||'제출하지 못했습니다.';return} const timing={primary_12h:'정시 제출로 1차 분석에 포함됩니다.',sensitivity_24h:'늦은 제출로 민감도 분석에 포함됩니다.',late_over_24h:'24시간을 넘긴 제출로 보관되지만 주 분석에는 포함되지 않습니다.',excluded_outside_target_window:'대상 기간 밖의 제출로 보관되지만 주 분석에는 포함되지 않습니다.',missing_declared:'누락 사유가 기록되었습니다.'}; result.textContent='제출이 저장되었습니다. '+(timing[value.timing_class]||'영수증이 발급되었습니다.')}catch(error){result.textContent='서버에 연결할 수 없습니다.'}});
+</script></body></html>

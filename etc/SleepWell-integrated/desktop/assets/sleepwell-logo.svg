@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- SleepWell app icon: white outlined crescent and "zZz" on the app's dark surface (#15141B).
+       Proportions traced from the reference glyph (moon 22x22, Z 5x7, z 4x6, z 4x5 px);
+       drawn from primitives, not an SF Symbol. -->
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="#15141b" filter="url(#shadow)"/>
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="3"/>
+  <!-- Reference coordinates x12 (outer bounds incl. stroke: moon 204..468 x 336..600). -->
+  <g transform="translate(526.5 496.5) scale(1.444) translate(-354 -420)" fill="none" stroke="#ffffff" stroke-linejoin="round" stroke-linecap="round">
+    <path transform="translate(336 468) scale(1.07) translate(-336 -468)" d="M296 347 A125 125 0 1 0 457 508 A113.9 113.9 0 1 1 296 347 Z" stroke-width="25"/>
+    <path d="M379 247 h46 l-46 70 h46" stroke-width="14" transform="translate(3.4 7.9) translate(402 282) scale(0.92) translate(-402 -282)"/>
+    <path d="M391 379 h34 l-34 58 h34" stroke-width="14" transform="translate(2.6 -7.2) translate(408 408) scale(0.92) translate(-408 -408)"/>
+    <path d="M463 331 h34 l-34 46 h34" stroke-width="14" transform="translate(-6 -0.7) translate(480 354) scale(0.92) translate(-480 -354)"/>
+  </g>
+</svg>

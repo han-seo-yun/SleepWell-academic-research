@@ -1,0 +1,25 @@
+# Walch PSG sleep/wake experiment
+
+Research-only result; not a clinical or production model.
+
+## Frozen design
+
+- Subject split: {'train': {'subjects': 22}, 'validation': {'subjects': 5}, 'test': {'subjects': 4}}
+- Raw PSG annotations supply all targets; cached label columns are ignored.
+- Features use only sensor observations inside the current non-overlapping bin.
+- Predictions become available at bin end, so latency equals 30/60/120/300 seconds.
+- No centered/future interpolation, PSG-relative clock, or label-derived feature is used.
+- Every model and resolution is scored on the same intersection of eligible native 30-second rows.
+
+## Validation-selected winner
+
+- Model: `activity_logistic` at 120 seconds
+- Validation subject-macro balanced accuracy: 0.7735
+- Held-out test subject-macro balanced accuracy: 0.7363
+
+All test candidates are descriptive only; the winner was frozen from validation results first.
+HGB boosting iterations are optimization steps, distinct from the sensor epoch duration.
+
+## Method reference
+
+Kassis, T., Agarwal, V., He, Y., Patel, D., & Brueckner, A. M. (2026). Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents. arXiv:2609.00065. https://doi.org/10.48550/arXiv.2609.00065

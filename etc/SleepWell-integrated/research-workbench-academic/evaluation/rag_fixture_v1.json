@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "purpose": "Deterministic bilingual retrieval evaluation. The files are synthetic and not scientific authorities.",
+  "documents": [
+    {"key":"ko_methods","file":"documents/methods_ko.md","metadata":{"title":"반복 측정 평가 예제","version":"2","language":"ko","domain":"ml_validation","rights":"synthetic fixture","license":"CC0-1.0","tags":["current","methods"]}},
+    {"key":"en_methods","file":"documents/methods_en.md","metadata":{"title":"Repeated-measures evaluation example","version":"2","language":"en","domain":"ml_validation","rights":"synthetic fixture","license":"CC0-1.0","tags":["current","methods"]}},
+    {"key":"old_guidance","file":"documents/old_guidance.md","metadata":{"title":"Superseded preprocessing guidance","version":"1","language":"en","domain":"ml_validation","rights":"synthetic fixture","license":"CC0-1.0","tags":["old_version"]}},
+    {"key":"conflict","file":"documents/conflicting_guidance.md","metadata":{"title":"Conflicting uncertainty example","version":"1","language":"en","domain":"ml_validation","rights":"synthetic fixture","license":"CC0-1.0","tags":["conflict"]}},
+    {"key":"extraction_failure","file":"documents/unsupported.bin","metadata":{"title":"Extraction failure fixture","version":"1","language":"en","domain":"ml_validation","rights":"synthetic fixture","license":"CC0-1.0","tags":["extraction_failure"]}}
+  ],
+  "questions": [
+    {"id":"dev-ko-independent","split":"dev","language":"ko","query":"반복 측정에서 독립 단위와 행 수는 어떻게 구분하나?","expected_anchors":[{"source":"ko_methods","locator":"paragraph:2"}]},
+    {"id":"dev-en-leakage","split":"dev","language":"en","query":"Where must imputation be fitted to prevent data leakage?","expected_anchors":[{"source":"en_methods","locator":"paragraph:4"}]},
+    {"id":"test-ko-final","split":"test","language":"ko","query":"최종 테스트 자료를 모델 선택에 반복 사용해도 되는가?","expected_anchors":[{"source":"ko_methods","locator":"paragraph:4"}]},
+    {"id":"test-en-participant","split":"test","language":"en","query":"What is the independent unit with repeated participant observations?","expected_anchors":[{"source":"en_methods","locator":"paragraph:2"}]},
+    {"id":"test-conflict","split":"test","language":"en","query":"Which fixture says fold standard deviation is a confidence interval?","expected_anchors":[{"source":"conflict","locator":"paragraph:2"}]},
+    {"id":"test-old-version","split":"test","language":"en","query":"Which obsolete preprocessing fixture fits imputation before splitting?","expected_anchors":[{"source":"old_guidance","locator":"paragraph:2"}]},
+    {"id":"test-extraction-failure","split":"test","language":"en","query":"ZXQ94721WVB","expected_anchors":[]},
+    {"id":"test-no-evidence","split":"test","language":"ko","query":"초전도큐비트_조셉슨접합_ZQX94721","expected_anchors":[]}
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "direct": ["✓ 직접 비교 가능", "✓ Directly comparable"],
+  "not_direct": ["— 직접 비교 불가: {reason}", "— Not directly comparable: {reason}"],
+  "improvement": ["개선 방향 변화 {value:+.4f}", "Improvement-direction change {value:+.4f}"],
+  "runs": ["실행 상태 · 대기 {queued} · 실행 {running} · 완료 {completed} · 실패 {failed} · 취소/중단 {stopped}", "Run status · queued {queued} · running {running} · completed {completed} · failed {failed} · cancelled/interrupted {stopped}"],
+  "class_distribution": ["클래스 분포: {values}", "Class distribution: {values}"],
+  "regression_distribution": ["타깃: n={n}, 평균 {mean:.3f}, 표준편차 {sd:.3f}, 범위 {low:.3f}–{high:.3f}", "Target: n={n}, mean {mean:.3f}, SD {sd:.3f}, range {low:.3f}–{high:.3f}"],
+  "baseline_result": ["기준 실험 · {name} · {metric} {mean:.4f} ± {sd:.4f}", "Baseline · {name} · {metric} {mean:.4f} ± {sd:.4f}"],
+  "quality_item": ["{column}: {reason}", "{column}: {reason}"],
+  "constant_feature": ["상수 피처", "constant feature"],
+  "high_missingness": ["높은 결측 비율", "high missingness"],
+  "mixed_numeric_text": ["숫자와 텍스트 혼재", "mixed numeric and text values"],
+  "possible_identifier": ["ID 가능성", "possible identifier"],
+  "high_cardinality_categorical": ["범주 고유값이 매우 많음", "high-cardinality categorical"],
+  "duplicate_rows": ["중복 행", "duplicate rows"],
+  "metric_undefined": ["현재 표본 구성에서 정의되지 않음", "undefined for the current sample composition"],
+  "training_has_one_class": ["학습 fold에 클래스가 하나뿐임", "training fold contains one class"],
+  "probability_unavailable": ["확률 또는 연속 점수를 제공하지 않음", "probability or continuous score unavailable"],
+  "validation_has_one_class": ["검증 fold에 클래스가 하나뿐임", "validation fold contains one class"],
+  "validation_has_no_positive": ["검증 fold에 양성 클래스가 없음", "validation fold has no positive class"],
+  "validation_has_no_negative": ["검증 fold에 음성 클래스가 없음", "validation fold has no negative class"],
+  "no_predicted_positive": ["양성 예측이 없음", "no positive predictions"],
+  "no_positive_in_truth_or_prediction": ["실제값과 예측값에 양성이 없음", "no positives in truth or predictions"],
+  "validation_missing_classes": ["검증 fold에 일부 클래스가 없음", "validation fold is missing classes"],
+  "requires_two_samples": ["두 개 이상의 표본이 필요함", "requires at least two samples"],
+  "constant_target": ["타깃이 상수임", "target is constant"],
+  "different_task": ["작업 유형이 다름", "different task"],
+  "different_split": ["분할이 다름", "different split"],
+  "different_data": ["데이터 버전이 다름", "different data version"],
+  "different_phase": ["평가 영역이 다름", "different evaluation phase"],
+  "different_target": ["타깃이 다름", "different target"],
+  "different_target_binning": ["타깃 구간화 규칙이 다름", "different target binning"],
+  "different_positive_class": ["양성 클래스가 다름", "different positive class"],
+  "different_metric_average": ["평균 방식이 다름", "different averaging method"],
+  "different_threshold": ["분류 임계값이 다름", "different classification threshold"],
+  "different_evaluation_rows": ["평가 행이 다름", "different evaluation rows"],
+  "baseline_not_found": ["현재 목록에 기준 실험이 없음", "baseline not in the current list"],
+  "baseline": ["기준 실험", "baseline"],
+  "comparable": ["비교 가능", "comparable"]
+  ,"metric_roc_auc": ["ROC-AUC", "ROC-AUC"]
+  ,"metric_average_precision": ["Average Precision", "Average Precision"]
+  ,"metric_accuracy": ["정확도", "Accuracy"]
+  ,"metric_balanced_accuracy": ["Balanced Accuracy", "Balanced Accuracy"]
+  ,"metric_recall": ["재현율", "Recall"]
+  ,"metric_specificity": ["특이도", "Specificity"]
+  ,"metric_precision": ["정밀도", "Precision"]
+  ,"metric_f1": ["F1", "F1"]
+  ,"metric_mae": ["MAE", "MAE"]
+  ,"metric_mse": ["MSE", "MSE"]
+  ,"metric_rmse": ["RMSE", "RMSE"]
+  ,"metric_r2": ["R²", "R²"]
+}

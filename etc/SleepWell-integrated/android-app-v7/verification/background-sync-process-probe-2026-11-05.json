@@ -1,0 +1,8 @@
+{
+  "app_process_present_before_job": false,
+  "job_run_command": "Running job [FORCED]",
+  "service_process_started": true,
+  "outcome": "BLOCKED",
+  "blocked_job_removed": true,
+  "last_attempt_ms": "1793860971806"
+}

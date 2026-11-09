@@ -1,0 +1,47 @@
+{
+  "retrieved_on": "2026-11-03",
+  "files": [
+    {
+      "file": "TRIPOD-AI-BMJ-2024.pdf",
+      "source_url": "https://www.bmj.com/content/bmj/385/bmj-2023-078378.full.pdf",
+      "description": "TRIPOD+AI statement, BMJ 2024;385:e078378",
+      "sha256": "0526CB5740224DCB12D66BF0FFDA426FE3BFD96AF617D71FABF30C57137DBD70"
+    },
+    {
+      "file": "TRIPODAI-Supplement-2024.pdf",
+      "source_url": "https://www.tripod-statement.org/wp-content/uploads/2024/04/TRIPODAI-Supplement.pdf",
+      "description": "Official TRIPOD+AI expanded and fillable checklists",
+      "sha256": "C19B0B939E85123277962444D6E58A360D6CD4F51957FA2004C8C415DB1BDECF"
+    },
+    {
+      "file": "PROBAST-AI-BMJ-2025.pdf",
+      "source_url": "https://www.bmj.com/content/bmj/388/bmj-2024-082505.full.pdf",
+      "description": "PROBAST+AI statement, BMJ 2025;388:e082505",
+      "sha256": "F65BB37E35E7362C136969AC9BDB4B1923B11F2DD34DA07C0BFFB6528B6C6452"
+    },
+    {
+      "file": "PROBAST-AI-PMC-supplementary.zip",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11931409/supplementaryFiles",
+      "description": "Official article supplementary-file bundle, downloaded through Europe PMC",
+      "sha256": "7DB22DBC846BA60EAB026B95DD06A4620BB160FE295B6DA9542F394197B9F36C"
+    },
+    {
+      "file": "mook082505.ww1.pdf",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11931409/supplementaryFiles",
+      "description": "PROBAST+AI supplementary figure 1 and tables 1, 2, and 5; extracted unchanged from the official bundle",
+      "sha256": "A4948A5494C64262E6B082DE26676274436BBC80BAA30ADBF4B301709659E40B"
+    },
+    {
+      "file": "mook082505.ww2.pdf",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11931409/supplementaryFiles",
+      "description": "PROBAST+AI supplementary table 3: assessment tool, including overall-judgment rules; extracted unchanged from the official bundle",
+      "sha256": "E8225E31512E349960A646DB703DC458D043D03BC4D6856271ACBAE0238400D0"
+    },
+    {
+      "file": "mook082505.ww3.pdf",
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11931409/supplementaryFiles",
+      "description": "PROBAST+AI supplementary table 4: Explanation and Elaboration Light; extracted unchanged from the official bundle",
+      "sha256": "028FCE475A5287C2E28BEA06EA67440EB9A76801BAFFC01EA3DCBF1FDF923BFB"
+    }
+  ]
+}

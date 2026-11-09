@@ -1,0 +1,10 @@
+{
+  "schema": "sleepwell.personalization_bayes_selection_lock.v1",
+  "locked_before_test_replay": true,
+  "selected_validation_alternative": "kalman_random_walk_q01",
+  "validation_gate_passed": false,
+  "protocol_sha256": "e59250c4ed174b58353359b79561107b1cfbf86558b837775ee9387231ea68b5",
+  "hyperparameters_sha256": "3d08a0707a1b77bb276dfc783e60e54d7b204468057a0a5d85b95b42502d5916",
+  "input_sha256": "edac2bbc2e525c14a2e51b7827b46259279b224d158a30ce7625c68169489948",
+  "frozen_predictions_sha256": "fa74c4371b7f64e338c39c0aa3a5f1193c9b178445b11dda9ba05e931da4b634"
+}

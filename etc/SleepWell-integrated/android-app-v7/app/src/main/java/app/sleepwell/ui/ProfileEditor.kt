@@ -1,0 +1,170 @@
+package app.sleepwell.ui
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.FilterChip
+import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.unit.dp
+import app.sleepwell.analysis.NextNightModel
+import app.sleepwell.analysis.ProfileStore
+
+/** Shared first-run and edit form; a failed save leaves the user's draft visible. */
+@OptIn(ExperimentalLayoutApi::class)
+@Composable
+fun ProfileEditor(
+    initialProfile: NextNightModel.ModelProfile?,
+    firstRun: Boolean,
+    onSave: (NextNightModel.ModelProfile) -> String?,
+    onCancel: (() -> Unit)? = null
+) {
+    val base = initialProfile ?: NextNightModel.ModelProfile()
+    var age by rememberSaveable { mutableStateOf(initialProfile?.ageBand.orEmpty()) }
+    var sex by rememberSaveable { mutableStateOf(initialProfile?.sex.orEmpty()) }
+    var occupation by rememberSaveable { mutableStateOf(initialProfile?.occupation.orEmpty()) }
+    var activity by rememberSaveable { mutableStateOf(base.activityMinutes) }
+    var desiredHours by rememberSaveable { mutableStateOf((base.desiredSleepMinutes / 60).toString()) }
+    var desiredMinutes by rememberSaveable { mutableStateOf((base.desiredSleepMinutes % 60).toString()) }
+    var bed by rememberSaveable { mutableStateOf(base.usualBed) }
+    var wake by rememberSaveable { mutableStateOf(base.usualWake) }
+    var error by rememberSaveable { mutableStateOf<String?>(null) }
+    var onboardingStep by rememberSaveable { mutableStateOf(0) }
+    val hasBasics = age in ProfileStore.AGE_BANDS && ProfileStore.SEXES.any { it.first == sex } &&
+        ProfileStore.OCCUPATIONS.any { it.second == occupation }
+
+    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)) {
+        Text(if (firstRun) "맞춤 수면 분석 시작하기" else "내 정보 수정",
+            style = MaterialTheme.typography.headlineSmall)
+        Text(if (firstRun) "기본정보와 수면 습관을 두 단계로 저장하면 삼성 헬스 기록을 바탕으로 분석을 시작합니다." else
+            "저장하면 변경한 정보로 수면 분석을 다시 계산합니다.", style = MaterialTheme.typography.bodyMedium)
+        Text("정보는 이 기기에 저장되며, 나중에 수정할 수 있어요.", style = MaterialTheme.typography.bodySmall)
+
+        if (firstRun) {
+            Text("${onboardingStep + 1}/2 · ${if (onboardingStep == 0) "기본정보" else "수면 습관"}",
+                style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
+            LinearProgressIndicator(progress = { (onboardingStep + 1) / 2f }, modifier = Modifier.fillMaxWidth())
+        }
+
+        if (!firstRun || onboardingStep == 0) Card(Modifier.fillMaxWidth()) {
+            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text("기본정보", style = MaterialTheme.typography.titleMedium)
+                Text("성별", style = MaterialTheme.typography.labelLarge)
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    ProfileStore.SEXES.forEach { (value, label) ->
+                        FilterChip(selected = sex == value, onClick = { sex = value; error = null }, label = { Text(label) })
+                    }
+                }
+                Text("연령대", style = MaterialTheme.typography.labelLarge)
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    ProfileStore.AGE_BANDS.forEach { value ->
+                        FilterChip(selected = age == value, onClick = { age = value; error = null }, label = { Text("${value}세") })
+                    }
+                }
+                Text("직업군", style = MaterialTheme.typography.labelLarge)
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    ProfileStore.OCCUPATIONS.forEach { (label, value) ->
+                        FilterChip(selected = occupation == value, onClick = { occupation = value; error = null }, label = { Text(label) })
+                    }
+                }
+            }
+        }
+
+        if (!firstRun || onboardingStep == 1) Card(Modifier.fillMaxWidth()) {
+            Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text("수면과 생활 습관", style = MaterialTheme.typography.titleMedium)
+                Text("희망 수면시간", style = MaterialTheme.typography.labelLarge)
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    OutlinedTextField(value = desiredHours,
+                        onValueChange = { desiredHours = it; error = null },
+                        label = { Text("희망 수면 · 시간") }, singleLine = true,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                        modifier = Modifier.weight(1f))
+                    OutlinedTextField(value = desiredMinutes,
+                        onValueChange = { desiredMinutes = it; error = null },
+                        label = { Text("희망 수면 · 분") }, singleLine = true,
+                        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                        modifier = Modifier.weight(1f))
+                }
+                Text("7~9시간 범위에서 분 단위로 직접 입력해 주세요. 예: 7시간 45분",
+                    style = MaterialTheme.typography.bodySmall)
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    OutlinedTextField(value = bed, onValueChange = { bed = it; error = null },
+                        label = { Text("평소 취침") }, placeholder = { Text("23:30") },
+                        singleLine = true, modifier = Modifier.weight(1f))
+                    OutlinedTextField(value = wake, onValueChange = { wake = it; error = null },
+                        label = { Text("평소 기상") }, placeholder = { Text("07:30") },
+                        singleLine = true, modifier = Modifier.weight(1f))
+                }
+                Text("24시간 형식으로 입력해 주세요. 예: 23:30, 07:30", style = MaterialTheme.typography.bodySmall)
+                Text("하루 활동량", style = MaterialTheme.typography.labelLarge)
+                Text("걷기·운동 등 몸을 움직이는 시간", style = MaterialTheme.typography.bodySmall)
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    ProfileStore.ACTIVITY.forEach { (minutes, label) ->
+                        FilterChip(selected = ProfileStore.activityLabel(activity) == label,
+                            onClick = { activity = minutes }, label = { Text(label) })
+                    }
+                }
+            }
+        }
+        Text(if (firstRun && onboardingStep == 0)
+            "성별·연령대는 집단 참고값에, 직업군은 생활 맥락에 사용합니다."
+            else "희망 수면시간과 평소 시각은 개인화 초기값에 사용합니다.",
+            style = MaterialTheme.typography.bodySmall)
+        if ((!firstRun || onboardingStep == 0) && !hasBasics)
+            Text("성별·연령대·직업군을 선택해 주세요.", style = MaterialTheme.typography.bodySmall)
+        error?.let { Text(it, color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.bodyMedium) }
+        if (firstRun && onboardingStep == 0) Button(onClick = {
+            error = null
+            onboardingStep = 1
+        }, enabled = hasBasics, modifier = Modifier.fillMaxWidth()) {
+            Text("다음 · 수면 습관 입력")
+        } else Button(onClick = {
+            val desired = ProfileStore.parseDesiredSleepMinutes(desiredHours, desiredMinutes)
+            if (desired == null) {
+                error = "희망 수면시간은 7~9시간으로 입력해 주세요. 분은 0~59입니다."
+            } else if (ProfileStore.validClock(bed.trim()) == null || ProfileStore.validClock(wake.trim()) == null) {
+                error = "평소 시각은 23:30처럼 입력해 주세요."
+            } else {
+                error = onSave(base.copy(ageBand = age, sex = sex, occupation = occupation,
+                    activityMinutes = activity, desiredSleepMinutes = desired, usualBed = bed.trim(),
+                    usualWake = wake.trim(), onboardingCompleted = true))
+            }
+        }, enabled = hasBasics, modifier = Modifier.fillMaxWidth()) {
+            Text(if (firstRun) "저장하고 시작하기" else "저장하고 다시 계산")
+        }
+        if (firstRun && onboardingStep == 1) {
+            TextButton(onClick = { error = null; onboardingStep = 0 }, modifier = Modifier.fillMaxWidth()) {
+                Text("이전 · 기본정보")
+            }
+        }
+        onCancel?.let { cancel ->
+            TextButton(onClick = cancel, modifier = Modifier.align(Alignment.CenterHorizontally)) { Text("취소") }
+        }
+        Spacer(Modifier.height(24.dp))
+    }
+}

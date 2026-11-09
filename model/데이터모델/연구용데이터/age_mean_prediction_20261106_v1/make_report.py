@@ -1,0 +1,112 @@
+"""Render aggregate locked results; never refit models or inspect individual output."""
+from pathlib import Path
+import csv
+import json
+
+HERE = Path(__file__).resolve().parent
+result = json.loads((HERE / "evaluation.json").read_text(encoding="utf-8"))
+audit = json.loads((HERE / "verify_replay.json").read_text(encoding="utf-8"))
+rows = []
+for scope, splits in result["scopes"].items():
+    for split, details in splits.items():
+        for view, values in details["views"].items():
+            for arm, metrics in values["metrics"].items():
+                rows.append({"scope": scope, "split": split, "view": view, "arm": arm, **metrics})
+with (HERE / "aggregate_metrics.csv").open("w", encoding="utf-8-sig", newline="") as f:
+    writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+    writer.writeheader()
+    writer.writerows(rows)
+
+text = ["""# 연령 평균 추가 예측 검증 결과
+
+검증일: 2026-11-06. 앱 기준: 통합 v8 / v0.8.2, Git `6f547c5022a0ea028477c039b5b9a78d46bf7f51`.
+
+## 결론
+
+**이번 고정 실험에서는 연령 평균 추가에 따른 예측 개선이 확인되지 않았다. 앱에는 반영하지 않는다.** 수치상 오차 감소는 있었으나 매우 작고, 참여자 단위 95% 신뢰구간이 0을 포함했다. 이는 연령이 전혀 쓸모없다는 증명이나 모든 연령 모델의 실패를 뜻하지 않는다.
+
+54–80세 Test 265명·1,835밤에서 연령 평균 추가 모델은 동일 조건 재학습 대조군보다 joint MAE가 0.0392분(약 2.35초) 낮았다. 95% CI는 −0.0148~+0.0928분으로 악화와 개선을 모두 포함한다. 앱 입력군 전체를 자료가 지원하는 60–80세 Test 215명·1,487밤에서는 개선 0.0070분(약 0.42초), CI −0.0399~+0.0551분이었다.
+
+현재 앱 대비 60–80세 오차 감소도 0.0275분(약 1.65초), CI −0.1121~+0.1777분이다. 사전 지정한 1분 개선 문턱과 0 초과 CI 조건을 충족하지 못했다. 1분 문턱은 공학적 도입 기준이며 임상 기준이 아니다. **그 문턱을 제외하더라도 통계적으로 명확한 개선 증거가 없다.**
+
+## 무엇을 비교했나
+
+- 현재 앱의 수면 이력 기반 예측과 같은 GRADUAL_V1 MESA/CMI hybrid 50:50 기준을 유지했다.
+- `control`: 기존 Hybrid39와 모든 사람에게 동일한 NHANES 전체 평균을 넣고 MESA 예측기를 재학습했다.
+- `age`: 같은 자료·가중치·전처리·하이퍼파라미터에 연령별 NHANES 평균을 넣었다. 성별·활동량·직업은 추가하지 않았다.
+- `band`: 평균의 숫자 크기를 제거하고 순서만 같은 범주 코드로 대체한 진단군이다. 후보 선택에 사용하지 않았다.
+- 예측 대상은 다음 주요 수면의 ACT 파생 시작·최종 종료 시각이다. 두 시각의 절대오차 평균(joint MAE)을 참여자별 계산 후 참여자 균등 평균했다. 작을수록 좋다.
+- 수면 구간 길이는 종료−시작이다. 실제 잠든 총시간(TST), 권장 수면 기회시간, 최적 필요 수면량과 다르다.
+
+NHANES 평균은 45–59세 435.295분, 60–80세 464.275분이며 전체 평균은 453.382분이다. 이를 관측값을 예측하는 입력으로 사용했으며 목표 수면시간으로 강제하지 않았다. NHANES의 해당 변수는 자기보고 평일/근무일 취침·기상 시각에서 산출된 값으로 실제 24시간 총수면 및 낮잠을 포괄하지 않는다. [CDC 공식 변수 설명](https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/SLQ_J.htm)
+
+## 자료와 검증 경계
+
+| 분할 | 전체 참여자 | 전체 밤 | 54–80세 참여자 | 60–80세 참여자 |
+|---|---:|---:|---:|---:|
+| Train | 1,525 | 10,524 | 1,308 | 1,065 |
+| Validation | 299 | 2,062 | 259 | 216 |
+| Test | 315 | 2,175 | 265 | 215 |
+
+MESA 전체 2,139명/14,761밤의 기존 참여자 분할을 유지했다. 분석 나이는 harmonized `nsrr_age`와 결측 포함 전원 일치했고, 원천 `sleepage5c`와 다른 20명은 모두 90세 초과의 상한 처리였다. 나이 결측 3명은 그대로 보존했다. CMI 4,627개 기록에는 연령이 없어 연령 효과 평가에 넣지 않았고, 기존 CMI 모델은 고정했다.
+
+54–59세 자료로 앱의 45–59세 입력군 전체를 검증할 수 없으므로, 앱 반영 판정은 60–80세에 한정했다. 다른 나이와 결측은 모든 비교군에서 기존 모델 출력으로 정확히 복원했다. 모든 Train 행은 학습에 유지했고, 지원 밖/결측의 global mean은 사실상 별도 연령 상태를 나타낼 수 있다.
+
+Train에서만 결측 대체 및 1%/99% 절단 기준을 계산했다. 밤별 학습 가중치는 참여자 기록 수의 역수로 설정했다. 기존 고정 설정의 HistGradientBoostingRegressor 3개 비교군만 학습했고 결과에 따른 추가 탐색은 하지 않았다. 절차와 입력을 학습 전에 봉인하고 모델·Validation 결과를 Test 전에 봉인했다. Test 평가는 한 번 수행했다.
+
+CI는 비교 모델과 후보의 **동일 참여자별 오차 차이**를 5,000번 bootstrap한 percentile 95% 구간이다. 밤을 독립 사람처럼 재추출하지 않았다. CI는 이번 고정 학습 모델 조건의 평가 표본 불확실성이며 재학습 변동성 전체를 포함하지 않는다. 참여자 단위 분할은 같은 사람의 기록이 학습과 평가에 섞이는 누수를 막기 위한 것이다. [scikit-learn 공식 교차검증 문서](https://scikit-learn.org/stable/modules/cross_validation.html)
+
+## 전체 비교 결과
+
+아래 오차 단위는 분이다. `all_with_exact_fallback`은 지원 범위 밖을 현재 모델로 유지한 전체 평가, `eligible_only`는 표시된 연령 범위만 평가한 값이다. `band`는 `age`와 평가 예측값이 완전히 같았다.
+"""]
+labels = {"scientific_54_80": "연구 비교 54–80세", "deployable_60_80": "앱 적용 검토 60–80세"}
+for scope, splits in result["scopes"].items():
+    text.append(f"\n### {labels[scope]}\n\n| 분할/집합 | 인원/밤 | 현재 joint | 재학습 control joint | age joint | control−age 개선(95% CI) |\n|---|---:|---:|---:|---:|---|\n")
+    for split, details in splits.items():
+        for view, values in details["views"].items():
+            m = values["metrics"]
+            d = values["age_vs"]["control"]
+            text.append(f"| {split} / {view} | {m['age']['people']}/{m['age']['nights']} | {m['current_v8']['joint']:.4f} | {m['control']['joint']:.4f} | {m['age']['joint']:.4f} | {d['improvement_min']:+.4f} [{d['ci95'][0]:+.4f}, {d['ci95'][1]:+.4f}] |\n")
+    text.append("\n개선의 부호는 control−age이며 양수면 개선이다.\n\nTest 지원 범위의 개별 지표:\n\n| 모델 | 취침 MAE | 기상 MAE | 구간 길이 MAE |\n|---|---:|---:|---:|\n")
+    m = splits["test"]["views"]["eligible_only"]["metrics"]
+    for arm in ("current_v8", "control", "age", "band"):
+        text.append(f"| {arm} | {m[arm]['onset']:.4f} | {m[arm]['wake']:.4f} | {m[arm]['interval']:.4f} |\n")
+
+text.append("""
+## 해석과 앱 결정
+
+연령 평균을 넣으면 어떤 지표는 소폭 좋아지고 다른 지표는 나빠졌다. 예를 들어 60–80세 Test에서 control 대비 취침 오차는 약 0.0604분 줄었지만 기상 오차는 약 0.0464분 늘었다. 구간 길이 오차도 control 82.8064분 → age 82.8786분으로 줄지 않았다.
+
+`age`와 순서 코드 `band`의 결과가 같았다. 이 나무 모델에서는 평균의 정확한 분 단위 크기보다 범주 분기 순서가 같은 정보를 제공했다. 따라서 작은 오차 감소를 '연령별 평균 수면시간이 개인의 필요 수면량을 잘 설명한다'는 근거로 사용할 수 없다.
+
+60–80세의 첫 기록/이력 1–2개/3개 이상 하위군(30명 이상)과 onset/wake 안전 기준은 통과했지만, Validation/Test의 최소 개선 및 Test CI 기준이 실패했다. 현재 앱과 사용자 데이터는 변경하지 않았으며 `used_for_target=false` 정책도 유지한다. DATA33·헬스 커넥트·개인화·백그라운드 동기화 코드는 변경하지 않았다.
+
+## 권장 수면시간의 효과와 구분
+
+이 분석은 **관측된 취침·기상 행동을 더 잘 예측하는가**만 평가했다. 연령 평균에 맞춰 자도록 권장했을 때 피로도·개운함·건강이 개선되는지, 개인에게 얼마나 자는 것이 최적인지는 평가하지 않았다. 그런 효과는 권장을 실제 적용한 전향 비교와 결과 측정이 별도로 필요하다. 이 실험의 근소한 예측 차이를 권장 정책 개선 효과로 전환하지 않는다.
+
+## 검증 및 한계
+
+- 신규 실험 단위 테스트 10개 통과: age-only 입력, 동일 전처리, 참여자 가중치, 지원 범위, 정확한 fallback, 기존 constrain, 도입 조건 검사.
+- 기준 Python reference와 기존 Android fixture: 9개 사례·1,008개 수치 일치(최대 차이 0). 이번 실행에서 Android bytecode나 기기 테스트를 새로 실행한 것은 아니다.
+- 분할별 2명씩 총 6명/42밤의 fresh causal replay: 특징·예측 1,848개 수치 일치(최대 차이 0). 전체 replay 해시 및 원본/모델/참조 코드 해시도 검증했다.
+- 미래의 밤은 해당 예측 후 이력에 추가하며, 기존 observed_at=wake 가정을 유지했다. 실제 Health Connect 늦은 수신과 다른 지역 시간대에서의 정확도는 이번 평가 대상이 아니다.
+- 과거 프로젝트에서 Test 분할을 이미 사용했으므로 새로운 독립 외부 검증으로 주장하지 않는다.
+- MESA의 중고령층만 평가했다. 젊은 성인, 한국인 전체, 실제 앱 이용자의 성능으로 일반화할 수 없다.
+- 약 68–70분의 joint MAE는 해당 후향 자료와 평가 방식의 오차이며 추천 정확도/건강 효과의 점수가 아니다.
+- 앱 수정이 없어 새 APK·빌드·lint·설치 시험을 수행하지 않았다. 기존 모델을 그대로 유지하므로 새 APK도 만들지 않았다.
+
+## 산출물 및 재현
+
+- `PROTOCOL.md`: 결과 확인 전 고정한 비교 및 적용 기준
+- `experiment.py`, `test_experiment.py`: 실험과 10개 회귀 검사
+- `verify_replay.py`, `verify_replay.json`, `baseline_parity.json`: 입력·나이 연결·기준 예측 검증
+- `input_manifest.json`, `prefit_seal.json`, `validation_lock.json`, `output_manifest.json`: 입력/절차/모델 봉인
+- `evaluation.json`, `aggregate_metrics.csv`: 모든 비교군·하위군·CI·판정
+- `research_models.joblib`, `private_predictions.parquet`: 로컬 연구 산출물; 사용자 데이터 저장소와 분리, 외부 업로드 없음
+
+고정 실행 순서: `python -m unittest -v test_experiment`, `python experiment.py prepare --output .`, `seal`, `fit`, `evaluate`. 이미 봉인된 폴더에서는 학습·평가를 덮어쓰지 않는다. 최종 검증은 기존 결과를 재집계하고 해시를 확인하며 Test를 다시 튜닝하는 절차가 아니다.
+""")
+(HERE / "REPORT.md").write_text("".join(text), encoding="utf-8")
+print("Rendered REPORT.md and aggregate_metrics.csv from locked evaluation.json")

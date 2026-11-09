@@ -1,0 +1,462 @@
+{
+  "workspace": [
+    "작업 공간",
+    "Workspace"
+  ],
+  "sleepwell": [
+    "SleepWell 연구",
+    "SleepWell research"
+  ],
+  "tabular": [
+    "일반 정형 데이터",
+    "General tabular data"
+  ],
+  "knowledge": [
+    "근거 문서·보고서",
+    "Evidence & reports"
+  ],
+  "data": [
+    "데이터·품질",
+    "Data & quality"
+  ],
+  "reports": [
+    "보고서",
+    "Reports"
+  ],
+  "evidence": [
+    "근거 문서",
+    "Evidence documents"
+  ],
+  "compare_runs": [
+    "여러 실행 비교",
+    "Compare runs"
+  ],
+  "single_result": [
+    "실행 상세·그림",
+    "Run detail & figures"
+  ],
+  "link_general": [
+    "일반 프로젝트 연결",
+    "Link tabular project"
+  ],
+  "general_connected": [
+    "연결한 프로젝트",
+    "Linked project"
+  ],
+  "workspace_help": [
+    "일반 실험은 기존 전용 실험 창에서 실행하고, 연결한 프로젝트의 결과를 공통 비교·보고서에서 사용합니다.",
+    "Run tabular experiments in the existing native experiment window; linked results are available for shared comparison and reports."
+  ],
+  "data_summary": [
+    "데이터 품질 요약",
+    "Data quality summary"
+  ],
+  "rows": [
+    "행",
+    "Rows"
+  ],
+  "participants": [
+    "참여자/그룹",
+    "Participants/groups"
+  ],
+  "missing": [
+    "결측",
+    "Missing"
+  ],
+  "duplicates": [
+    "중복 행",
+    "Duplicate rows"
+  ],
+  "unknown": [
+    "확인되지 않음",
+    "Unknown"
+  ],
+  "mapping": [
+    "열·역할 매핑",
+    "Column & role mapping"
+  ],
+  "original_column": [
+    "원본 열",
+    "Original column"
+  ],
+  "type": [
+    "타입",
+    "Type"
+  ],
+  "unique": [
+    "고유값",
+    "Unique"
+  ],
+  "role": [
+    "역할",
+    "Role"
+  ],
+  "unit": [
+    "단위",
+    "Unit"
+  ],
+  "timezone": [
+    "시간대",
+    "Timezone"
+  ],
+  "allowed": [
+    "허용 값 (쉼표 구분)",
+    "Allowed values (comma separated)"
+  ],
+  "missing_rule": [
+    "결측 규칙",
+    "Missing rule"
+  ],
+  "save_mapping": [
+    "매핑 저장",
+    "Save mapping"
+  ],
+  "mapping_note": [
+    "원본 파일은 수정하지 않습니다. SleepWell 실행에는 명시한 열 매핑을 적용한 별도 입력 스냅샷을 사용합니다. 시간대 정보 없는 시각은 지정한 시간대가 필요합니다.",
+    "The original file is unchanged. SleepWell uses a separate mapped input snapshot. Naive timestamps require an explicitly selected timezone."
+  ],
+  "apply_mapping": [
+    "매핑 입력 버전 만들기",
+    "Create mapped input version"
+  ],
+  "scope_limit": [
+    "보고서 CSV 변환·합성 전향 재생은 참여자별 실행이 필요합니다. 후향 엔진과 일반 그룹 분할은 별도 지원 범위를 유지합니다.",
+    "Report CSV conversion and synthetic prospective replay require participant-specific execution. Retrospective and general grouped evaluation retain their own scope."
+  ],
+  "baseline_run": [
+    "기준 실행 고정",
+    "Pin baseline run"
+  ],
+  "refresh_runs": [
+    "결과 새로고침",
+    "Refresh results"
+  ],
+  "metric_filter": [
+    "지표",
+    "Metric"
+  ],
+  "model_filter": [
+    "모델",
+    "Model"
+  ],
+  "filter": [
+    "검색",
+    "Filter"
+  ],
+  "ascending": [
+    "오름차순",
+    "Ascending"
+  ],
+  "descending": [
+    "내림차순",
+    "Descending"
+  ],
+  "select_runs": [
+    "Ctrl/Shift로 여러 실행을 선택하세요. 데이터·타깃·평가 대상·분할이 다른 결과는 순위나 변화량을 합치지 않습니다.",
+    "Select multiple runs with Ctrl/Shift. Different data, targets, evaluation populations and splits are not pooled into a ranking or delta."
+  ],
+  "value": [
+    "원본값",
+    "Value"
+  ],
+  "delta": [
+    "기준 대비 차이",
+    "Difference"
+  ],
+  "compatibility": [
+    "비교 가능성",
+    "Comparability"
+  ],
+  "comparable": [
+    "비교 가능",
+    "Comparable"
+  ],
+  "reference_only": [
+    "참고 비교",
+    "Reference only"
+  ],
+  "incomparable": [
+    "비교 불가",
+    "Incomparable"
+  ],
+  "denominator": [
+    "평가 분모",
+    "Denominator"
+  ],
+  "variation": [
+    "변동 (CI 아님)",
+    "Variation (not CI)"
+  ],
+  "lower": [
+    "낮을수록 좋음",
+    "Lower is better"
+  ],
+  "higher": [
+    "높을수록 좋음",
+    "Higher is better"
+  ],
+  "fit_graph": [
+    "그림 맞춤",
+    "Fit figure"
+  ],
+  "detach_graph": [
+    "그림 별도 창",
+    "Detach figure"
+  ],
+  "comparison_detail": [
+    "조건 차이·비교 제한",
+    "Configuration differences & limits"
+  ],
+  "no_runs": [
+    "완료된 실험이 없습니다. 실험 설계에서 실행하거나 기존 프로젝트를 연결하세요.",
+    "No completed experiments. Run an experiment or link an existing project."
+  ],
+  "source_models": [
+    "모델·계산 출처",
+    "Model & computation provenance"
+  ],
+  "document_library": [
+    "문서 라이브러리",
+    "Document library"
+  ],
+  "import_document": [
+    "문서 등록",
+    "Import document"
+  ],
+  "source_title": [
+    "원문 제목",
+    "Original title"
+  ],
+  "authors": [
+    "저자/기관",
+    "Author/organization"
+  ],
+  "source_version": [
+    "문서 버전",
+    "Document version"
+  ],
+  "domain": [
+    "분야",
+    "Domain"
+  ],
+  "rights": [
+    "사용 권한/라이선스",
+    "Usage rights/license"
+  ],
+  "source_language": [
+    "문서 언어",
+    "Document language"
+  ],
+  "register_metadata": [
+    "URL/DOI 메타데이터 등록",
+    "Register URL/DOI metadata"
+  ],
+  "metadata_note": [
+    "URL/DOI는 메타데이터만 등록합니다. 접근 권한이 있는 로컬 전문을 별도로 등록해야 내용을 인용할 수 있습니다.",
+    "URL/DOI registration stores metadata only. Import authorized local full text before citing its contents."
+  ],
+  "source_open": [
+    "원본 파일 열기",
+    "Open original file"
+  ],
+  "deactivate": [
+    "비활성/권한 철회",
+    "Deactivate/revoke"
+  ],
+  "activate": [
+    "활성화",
+    "Activate"
+  ],
+  "source_id": [
+    "출처 ID",
+    "Source ID"
+  ],
+  "source_status": [
+    "추출/검증 상태",
+    "Extraction/validation"
+  ],
+  "source_hash": [
+    "원본 SHA256",
+    "Original SHA256"
+  ],
+  "search_evidence": [
+    "근거 검색",
+    "Search evidence"
+  ],
+  "query": [
+    "검색 질문",
+    "Search question"
+  ],
+  "embedding_path": [
+    "로컬 임베딩 모델 폴더 (선택)",
+    "Local embedding model folder (optional)"
+  ],
+  "retrieval_note": [
+    "기본은 로컬 어휘 검색입니다. 모델을 준비하면 다국어 임베딩과 결합합니다. 점수는 관련성 순위이며 사실 확률이 아닙니다.",
+    "Local lexical retrieval is the default. A prepared multilingual model enables hybrid retrieval. Scores indicate relevance, not truth probability."
+  ],
+  "add_citation": [
+    "선택 근거를 보고서에 사용",
+    "Use selected evidence in report"
+  ],
+  "evidence_bundle": [
+    "선택한 근거 수",
+    "Selected evidence count"
+  ],
+  "locator": [
+    "원문 위치",
+    "Source location"
+  ],
+  "relevance": [
+    "관련성",
+    "Relevance"
+  ],
+  "no_evidence": [
+    "근거 부족: 인용할 자료가 없습니다.",
+    "Insufficient evidence: no source available to cite."
+  ],
+  "create_report": [
+    "구조화 초안 만들기",
+    "Create structured draft"
+  ],
+  "report_question": [
+    "연구 질문/목적",
+    "Question/purpose"
+  ],
+  "template": [
+    "템플릿",
+    "Template"
+  ],
+  "research": [
+    "연구 보고서",
+    "Research report"
+  ],
+  "industrial": [
+    "산업 검증 보고서",
+    "Industrial validation"
+  ],
+  "model_card": [
+    "모델 카드",
+    "Model card"
+  ],
+  "comparison": [
+    "실험 비교 메모",
+    "Experiment comparison memo"
+  ],
+  "report_open": [
+    "저장 보고서 열기",
+    "Open saved report"
+  ],
+  "check_report": [
+    "자동 검사",
+    "Automatic checks"
+  ],
+  "save_claim": [
+    "문장 수정·재검증 표시",
+    "Edit claim & flag recheck"
+  ],
+  "reviewer": [
+    "검토자 (직접 입력)",
+    "Reviewer (enter explicitly)"
+  ],
+  "review_note": [
+    "검토 기록",
+    "Review note"
+  ],
+  "record_review": [
+    "사용자 검토 기록 저장",
+    "Record user review"
+  ],
+  "export_draft": [
+    "경고 포함 초안 내보내기",
+    "Export draft with warnings"
+  ],
+  "export_checked": [
+    "자동 검사 통과본 내보내기",
+    "Export checked report"
+  ],
+  "new_language": [
+    "현재 언어로 새 버전",
+    "New version in current language"
+  ],
+  "report_notice": [
+    "자동 검사는 수치·인용 연결을 확인합니다. 의미상 뒷받침·전문가 검토·인증을 대신하지 않습니다.",
+    "Automatic checks verify numerical references and citation links. They do not replace semantic support review, expert validation or certification."
+  ],
+  "report_empty": [
+    "완료 결과와 필요한 문헌 근거를 선택한 뒤 초안을 만드세요. 부족한 근거는 경고로 남습니다.",
+    "Select completed runs and relevant evidence before drafting. Missing evidence remains a warning."
+  ],
+  "claim": [
+    "주장",
+    "Claim"
+  ],
+  "section": [
+    "섹션",
+    "Section"
+  ],
+  "checks": [
+    "검사 결과",
+    "Validation results"
+  ],
+  "report_saved": [
+    "새 보고서 버전 저장됨",
+    "New report version saved"
+  ],
+  "insufficient_data": [
+    "자료가 부족하여 계산할 수 없습니다.",
+    "Insufficient data for calculation."
+  ],
+  "external_evaluation": [
+    "동결 모델·외부 평가",
+    "Frozen model & external evaluation"
+  ],
+  "freeze_model": [
+    "선택 일반 모델 동결",
+    "Freeze selected tabular model"
+  ],
+  "evaluate_external": [
+    "외부 파일 평가",
+    "Evaluate external file"
+  ],
+  "paired_analysis": [
+    "짝지은 비교 통계",
+    "Paired comparison statistics"
+  ],
+  "participant_wrapper": [
+    "참여자별 전향 평가",
+    "Participant-specific prospective evaluation"
+  ],
+  "budget_preview": [
+    "실행 전 조건·예산",
+    "Conditions & budget before execution"
+  ],
+  "report_ready": [
+    "보고서 준비",
+    "Report readiness"
+  ],
+  "result_count": [
+    "완료 실행",
+    "Completed runs"
+  ],
+  "source_count": [
+    "활성 문서",
+    "Active documents"
+  ],
+  "review_required": [
+    "사용자 의미 검토 필요",
+    "Human semantic review required"
+  ],
+  "development_only": [
+    "개발/학습 대상만 표시 · 최종 테스트 제외",
+    "Development rows only · final test excluded"
+  ],
+  "before_split": [
+    "분할 전 전체 입력 · 평가 분할을 먼저 고정하세요",
+    "Full input before splitting · freeze evaluation splits first"
+  ],
+  "sleepwell_scope": [
+    "SleepWell 입력 품질 · 후향/시간별 예측 범위는 각 실행에 별도 기록",
+    "SleepWell input quality · retrospective/time-specific prediction scope is recorded per run"
+  ]
+}

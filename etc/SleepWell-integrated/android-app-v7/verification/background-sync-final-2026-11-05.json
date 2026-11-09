@@ -1,0 +1,10 @@
+{
+  "regression_tests_passed": 109,
+  "job_probe_tests_passed": 1,
+  "original_app_files_restored_byte_for_byte": 4,
+  "temporary_preferences_removed": 1,
+  "ui_background_permission_button_checked": true,
+  "health_connect_permission_dialog_opened": true,
+  "background_permission_granted_by_agent": false,
+  "apk_sha256": "e0b1b83730e367806a5889dfdace4866c2735fc28aeb72fd87eee0660e5849f1"
+}

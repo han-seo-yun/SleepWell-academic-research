@@ -1,0 +1,11 @@
+{
+  "evidence_library": ["근거 문서", "Evidence documents"],
+  "metadata_only": ["메타데이터만 등록됨", "Metadata only"],
+  "ocr_needed": ["텍스트 없음 · OCR 필요", "No extractable text · OCR required"],
+  "no_evidence": ["근거 없음", "No supporting evidence found"],
+  "relevance_score": ["관련성 점수", "Relevance score"],
+  "relevance_not_probability": ["관련성 순위용 점수이며 사실 확률이나 검증 신뢰도가 아닙니다.", "Ranking relevance only; not a fact probability or verification confidence."],
+  "inactive_source": ["비활성 또는 권한 철회", "Inactive or access withdrawn"],
+  "lexical_retrieval": ["로컬 어휘 검색", "Local lexical retrieval"],
+  "hybrid_retrieval": ["로컬 하이브리드 검색", "Local hybrid retrieval"]
+}

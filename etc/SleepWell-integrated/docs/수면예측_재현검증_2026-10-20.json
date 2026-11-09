@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "verified": true,
+  "tolerance_minutes": 1e-07,
+  "hashes": {
+    "frozen_inputs": 12,
+    "sensor_cache": true,
+    "code_snapshot_files": 5,
+    "environment_manifest": true
+  },
+  "cohorts": {
+    "cmi": {
+      "test_rows": 673,
+      "test_people": 44,
+      "arms": [
+        "data",
+        "hybrid",
+        "physical",
+        "population_mean",
+        "population_median",
+        "recent_median"
+      ],
+      "learned_arms": [
+        "data",
+        "hybrid"
+      ],
+      "reload_maximum_error_min": {
+        "data": 5.684341886080802e-14,
+        "hybrid": 5.684341886080802e-14
+      },
+      "saved_metrics_recomputed": true,
+      "row_id_alignment": true,
+      "model_hashes": true
+    },
+    "mesa": {
+      "test_rows": 2175,
+      "test_people": 315,
+      "arms": [
+        "data",
+        "hybrid",
+        "physical",
+        "population_mean",
+        "population_median",
+        "recent_median"
+      ],
+      "learned_arms": [
+        "data",
+        "hybrid"
+      ],
+      "reload_maximum_error_min": {
+        "data": 5.684341886080802e-14,
+        "hybrid": 5.684341886080802e-14
+      },
+      "saved_metrics_recomputed": true,
+      "row_id_alignment": true,
+      "model_hashes": true
+    },
+    "samsung": {
+      "test_rows": 30,
+      "test_people": 1,
+      "arms": [
+        "data",
+        "data_sensors",
+        "hybrid",
+        "hybrid_sensors",
+        "physical",
+        "population_mean",
+        "population_median",
+        "recent_median"
+      ],
+      "learned_arms": [
+        "data",
+        "data_sensors",
+        "hybrid",
+        "hybrid_sensors"
+      ],
+      "reload_maximum_error_min": {
+        "data": 5.684341886080802e-14,
+        "hybrid": 5.684341886080802e-14,
+        "data_sensors": 5.684341886080802e-14,
+        "hybrid_sensors": 5.684341886080802e-14
+      },
+      "saved_metrics_recomputed": true,
+      "row_id_alignment": true,
+      "model_hashes": true
+    }
+  },
+  "privacy": "Aggregate output only; participant identifiers and dates omitted."
+}

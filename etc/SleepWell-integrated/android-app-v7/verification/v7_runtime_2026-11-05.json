@@ -1,0 +1,26 @@
+{
+  "device": "emulator-5554",
+  "version": [
+    "versionCode=7 minSdk=29 targetSdk=37",
+    "versionName=0.7.0"
+  ],
+  "resumed_activity": [
+    "topResumedActivity=ActivityRecord{52316680 u0 app.sleepwell/.MainActivity t35}"
+  ],
+  "background_sync_state": {
+    "last_success_ms": "1793862757373",
+    "last_attempt_ms": "1793862757373",
+    "last_outcome": "EMPTY"
+  },
+  "periodic_job_53001": "waiting",
+  "closed_process_probe": {
+    "job_id": 53100,
+    "spawned_service_pid": 12835,
+    "result": "EMPTY",
+    "probe_job_cancelled": true
+  },
+  "real_sleep_files": [],
+  "apk_sha256": "c9dbd251c6ca5e6874da4999b1e4f22e5d418355cc5a1fe360b445a0adb6095c",
+  "published_files_verified": 143,
+  "publish_mismatches": []
+}

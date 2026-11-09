@@ -1,0 +1,92 @@
+# Kotlin 앱 소스
+# (src/ 하위만 포함, 나머지 제외)
+
+# Python 스크립트 (보고서 생성용)
+*.py
+!tools/model/*.py
+!web-app/*.py
+!web-app/tests/*.py
+web-app/.local/
+web-app/.venv/
+web-app/models/*
+!web-app/models/*.json
+web-app/data/
+._*
+__pycache__/
+*.pyc
+
+# PDF 보고서 (저장소에는 불필요, 별도 공유)
+*.pdf
+
+# 임시/데이터 폴더 (앱 코드 아님)
+원본-*
+전처리 후*
+3. MVP*.zip
+
+# Windows 임시 파일
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# IDE
+.idea/
+*.iml
+.gradle/
+build/
+
+# epoch 검증 하네스 산출물 (tools/verify/)
+# 스크립트(.kt/.ps1)만 커밋하고 빌드 결과는 제외한다.
+tools/verify/out/
+tools/verify/test-out/
+tools/verify/android-user-model-test/classes/
+desktop/bin/
+*.jar
+*.class
+*.exe
+!android-app/gradle/wrapper/gradle-wrapper.jar
+!android-app-v7/gradle/wrapper/gradle-wrapper.jar
+buggy-src/
+work/
+
+# 로컬 개인정보·동기화 상태·자격 증명 (커밋 금지)
+*.db
+*.sqlite
+*.sqlite3
+*.pfx
+*.p12
+*.pem
+*.key
+local.properties
+.env
+.env.*
+!.env.example
+
+# 개인 데이터·스크린샷 (커밋 금지)
+sleepwell 결과 예시.jpg
+
+# 에이전트·잠금 임시 상태
+.omc/
+**/.omc/
+*.lock/
+**/*.lock/
+
+# Android v7 백업: 소스만 추적
+android-app-v7/.gradle/
+android-app-v7/.kotlin/
+android-app-v7/**/build/
+android-app-v7/배포/
+android-app-v7/local.properties
+android-app-v7/app/local.properties
+android-app-v7/*.log
+*.apk
+*.aab
+*.dex
+
+# 연구 워크벤치: 소스만 추적
+!research-workbench-academic/**/*.py
+research-workbench-academic/.venv/
+research-workbench-academic/.models/
+research-workbench-academic/projects/
+research-workbench-academic/deliverables/
+research-workbench-academic/release/
+research-workbench-academic/tmp/

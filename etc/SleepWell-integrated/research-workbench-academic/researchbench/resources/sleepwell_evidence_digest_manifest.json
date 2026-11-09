@@ -1,0 +1,207 @@
+{
+  "schema": "sleepwell.evidence_digest_manifest.v1",
+  "generated_from": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\reports\\tripod_probast_audit_20261103\\build_audit_report.py",
+  "generated_from_sha256": "dee8743dd88ce3bd922b970d3a2102e013cfa906db386c62b35e8ce6d461099a",
+  "evidence": [
+    {
+      "id": "E01",
+      "description": "정본·복사본·시연 범위",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\research_workbench_academic\\ACADEMIC_CONTRACT.md",
+      "line": 3,
+      "sha256": "e41c8b4748f2ebbdcf19eccff58c111e3436957032b7d341c8feb4b376e48be8",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E02",
+      "description": "robust-v2 학습·선택 프로토콜",
+      "source_path": "E:\\학술제\\데이터모델\\연구용데이터\\robust_next_night_run_20261020_v2\\analysis\\protocol.json",
+      "line": 211,
+      "sha256": "20ece7f46d1f81184a682835d92e249311f5311d9477e40ddeab0a4515552b04",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E03",
+      "description": "fold 내부 대치·전처리·적합 코드",
+      "source_path": "E:\\학술제\\데이터모델\\연구용데이터\\robust_next_night_run_20261020_v2\\analysis\\code_snapshot\\robust_night_experiments.py",
+      "line": 54,
+      "sha256": "75b7eb1d1868a841cbba13df8b9aafdeb0e235d313a24b1a4b3f61dc6f708351",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E04",
+      "description": "참여자 분리 CV와 fold prior",
+      "source_path": "E:\\학술제\\데이터모델\\연구용데이터\\robust_next_night_run_20261020_v2\\analysis\\code_snapshot\\robust_night_experiments.py",
+      "line": 106,
+      "sha256": "75b7eb1d1868a841cbba13df8b9aafdeb0e235d313a24b1a4b3f61dc6f708351",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E05",
+      "description": "CMI Train CV 선택",
+      "source_path": "E:\\학술제\\데이터모델\\연구용데이터\\robust_next_night_run_20261020_v2\\analysis\\cmi\\train_selection.json",
+      "line": 1,
+      "sha256": "0f9f36a4b699e289972cdbabf2d7919b3495a1ff10b124724edbabe9b3116ecb",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E06",
+      "description": "MESA Train CV 선택",
+      "source_path": "E:\\학술제\\데이터모델\\연구용데이터\\robust_next_night_run_20261020_v2\\analysis\\mesa\\train_selection.json",
+      "line": 1,
+      "sha256": "96742757133cf52cb048a56d9d244716ffaf43cb12f4fe1ff1083a351bc810da",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E07",
+      "description": "CMI robust-v2 집계 성능·CI·QC",
+      "source_path": "E:\\학술제\\데이터모델\\연구용데이터\\robust_next_night_run_20261020_v2\\analysis\\cmi\\summary.json",
+      "line": 1,
+      "sha256": "6d0e5ac7592520328c3d238525bda7c36eb228859da31f2fe7a127a069909ec9",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E08",
+      "description": "MESA robust-v2 집계 성능·CI·QC",
+      "source_path": "E:\\학술제\\데이터모델\\연구용데이터\\robust_next_night_run_20261020_v2\\analysis\\mesa\\summary.json",
+      "line": 1,
+      "sha256": "1f9f618ad0e9e67b9d1d33a5d8072194929a5103da2ea4fc79f5209a2eaf83d4",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E09",
+      "description": "기초 episode 추출·제외 집계",
+      "source_path": "E:\\학술제\\데이터모델\\연구용데이터\\next_night_run_20261020_v1\\dataset\\dataset_metadata.json",
+      "line": 1,
+      "sha256": "4ef2f10cd68ccc061ad50f0f88ec084f3a5f8ad1dba1c2f23af0e3c660aaeae6",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E10",
+      "description": "CMI 휴대형 모델·한계·계보",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\work\\dayone-personalization-20261027\\web-app\\models\\robust_cmi_v2.json",
+      "line": 1,
+      "sha256": "add8ba4e23f9c4c9337b821406386664a054580d86c6e53c9b5e6f189bdfa2c7",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E11",
+      "description": "MESA 휴대형 모델·한계·계보",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\work\\dayone-personalization-20261027\\web-app\\models\\robust_mesa_v2.json",
+      "line": 1,
+      "sha256": "757b939d756c9174eab9304e0d8e872f4ed9eeae34e99a3d921f29284207c620",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E12",
+      "description": "현재 gradual 정책과 과거 성능표 구분",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\work\\dayone-personalization-20261027\\web-app\\fusion_forecast.py",
+      "line": 321,
+      "sha256": "15591d72dedf55b0d9365bc57e13228f8847fff8902f12570cdd5e657c4fc34b",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E13",
+      "description": "과거 이력·관측 시각 경계",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\work\\dayone-personalization-20261027\\web-app\\night_core.py",
+      "line": 48,
+      "sha256": "c831defa2d3b68196601a740bd3d21271aa1efcb386380db242e40fcebccce86",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E14",
+      "description": "잔차 개인화 시간 경계",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\work\\dayone-personalization-20261027\\web-app\\adaptive_personalization.py",
+      "line": 32,
+      "sha256": "33dacfcf6c9108fba57caefbf99c9a30c0b05688784f01b764e0858fdacd49d3",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E15",
+      "description": "예측 고정·후속 결과 기록",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\work\\dayone-personalization-20261027\\web-app\\prospective.py",
+      "line": 318,
+      "sha256": "79b293fe67646ff7054cf961ad07233d83cea2aff3167e3614da307063b387ef",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E16",
+      "description": "legacy-v1 목표·라벨 설명; v2 성능 근거 아님",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\work\\dayone-personalization-20261027\\docs\\NEXT_NIGHT_RESULTS_2026-10-20.md",
+      "line": 7,
+      "sha256": "3c84d188ca08c869bfe7ddcfd30c2708449e8edd7062ea7d8560172b592715d9",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E17",
+      "description": "별도 continuous 모델 비교; v2 성능 근거 아님",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\work\\dayone-personalization-20261027\\docs\\TARGET_VALIDITY_2026-10-25.md",
+      "line": 11,
+      "sha256": "0c4c33c807a5e508d3db08f058495328f6d0db26c636afc3b98caf6acc964609",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E18",
+      "description": "실사용 자기보고 목표와 측정·보고 지연",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\work\\dayone-personalization-20261027\\docs\\FULL_TARGET_VALIDITY_2026-10-25.md",
+      "line": 35,
+      "sha256": "1741d53af7b599a7f98de520776f3b2946b0fc2d7eaaa47e546929c7adb5ee88",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E19",
+      "description": "미래 검증·예측구간·효과시험 계획",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\work\\dayone-personalization-20261027\\docs\\ADDITIONAL_DATA_EXPERIMENTS_2026-10-25.md",
+      "line": 31,
+      "sha256": "d1adfd7cb4b8b7bcc8ef466d7d309b14f940832a8616b7d065cc408591190e61",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E20",
+      "description": "합성 시연과 미완료 실제 검증",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\research_workbench_academic\\VALIDATION.md",
+      "line": 25,
+      "sha256": "a1ecafd8291a65bc9dfdc835896c5fd48337d41856eafae2b9a902841871dbd5",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E21",
+      "description": "일반 워크벤치 통계 기능의 적용 범위",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\research_workbench_academic\\docs\\STATISTICAL_METHODS.md",
+      "line": 1,
+      "sha256": "15a99086c94f1d62189cf599d3ed533eca47726c5f7474af3fcf25df1657ccce",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E22",
+      "description": "이번 71파일·12비교군 재검사",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\reports\\tripod_probast_audit_20261103\\evidence_verification.json",
+      "line": 1,
+      "sha256": "79c5d8d3f581a709a1d4e645b3e6e6b1a3201f9a40308c8fcfa818740cc10ac8",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E23",
+      "description": "이번 시간경계·저장 테스트 27개",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\reports\\tripod_probast_audit_20261103\\targeted_test_results.txt",
+      "line": 1,
+      "sha256": "b54ad3142a034a003112a18dd3c0528633e0594686ed74e26aa172cd66b59b18",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E24",
+      "description": "기존 원모델 재적재 검증 기록",
+      "source_path": "E:\\학술제\\데이터모델\\연구용데이터\\robust_next_night_run_20261020_v2\\audit\\v2_verification\\verification.json",
+      "line": 1,
+      "sha256": "648bacf447a234ef239cae60a0174877311d1a5ec2f6fa28d7f6858ada735989",
+      "available_when_bundled": true
+    },
+    {
+      "id": "E25",
+      "description": "PSG 동시 분류 연구: 다음날 예측과 별개",
+      "source_path": "C:\\Users\\pyomo\\OneDrive\\문서\\ChatGPT\\학술제\\work\\dayone-personalization-20261027\\docs\\RESEARCH_PSG_RESULTS_2026-10-20.md",
+      "line": 17,
+      "sha256": "2be25b82fdf2fd65ffb605a2dae34612f931ed05a9733d61d33f46b5ae5d6bd1",
+      "available_when_bundled": true
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Android XML cannot express LAN CIDRs. Cleartext is enabled for the research
+         transport; TabDptSettingsStore rejects every non-loopback/non-private HTTP host. -->
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>

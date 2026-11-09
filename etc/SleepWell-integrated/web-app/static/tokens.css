@@ -1,0 +1,136 @@
+/* SleepWell design tokens — shared by the researcher shell and the research lab.
+   Components reference only these variables; dark mode swaps the values. */
+:root {
+  color-scheme: light;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --bg: #f5f5fa;
+  --surface: #ffffff;
+  --surface-2: #faf9fc;
+  --surface-3: #f3f1f8;
+  --ink: #29283c;
+  --ink-2: #4c4860;
+  --muted: #6f6c82;
+  --faint: #9e98ab;
+  --line: #e9e7f1;
+  --line-strong: #d7d2e4;
+
+  --accent: #6f5fc0;
+  --accent-strong: #5b4ca8;
+  --accent-soft: #eeebfa;
+  --accent-ink: #5b4ca8;
+  --on-accent: #ffffff;
+  --focus: #a89ce8;
+
+  --ok: #2f855a;
+  --ok-soft: #e7f4ec;
+  --warn: #9b5d08;
+  --warn-soft: #fff4dc;
+  --danger: #a03934;
+  --danger-soft: #fdeeec;
+  --info: #2b6cb0;
+  --info-soft: #e8f1fa;
+
+  --status-timely: #2f855a;
+  --status-late: #d69e2e;
+  --status-prediction: #90cdf4;
+  --status-missing: #d5d9e2;
+
+  --chart-observed: #5b3fa6;
+  --chart-predicted: #e8590c;
+  --chart-grid: #ebe9f2;
+
+  --hero-from: #7462b3;
+  --hero-to: #a195d1;
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --shadow: 0 1px 2px rgba(30, 24, 60, 0.04), 0 8px 24px rgba(30, 24, 60, 0.05);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 22px;
+  --space-6: 32px;
+  --sidebar-width: 248px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #15141c;
+    --surface: #1d1c26;
+    --surface-2: #23222e;
+    --surface-3: #2a2836;
+    --ink: #ecebf3;
+    --ink-2: #cfcce0;
+    --muted: #a6a2b8;
+    --faint: #7d798f;
+    --line: #2f2d3b;
+    --line-strong: #3d3a4c;
+    --accent: #a596ef;
+    --accent-strong: #bcb0f5;
+    --accent-soft: #2c2745;
+    --accent-ink: #c9bff7;
+    --on-accent: #15141c;
+    --focus: #8f80e0;
+    --ok: #68d391;
+    --ok-soft: #1c3226;
+    --warn: #f6c46b;
+    --warn-soft: #3a2f17;
+    --danger: #fc8f86;
+    --danger-soft: #3d1f1d;
+    --info: #90cdf4;
+    --info-soft: #1b2a3a;
+    --status-timely: #48bb78;
+    --status-late: #ecc94b;
+    --status-prediction: #4f86b8;
+    --status-missing: #3a3848;
+    --chart-observed: #a596ef;
+    --chart-predicted: #f6964f;
+    --chart-grid: #2f2d3b;
+    --hero-from: #4a3d8c;
+    --hero-to: #6a5bb0;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #15141c;
+  --surface: #1d1c26;
+  --surface-2: #23222e;
+  --surface-3: #2a2836;
+  --ink: #ecebf3;
+  --ink-2: #cfcce0;
+  --muted: #a6a2b8;
+  --faint: #7d798f;
+  --line: #2f2d3b;
+  --line-strong: #3d3a4c;
+  --accent: #a596ef;
+  --accent-strong: #bcb0f5;
+  --accent-soft: #2c2745;
+  --accent-ink: #c9bff7;
+  --on-accent: #15141c;
+  --focus: #8f80e0;
+  --ok: #68d391;
+  --ok-soft: #1c3226;
+  --warn: #f6c46b;
+  --warn-soft: #3a2f17;
+  --danger: #fc8f86;
+  --danger-soft: #3d1f1d;
+  --info: #90cdf4;
+  --info-soft: #1b2a3a;
+  --status-timely: #48bb78;
+  --status-late: #ecc94b;
+  --status-prediction: #4f86b8;
+  --status-missing: #3a3848;
+  --chart-observed: #a596ef;
+  --chart-predicted: #f6964f;
+  --chart-grid: #2f2d3b;
+  --hero-from: #4a3d8c;
+  --hero-to: #6a5bb0;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+}

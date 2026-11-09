@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "day": "2026-10-25",
+  "revision": 1,
+  "generated_at": "2026-10-25T12:00:00Z",
+  "participant_key": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "data": {
+    "profile": {
+      "age_band": "30-44",
+      "sex": "any",
+      "activity_minutes": 45,
+      "usual_bed": "23:30",
+      "usual_wake": "07:00",
+      "desired_sleep_minutes": 450,
+      "created_at": "2026-10-01T00:00:00Z",
+      "occupation": "synthetic researcher",
+      "daily_context": null
+    },
+    "records": [
+      {
+        "id": "manual:2026-10-25",
+        "day": "2026-10-25",
+        "bedtime": "2026-10-24T14:40:00Z",
+        "wake_time": "2026-10-24T22:20:00Z",
+        "duration_minutes": 460,
+        "rested": 4,
+        "fatigue": 2,
+        "source": "manual",
+        "modified_at": "2026-10-24T22:30:00Z"
+      }
+    ],
+    "recommendation": {
+      "generated_at": "2026-10-24T11:00:00Z",
+      "wake_time": "2026-10-24T22:30:00Z",
+      "bedtime": "2026-10-24T15:00:00Z",
+      "duration_minutes": 450,
+      "regularity_minutes": 18,
+      "subjective_quality": 4,
+      "process_s": 0.62,
+      "explanation": "Synthetic recommendation fixture; not a clinical optimum.",
+      "plan_feasible": true
+    },
+    "forecast": {
+      "generated_at": "2026-10-24T11:00:00Z",
+      "cmi_bed_offset": 1150.0,
+      "mesa_bed_offset": 1145.0,
+      "ensemble_bed_offset": 1147.5,
+      "note": "Synthetic immutable next-night forecast."
+    },
+    "outcomes": {
+      "record_count": 1,
+      "summary_window": "most_recent_14_records_since_enrollment_through_snapshot",
+      "measurement_scales": {
+        "rested": "1=전혀 회복되지 않음, 5=매우 회복됨",
+        "fatigue": "1=피로 없음, 5=매우 피로함"
+      },
+      "primary_diary": {
+        "record_count": 1,
+        "mean_duration_minutes": 460.0,
+        "mean_rested": 4.0,
+        "mean_fatigue": 2.0
+      },
+      "wearable_auxiliary": {
+        "record_count": 0,
+        "mean_duration_minutes": null,
+        "mean_rested": null,
+        "mean_fatigue": null
+      },
+      "current_model": null,
+      "prospective_forecasts": [
+        {
+          "night_id": "2026-10-24",
+          "forecast_status": "prospective_frozen",
+          "cutoff": "2026-10-24T11:00:00Z",
+          "generated_at": "2026-10-24T11:00:00Z",
+          "model_version": "portable-fusion-v2",
+          "model_feature_contract": "sleepwell-portable-features-v2",
+          "research_predictions": {
+            "physical_cmi": {"bed": "2026-10-24T14:30:00Z", "wake": "2026-10-24T22:00:00Z", "interval_min": 450.0, "onset_offset_min": 210.0, "wake_offset_min": 660.0},
+            "data_cmi": {"bed": "2026-10-24T14:35:00Z", "wake": "2026-10-24T22:05:00Z", "interval_min": 450.0, "onset_offset_min": 215.0, "wake_offset_min": 665.0},
+            "hybrid_cmi": {"bed": "2026-10-24T14:32:00Z", "wake": "2026-10-24T22:02:00Z", "interval_min": 450.0, "onset_offset_min": 212.0, "wake_offset_min": 662.0},
+            "physical_mesa": {"bed": "2026-10-24T14:40:00Z", "wake": "2026-10-24T22:10:00Z", "interval_min": 450.0, "onset_offset_min": 220.0, "wake_offset_min": 670.0},
+            "data_mesa": {"bed": "2026-10-24T14:45:00Z", "wake": "2026-10-24T22:15:00Z", "interval_min": 450.0, "onset_offset_min": 225.0, "wake_offset_min": 675.0},
+            "hybrid_mesa": {"bed": "2026-10-24T14:42:00Z", "wake": "2026-10-24T22:12:00Z", "interval_min": 450.0, "onset_offset_min": 222.0, "wake_offset_min": 672.0}
+          },
+          "research_artifacts": {
+            "cmi": {"sha256": "synthetic-cmi-sha256", "model_version": "portable-fusion-v2"},
+            "mesa": {"sha256": "synthetic-mesa-sha256", "model_version": "portable-fusion-v2"}
+          },
+          "research_feature_snapshot": {"cmi": {}, "mesa": {}},
+          "adaptive_research_predictions": {
+            "hybrid_cmi": {
+              "role": "동결 연구예측의 전향적 과거 오차 보정 sidecar; 원본 예측을 대체하지 않음",
+              "base_onset_offset_min": 212.0,
+              "base_wake_offset_min": 662.0,
+              "adjusted_onset_offset_min": 212.0,
+              "adjusted_wake_offset_min": 662.0,
+              "adjustment": {
+                "policy_version": "online-residual-shrinkage-v1",
+                "eligible_count": 0,
+                "decayed_mass": 0.0,
+                "kish_effective_n": 0.0,
+                "weight": 0.0,
+                "raw_onset_residual_mean_min": 0.0,
+                "raw_wake_residual_mean_min": 0.0,
+                "onset_correction_min": 0.0,
+                "wake_correction_min": 0.0,
+                "last_outcome_gap_days": null,
+                "last_available_gap_days": null,
+                "active": false,
+                "uncertainty_min": null,
+                "uncertainty_reason": "검증된 예측구간이 없어 제공하지 않음"
+              }
+            }
+          },
+          "recommendation_policy": "sleep-opportunity-policy-v2",
+          "recommendation": {
+            "generated_at": "2026-10-24T11:00:00Z",
+            "wake_time": "2026-10-24T22:30:00Z",
+            "bedtime": "2026-10-24T15:00:00Z",
+            "duration_minutes": 450,
+            "regularity_minutes": 18,
+            "subjective_quality": 4,
+            "process_s": 0.62,
+            "explanation": "Synthetic recommendation fixture; not a clinical optimum.",
+            "plan_feasible": true
+          }
+        }
+      ],
+      "recommendation_exposures": [
+        {
+          "night_id": "2026-10-24",
+          "viewed_at": "2026-10-24T11:05:00Z",
+          "recommendation_generated_at": "2026-10-24T11:00:00Z",
+          "forecast_status": "prospective_frozen",
+          "recommendation_policy": "sleep-opportunity-policy-v2",
+          "recommendation": {"generated_at": "2026-10-24T11:00:00Z", "wake_time": "2026-10-24T22:30:00Z", "bedtime": "2026-10-24T15:00:00Z", "duration_minutes": 450, "regularity_minutes": 18, "subjective_quality": 4, "process_s": 0.62, "explanation": "Synthetic recommendation fixture; not a clinical optimum.", "plan_feasible": true},
+          "model_version": "portable-fusion-v2",
+          "research_artifacts": {"cmi": {"sha256": "synthetic-cmi-sha256"}, "mesa": {"sha256": "synthetic-mesa-sha256"}},
+          "interpretation": "추천을 화면에 표시한 노출 기록이며 추천 효과를 뜻하지 않음"
+        }
+      ],
+      "prospective_outcomes": [
+        {
+          "night_id": "2026-10-24",
+          "record_id": "manual:2026-10-25",
+          "actual_source": "manual",
+          "target": "first_self_reported_sleep_onset_and_final_wake",
+          "available_at": "2026-10-24T22:30:00Z",
+          "outcome_at": "2026-10-24T22:20:00Z",
+          "source_model_version": "portable-fusion-v2",
+          "source_model_feature_contract": "sleepwell-portable-features-v2",
+          "source_research_artifacts": {"cmi": {"sha256": "synthetic-cmi-sha256"}, "mesa": {"sha256": "synthetic-mesa-sha256"}},
+          "rule": "first manual report after frozen forecast is immutable, including exclusions; later edits cannot substitute",
+          "status": "matched",
+          "actual_onset_offset_min": 220.0,
+          "actual_wake_offset_min": 680.0,
+          "residuals": {
+            "physical_cmi": {"onset_residual_min": 10.0, "wake_residual_min": 20.0},
+            "data_cmi": {"onset_residual_min": 5.0, "wake_residual_min": 15.0},
+            "hybrid_cmi": {"onset_residual_min": 8.0, "wake_residual_min": 18.0},
+            "physical_mesa": {"onset_residual_min": 0.0, "wake_residual_min": 10.0},
+            "data_mesa": {"onset_residual_min": -5.0, "wake_residual_min": 5.0},
+            "hybrid_mesa": {"onset_residual_min": -2.0, "wake_residual_min": 8.0}
+          }
+        }
+      ],
+      "realized_comparisons": [
+        {
+          "night_id": "2026-10-24",
+          "status": "matched",
+          "record_id": "manual:2026-10-25",
+          "actual_source": "manual",
+          "target": "first_self_reported_sleep_onset_and_final_wake",
+          "actual_available_at": "2026-10-24T22:30:00Z",
+          "actual_onset_offset_min": 220.0,
+          "actual_wake_offset_min": 680.0,
+          "recommendation_exposure": {"night_id": "2026-10-24", "viewed_at": "2026-10-24T11:05:00Z"},
+          "recommendation_adherence_descriptive": {"bedtime_absolute_difference_min": 20.0, "wake_absolute_difference_min": 10.0, "interpretation": "기술적 차이이며 인과 추정이 아님"},
+          "wearable_auxiliary": null,
+          "research_predictions": {
+            "hybrid_cmi": {"onset_offset_min": 212.0, "wake_offset_min": 662.0},
+            "hybrid_mesa": {"onset_offset_min": 222.0, "wake_offset_min": 672.0}
+          },
+          "adaptive_research_predictions": {
+            "hybrid_cmi": {"base_onset_offset_min": 212.0, "base_wake_offset_min": 662.0, "adjusted_onset_offset_min": 212.0, "adjusted_wake_offset_min": 662.0}
+          }
+        }
+      ]
+    }
+  }
+}

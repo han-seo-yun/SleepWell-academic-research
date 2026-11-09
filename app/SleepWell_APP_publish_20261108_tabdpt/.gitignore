@@ -1,0 +1,49 @@
+# IDE and build output
+.gradle/
+.kotlin/
+.idea/
+**/build/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+__pycache__/
+*.pyc
+
+# Machine-specific configuration and credentials
+local.properties
+**/local.properties
+.env
+.env.*
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+key.properties
+keystore.properties
+
+# Local personal data, backups, and distribution artifacts
+/verification/
+/배포/
+/app/src/main/assets/tabdpt/
+*.apk
+*.aab
+*.zip
+*.db
+*.db-*
+*.sqlite*
+*.csv
+!app/src/main/assets/demo_*.csv
+
+# Internal historical root reports; public documentation is in README and docs
+/*.md
+!/README.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Private legacy regression assets (optional local test setup)
+/app/src/androidTest/assets/fixtures/mobile_hgb_*_golden.json

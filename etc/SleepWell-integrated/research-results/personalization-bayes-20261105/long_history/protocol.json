@@ -1,0 +1,72 @@
+{
+  "schema": "sleepwell.bayes_long_history_protocol.v1",
+  "frozen_at": "2026-11-05",
+  "status": "locally_prespecified_before_comparison",
+  "scope": "single-person behavioral sleep-midpoint proxy; not the production recommendation, physiology, or clinical benefit",
+  "data_status": "retrospective_single_person_fixed_chronological_split_and_previously_reused_test",
+  "time_contract": {
+    "timezone": "Asia/Seoul",
+    "cutoff": "forecast_date 20:00 local",
+    "availability_assumption": "sleep_end is treated as availability because observed_at is absent",
+    "eligible": "sleep_end strictly before cutoff"
+  },
+  "prior": {
+    "primary": "fixed circular mean of first seven Train midpoints; proxy only, not enrollment input",
+    "update_observations": "causal midpoints after the seven prior-construction nights",
+    "sensitivity": "fixed circular mean of all Train targets, applied after candidate selection"
+  },
+  "train_only_hyperparameters": {
+    "observation_variance": "max(25, 0.5*mean consecutive squared differences of y)",
+    "constant_state_variance": "max(25, population_variance(y)-observation_variance)",
+    "affine_observation_variance": "max(25, mean squared identity residual y-x)",
+    "affine_prior_mean": [0.0, 1.0],
+    "affine_prior_covariance": "diag(constant_state_variance, max(0.01, constant_state_variance/max(25,population_variance(x))))",
+    "y": "shortest circular difference from fixed prior to target midpoint",
+    "x": "shortest circular difference from fixed prior to 14-day-half-life circular mean of causal prior midpoints",
+    "circular_gaussian_guard": "unsupported if any Train absolute y is at least 600 minutes or the Train y range is at least 720 minutes"
+  },
+  "current": {
+    "id": "current_mass_lambda14",
+    "prediction": "prior plus M/(M+14) times shortest difference to the 14-day weighted circular history mean"
+  },
+  "alternatives": [
+    {
+      "id": "eb_constant_offset",
+      "model": "z~Normal(0,T), y|z~Normal(z,R); posterior mean from all eligible post-prior observations"
+    },
+    {
+      "id": "kalman_qr_0_001",
+      "model": "scalar random-walk offset with process variance 0.001*R per elapsed calendar day"
+    },
+    {
+      "id": "kalman_qr_0_01",
+      "model": "scalar random-walk offset with process variance 0.01*R per elapsed calendar day"
+    },
+    {
+      "id": "kalman_qr_0_1",
+      "model": "scalar random-walk offset with process variance 0.1*R per elapsed calendar day"
+    },
+    {
+      "id": "affine_bayes",
+      "model": "beta0+beta1*x with Normal prior centered at identity (0,1), recursively refit from eligible post-prior pairs"
+    }
+  ],
+  "selection": {
+    "split": "validation",
+    "metric": "mean absolute circular sleep-midpoint error in minutes",
+    "rule": "lowest mean error; ties by declared candidate order",
+    "test_access": "write selection_lock.json before computing Test metrics"
+  },
+  "decision": {
+    "production_promotion": "prohibited from this one-person companion analysis alone",
+    "interpretation": "a favorable result is sensitivity evidence and must be corroborated by the separate cohort residual-layer comparison",
+    "uncertainty": "posterior variances are model diagnostics, not validated prediction intervals"
+  },
+  "reporting": [
+    "validation current and all candidates",
+    "locked Test current and selected only",
+    "paired mean and median gain and improved/equal/worsened nights",
+    "history, recency mass, gap strata, fitted coefficient or state diagnostics",
+    "no participant bootstrap or clinical confidence interval"
+  ]
+}

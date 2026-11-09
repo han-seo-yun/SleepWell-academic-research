@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "artifact_type": "sleepwell_population_prior",
+  "version": "nhanes-train-demographic-20261020-v1",
+  "source": "NHANES 2017–2018 자기보고 평일 수면시간 · 학습 분할만 · 조사 가중 평균",
+  "source_sha256": "a5c4b7d9a5d2582f8a4e95370f48eb271ae49a25b79d2aef528880288260347a",
+  "supported_age": [
+    18,
+    80
+  ],
+  "groups": [
+    {
+      "age_group": "18-29",
+      "sex": "female",
+      "activity_band": "high",
+      "n_people": 139,
+      "mean_sleep_min": 472.31139644394773
+    },
+    {
+      "age_group": "18-29",
+      "sex": "female",
+      "activity_band": "low",
+      "n_people": 155,
+      "mean_sleep_min": 483.576357163232
+    },
+    {
+      "age_group": "18-29",
+      "sex": "female",
+      "activity_band": "medium",
+      "n_people": 92,
+      "mean_sleep_min": 489.6756267702999
+    },
+    {
+      "age_group": "18-29",
+      "sex": "male",
+      "activity_band": "high",
+      "n_people": 230,
+      "mean_sleep_min": 455.1524016245752
+    },
+    {
+      "age_group": "18-29",
+      "sex": "male",
+      "activity_band": "low",
+      "n_people": 76,
+      "mean_sleep_min": 463.1206934275168
+    },
+    {
+      "age_group": "18-29",
+      "sex": "male",
+      "activity_band": "medium",
+      "n_people": 66,
+      "mean_sleep_min": 468.055342337337
+    },
+    {
+      "age_group": "30-44",
+      "sex": "female",
+      "activity_band": "high",
+      "n_people": 150,
+      "mean_sleep_min": 441.02202714992274
+    },
+    {
+      "age_group": "30-44",
+      "sex": "female",
+      "activity_band": "low",
+      "n_people": 238,
+      "mean_sleep_min": 468.2910324894559
+    },
+    {
+      "age_group": "30-44",
+      "sex": "female",
+      "activity_band": "medium",
+      "n_people": 104,
+      "mean_sleep_min": 460.4924926338951
+    },
+    {
+      "age_group": "30-44",
+      "sex": "male",
+      "activity_band": "high",
+      "n_people": 197,
+      "mean_sleep_min": 423.05525720406547
+    },
+    {
+      "age_group": "30-44",
+      "sex": "male",
+      "activity_band": "low",
+      "n_people": 132,
+      "mean_sleep_min": 450.8125533101915
+    },
+    {
+      "age_group": "30-44",
+      "sex": "male",
+      "activity_band": "medium",
+      "n_people": 93,
+      "mean_sleep_min": 437.50159136126797
+    },
+    {
+      "age_group": "45-59",
+      "sex": "female",
+      "activity_band": "high",
+      "n_people": 102,
+      "mean_sleep_min": 456.7100438213779
+    },
+    {
+      "age_group": "45-59",
+      "sex": "female",
+      "activity_band": "low",
+      "n_people": 262,
+      "mean_sleep_min": 440.25020677733016
+    },
+    {
+      "age_group": "45-59",
+      "sex": "female",
+      "activity_band": "medium",
+      "n_people": 108,
+      "mean_sleep_min": 448.57355071912974
+    },
+    {
+      "age_group": "45-59",
+      "sex": "male",
+      "activity_band": "high",
+      "n_people": 180,
+      "mean_sleep_min": 416.1106206440668
+    },
+    {
+      "age_group": "45-59",
+      "sex": "male",
+      "activity_band": "low",
+      "n_people": 149,
+      "mean_sleep_min": 433.5347767623404
+    },
+    {
+      "age_group": "45-59",
+      "sex": "male",
+      "activity_band": "medium",
+      "n_people": 105,
+      "mean_sleep_min": 427.63023694024616
+    },
+    {
+      "age_group": "60-80",
+      "sex": "female",
+      "activity_band": "high",
+      "n_people": 106,
+      "mean_sleep_min": 442.5720394892903
+    },
+    {
+      "age_group": "60-80",
+      "sex": "female",
+      "activity_band": "low",
+      "n_people": 464,
+      "mean_sleep_min": 469.48059193499193
+    },
+    {
+      "age_group": "60-80",
+      "sex": "female",
+      "activity_band": "medium",
+      "n_people": 164,
+      "mean_sleep_min": 475.90190991274807
+    },
+    {
+      "age_group": "60-80",
+      "sex": "male",
+      "activity_band": "high",
+      "n_people": 191,
+      "mean_sleep_min": 463.5696069847213
+    },
+    {
+      "age_group": "60-80",
+      "sex": "male",
+      "activity_band": "low",
+      "n_people": 378,
+      "mean_sleep_min": 459.6014448856427
+    },
+    {
+      "age_group": "60-80",
+      "sex": "male",
+      "activity_band": "medium",
+      "n_people": 161,
+      "mean_sleep_min": 461.25750236063726
+    },
+    {
+      "age_group": "18-29",
+      "sex": "female",
+      "activity_band": "any",
+      "n_people": 387,
+      "mean_sleep_min": 480.85387522203564
+    },
+    {
+      "age_group": "18-29",
+      "sex": "male",
+      "activity_band": "any",
+      "n_people": 374,
+      "mean_sleep_min": 458.5914465851152
+    },
+    {
+      "age_group": "30-44",
+      "sex": "female",
+      "activity_band": "any",
+      "n_people": 499,
+      "mean_sleep_min": 457.8780193097549
+    },
+    {
+      "age_group": "30-44",
+      "sex": "male",
+      "activity_band": "any",
+      "n_people": 426,
+      "mean_sleep_min": 434.7605306150831
+    },
+    {
+      "age_group": "45-59",
+      "sex": "female",
+      "activity_band": "any",
+      "n_people": 475,
+      "mean_sleep_min": 446.06079100072486
+    },
+    {
+      "age_group": "45-59",
+      "sex": "male",
+      "activity_band": "any",
+      "n_people": 437,
+      "mean_sleep_min": 424.5052269015975
+    },
+    {
+      "age_group": "60-80",
+      "sex": "female",
+      "activity_band": "any",
+      "n_people": 738,
+      "mean_sleep_min": 466.6728761397473
+    },
+    {
+      "age_group": "60-80",
+      "sex": "male",
+      "activity_band": "any",
+      "n_people": 737,
+      "mean_sleep_min": 461.1763070284379
+    },
+    {
+      "age_group": "18-29",
+      "sex": "any",
+      "activity_band": "any",
+      "n_people": 761,
+      "mean_sleep_min": 469.3463547995143
+    },
+    {
+      "age_group": "30-44",
+      "sex": "any",
+      "activity_band": "any",
+      "n_people": 925,
+      "mean_sleep_min": 446.5847791600742
+    },
+    {
+      "age_group": "45-59",
+      "sex": "any",
+      "activity_band": "any",
+      "n_people": 912,
+      "mean_sleep_min": 435.2945220869874
+    },
+    {
+      "age_group": "60-80",
+      "sex": "any",
+      "activity_band": "any",
+      "n_people": 1475,
+      "mean_sleep_min": 464.27542524724583
+    }
+  ],
+  "global": {
+    "n_people": 4073,
+    "mean_sleep_min": 453.38223311019397
+  },
+  "unsupported_fields": [
+    "occupation",
+    "usual_bed"
+  ],
+  "interpretation": "관측 수면시간 평균이며 최적 수면량·권장 효과·한국인 기준을 뜻하지 않습니다.",
+  "activity_definition": "일·이동·여가 활동의 자기보고 분/일 합계",
+  "minimum_group_people": 30
+}

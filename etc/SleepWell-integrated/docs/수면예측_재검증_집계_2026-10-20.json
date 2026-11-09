@@ -1,0 +1,1573 @@
+{
+  "cmi": {
+    "cohort": "cmi",
+    "inner_selected": {
+      "data": "absolute15",
+      "hybrid": "huber"
+    },
+    "train_cv_winner": "data",
+    "validation": {
+      "data": {
+        "onset_mae_min": 57.098259184793896,
+        "wake_mae_min": 45.11302376276782,
+        "interval_mae_min": 69.13958222183422,
+        "joint_mae_min": 51.10564147378086,
+        "n_nights": 691,
+        "n_people": 39,
+        "averaging": "equal participant"
+      },
+      "hybrid": {
+        "onset_mae_min": 56.35506195022945,
+        "wake_mae_min": 46.60097513135316,
+        "interval_mae_min": 67.35344769867926,
+        "joint_mae_min": 51.478018540791304,
+        "n_nights": 691,
+        "n_people": 39,
+        "averaging": "equal participant"
+      },
+      "physical": {
+        "onset_mae_min": 79.50482183961624,
+        "wake_mae_min": 62.84087273324922,
+        "interval_mae_min": 82.85879844641094,
+        "joint_mae_min": 71.17284728643274,
+        "n_nights": 691,
+        "n_people": 39,
+        "averaging": "equal participant"
+      },
+      "population_mean": {
+        "onset_mae_min": 85.89315662400158,
+        "wake_mae_min": 68.45724609173745,
+        "interval_mae_min": 79.75375021743544,
+        "joint_mae_min": 77.17520135786954,
+        "n_nights": 691,
+        "n_people": 39,
+        "averaging": "equal participant"
+      },
+      "population_median": {
+        "onset_mae_min": 84.80819777513982,
+        "wake_mae_min": 65.31777088942874,
+        "interval_mae_min": 79.74178434659663,
+        "joint_mae_min": 75.0629843322843,
+        "n_nights": 691,
+        "n_people": 39,
+        "averaging": "equal participant"
+      },
+      "recent_median": {
+        "onset_mae_min": 58.045187230908724,
+        "wake_mae_min": 51.71971050328903,
+        "interval_mae_min": 70.0176050724896,
+        "joint_mae_min": 54.88244886709889,
+        "n_nights": 691,
+        "n_people": 39,
+        "averaging": "equal participant"
+      }
+    },
+    "test": {
+      "data": {
+        "onset_mae_min": 48.90217465665528,
+        "wake_mae_min": 46.117348570457814,
+        "interval_mae_min": 58.36901105047129,
+        "joint_mae_min": 47.50976161355656,
+        "n_nights": 673,
+        "n_people": 44,
+        "averaging": "equal participant"
+      },
+      "hybrid": {
+        "onset_mae_min": 50.018177577466986,
+        "wake_mae_min": 48.448211822232565,
+        "interval_mae_min": 60.527603789647294,
+        "joint_mae_min": 49.23319469984976,
+        "n_nights": 673,
+        "n_people": 44,
+        "averaging": "equal participant"
+      },
+      "physical": {
+        "onset_mae_min": 73.87089249363852,
+        "wake_mae_min": 58.62898870932873,
+        "interval_mae_min": 72.81704940785961,
+        "joint_mae_min": 66.24994060148363,
+        "n_nights": 673,
+        "n_people": 44,
+        "averaging": "equal participant"
+      },
+      "population_mean": {
+        "onset_mae_min": 78.39657287840389,
+        "wake_mae_min": 60.9797621375187,
+        "interval_mae_min": 72.53173756136756,
+        "joint_mae_min": 69.68816750796128,
+        "n_nights": 673,
+        "n_people": 44,
+        "averaging": "equal participant"
+      },
+      "population_median": {
+        "onset_mae_min": 72.34828161340168,
+        "wake_mae_min": 56.94232087234131,
+        "interval_mae_min": 72.50084049278502,
+        "joint_mae_min": 64.64530124287151,
+        "n_nights": 673,
+        "n_people": 44,
+        "averaging": "equal participant"
+      },
+      "recent_median": {
+        "onset_mae_min": 53.30371825258886,
+        "wake_mae_min": 53.78483571578284,
+        "interval_mae_min": 65.41629034023985,
+        "joint_mae_min": 53.54427698418588,
+        "n_nights": 673,
+        "n_people": 44,
+        "averaging": "equal participant"
+      }
+    },
+    "comparisons": {
+      "v2_hybrid_vs_v2_physical": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 23.852714916171543,
+            "ci95": [
+              15.510822707121728,
+              32.67791604616814
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 10.180776887096195,
+            "ci95": [
+              4.445528437204612,
+              15.454410404825712
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 12.289445618212294,
+            "ci95": [
+              6.387461636384243,
+              18.039705689752385
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 17.01674590163386,
+            "ci95": [
+              11.556205412749192,
+              22.311154217965175
+            ]
+          }
+        }
+      },
+      "v2_hybrid_vs_v2_data": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": -1.1160029208117146,
+            "ci95": [
+              -2.8674059734362816,
+              0.2734824121608099
+            ]
+          },
+          "wake": {
+            "error_reduction_min": -2.330863251774725,
+            "ci95": [
+              -4.366085072595821,
+              -0.510063194084864
+            ]
+          },
+          "interval": {
+            "error_reduction_min": -2.1585927391759947,
+            "ci95": [
+              -5.055426747908211,
+              0.3136013809094604
+            ]
+          },
+          "joint": {
+            "error_reduction_min": -1.7234330862932195,
+            "ci95": [
+              -3.1106620682240798,
+              -0.4795123126663366
+            ]
+          }
+        }
+      },
+      "v2_data_vs_v1_data": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 4.893534797293186,
+            "ci95": [
+              1.6305049607106712,
+              8.165176136740776
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 3.9655290762357676,
+            "ci95": [
+              0.8974904267429321,
+              7.0173756603519255
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 4.232298757176892,
+            "ci95": [
+              1.5525655265206368,
+              6.967275564496575
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 4.429531936764477,
+            "ci95": [
+              2.4637263533899407,
+              6.505434529424933
+            ]
+          }
+        }
+      },
+      "v2_selected_vs_v1_data": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 4.893534797293186,
+            "ci95": [
+              1.6305049607106712,
+              8.165176136740776
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 3.9655290762357676,
+            "ci95": [
+              0.8974904267429321,
+              7.0173756603519255
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 4.232298757176892,
+            "ci95": [
+              1.5525655265206368,
+              6.967275564496575
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 4.429531936764477,
+            "ci95": [
+              2.4637263533899407,
+              6.505434529424933
+            ]
+          }
+        }
+      },
+      "v2_hybrid_vs_v1_hybrid": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 4.049869760198107,
+            "ci95": [
+              1.073382898211958,
+              7.003556738198287
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 1.5870038397160096,
+            "ci95": [
+              -1.6153853093651136,
+              4.514195418400942
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 2.0699690888632016,
+            "ci95": [
+              -0.04028146815730257,
+              4.030458866058723
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 2.8184367999570576,
+            "ci95": [
+              0.6757034419503901,
+              4.93973081693715
+            ]
+          }
+        }
+      },
+      "v2_selected_vs_v1_hybrid": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 5.165872681009823,
+            "ci95": [
+              1.7215289345454066,
+              8.578258784580079
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 3.9178670914907348,
+            "ci95": [
+              0.7836295512969208,
+              7.060224350032312
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 4.2285618280391954,
+            "ci95": [
+              1.5876444960416864,
+              6.932328432272445
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 4.541869886250279,
+            "ci95": [
+              2.4546354399338233,
+              6.691047951468052
+            ]
+          }
+        }
+      }
+    },
+    "qc": {
+      "definition": {
+        "center": [
+          156.0,
+          667.0
+        ],
+        "scale": [
+          93.40379999999999,
+          66.717
+        ],
+        "threshold": 3.5,
+        "meaning": "statistical rarity, not a proven sensor error; no target removed"
+      },
+      "removed_rows": 0,
+      "split_flagged_counts": {
+        "train": 208,
+        "validation": 25,
+        "test": 9
+      },
+      "split_counts": {
+        "train": 3263,
+        "validation": 691,
+        "test": 673
+      }
+    },
+    "test_subgroups": {
+      "statistically_rare": {
+        "data": {
+          "onset_mae_min": 42.75009555381217,
+          "wake_mae_min": 231.75624764799394,
+          "interval_mae_min": 192.81695442477954,
+          "joint_mae_min": 137.25317160090307,
+          "n_nights": 9,
+          "n_people": 6,
+          "averaging": "equal participant"
+        },
+        "hybrid": {
+          "onset_mae_min": 45.19451725445112,
+          "wake_mae_min": 226.64408266786356,
+          "interval_mae_min": 193.1255133854751,
+          "joint_mae_min": 135.91929996115735,
+          "n_nights": 9,
+          "n_people": 6,
+          "averaging": "equal participant"
+        },
+        "physical": {
+          "onset_mae_min": 67.77777777777779,
+          "wake_mae_min": 248.91666666666666,
+          "interval_mae_min": 229.4722222222222,
+          "joint_mae_min": 158.34722222222223,
+          "n_nights": 9,
+          "n_people": 6,
+          "averaging": "equal participant"
+        },
+        "population_mean": {
+          "onset_mae_min": 103.88888888888887,
+          "wake_mae_min": 263.69629770461216,
+          "interval_mae_min": 207.97338439031466,
+          "joint_mae_min": 183.79259329675054,
+          "n_nights": 9,
+          "n_people": 6,
+          "averaging": "equal participant"
+        },
+        "population_median": {
+          "onset_mae_min": 103.8888888888889,
+          "wake_mae_min": 270.8333333333333,
+          "interval_mae_min": 207.94444444444446,
+          "joint_mae_min": 187.3611111111111,
+          "n_nights": 9,
+          "n_people": 6,
+          "averaging": "equal participant"
+        },
+        "recent_median": {
+          "onset_mae_min": 76.59756776825985,
+          "wake_mae_min": 260.6953710745283,
+          "interval_mae_min": 189.18113663960182,
+          "joint_mae_min": 168.64646942139407,
+          "n_nights": 9,
+          "n_people": 6,
+          "averaging": "equal participant"
+        }
+      },
+      "other": {
+        "data": {
+          "onset_mae_min": 48.746379798597154,
+          "wake_mae_min": 42.27122766271695,
+          "interval_mae_min": 55.49454130528531,
+          "joint_mae_min": 45.50880373065705,
+          "n_nights": 664,
+          "n_people": 44,
+          "averaging": "equal participant"
+        },
+        "hybrid": {
+          "onset_mae_min": 50.07310266080608,
+          "wake_mae_min": 45.41289704322439,
+          "interval_mae_min": 58.155760756095454,
+          "joint_mae_min": 47.74299985201523,
+          "n_nights": 664,
+          "n_people": 44,
+          "averaging": "equal participant"
+        },
+        "physical": {
+          "onset_mae_min": 73.76565426124512,
+          "wake_mae_min": 54.202362621495766,
+          "interval_mae_min": 69.29488184043342,
+          "joint_mae_min": 63.984008441370435,
+          "n_nights": 664,
+          "n_people": 44,
+          "averaging": "equal participant"
+        },
+        "population_mean": {
+          "onset_mae_min": 77.42560462496762,
+          "wake_mae_min": 56.36358989791349,
+          "interval_mae_min": 69.24150399456313,
+          "joint_mae_min": 66.89459726144057,
+          "n_nights": 664,
+          "n_people": 44,
+          "averaging": "equal participant"
+        },
+        "population_median": {
+          "onset_mae_min": 71.33647737358022,
+          "wake_mae_min": 51.83709192982788,
+          "interval_mae_min": 69.21266921323443,
+          "joint_mae_min": 61.58678465170406,
+          "n_nights": 664,
+          "n_people": 44,
+          "averaging": "equal participant"
+        },
+        "recent_median": {
+          "onset_mae_min": 52.503825361692364,
+          "wake_mae_min": 50.88159724217338,
+          "interval_mae_min": 63.9615849896288,
+          "joint_mae_min": 51.69271130193288,
+          "n_nights": 664,
+          "n_people": 44,
+          "averaging": "equal participant"
+        }
+      }
+    },
+    "reload_max_error": {
+      "data": 0.0,
+      "hybrid": 0.0
+    }
+  },
+  "mesa": {
+    "cohort": "mesa",
+    "inner_selected": {
+      "data": "absolute7",
+      "hybrid": "absolute7"
+    },
+    "train_cv_winner": "data",
+    "validation": {
+      "data": {
+        "onset_mae_min": 67.4222122296192,
+        "wake_mae_min": 60.987242439186396,
+        "interval_mae_min": 79.51332484841323,
+        "joint_mae_min": 64.20472733440288,
+        "n_nights": 2062,
+        "n_people": 299,
+        "averaging": "equal participant"
+      },
+      "hybrid": {
+        "onset_mae_min": 67.40450847826295,
+        "wake_mae_min": 61.06512090924473,
+        "interval_mae_min": 79.46879771481888,
+        "joint_mae_min": 64.23481469375385,
+        "n_nights": 2062,
+        "n_people": 299,
+        "averaging": "equal participant"
+      },
+      "physical": {
+        "onset_mae_min": 95.3355609171594,
+        "wake_mae_min": 74.293358814771,
+        "interval_mae_min": 106.79223793546605,
+        "joint_mae_min": 84.8144598659652,
+        "n_nights": 2062,
+        "n_people": 299,
+        "averaging": "equal participant"
+      },
+      "population_mean": {
+        "onset_mae_min": 84.55111118473371,
+        "wake_mae_min": 80.79770293978635,
+        "interval_mae_min": 92.96934580348046,
+        "joint_mae_min": 82.67440706226002,
+        "n_nights": 2062,
+        "n_people": 299,
+        "averaging": "equal participant"
+      },
+      "population_median": {
+        "onset_mae_min": 82.64017027658326,
+        "wake_mae_min": 80.79414184848967,
+        "interval_mae_min": 90.73391529967617,
+        "joint_mae_min": 81.71715606253649,
+        "n_nights": 2062,
+        "n_people": 299,
+        "averaging": "equal participant"
+      },
+      "recent_median": {
+        "onset_mae_min": 73.12243328781628,
+        "wake_mae_min": 64.4691990395903,
+        "interval_mae_min": 84.61524733534222,
+        "joint_mae_min": 68.79581616370325,
+        "n_nights": 2062,
+        "n_people": 299,
+        "averaging": "equal participant"
+      }
+    },
+    "test": {
+      "data": {
+        "onset_mae_min": 69.37037639943878,
+        "wake_mae_min": 66.85456538262024,
+        "interval_mae_min": 81.16923743680185,
+        "joint_mae_min": 68.1124708910295,
+        "n_nights": 2175,
+        "n_people": 315,
+        "averaging": "equal participant"
+      },
+      "hybrid": {
+        "onset_mae_min": 69.47436833742913,
+        "wake_mae_min": 67.00427170839488,
+        "interval_mae_min": 81.2871117822157,
+        "joint_mae_min": 68.23932002291205,
+        "n_nights": 2175,
+        "n_people": 315,
+        "averaging": "equal participant"
+      },
+      "physical": {
+        "onset_mae_min": 101.42412898482573,
+        "wake_mae_min": 79.28340410161731,
+        "interval_mae_min": 109.52526928699373,
+        "joint_mae_min": 90.35376654322154,
+        "n_nights": 2175,
+        "n_people": 315,
+        "averaging": "equal participant"
+      },
+      "population_mean": {
+        "onset_mae_min": 90.0749502608851,
+        "wake_mae_min": 85.63034921318473,
+        "interval_mae_min": 95.58258910677847,
+        "joint_mae_min": 87.85264973703505,
+        "n_nights": 2175,
+        "n_people": 315,
+        "averaging": "equal participant"
+      },
+      "population_median": {
+        "onset_mae_min": 88.03353300579487,
+        "wake_mae_min": 85.62965545477448,
+        "interval_mae_min": 94.72819853867476,
+        "joint_mae_min": 86.8315942302847,
+        "n_nights": 2175,
+        "n_people": 315,
+        "averaging": "equal participant"
+      },
+      "recent_median": {
+        "onset_mae_min": 75.0624329372851,
+        "wake_mae_min": 71.24119732859049,
+        "interval_mae_min": 84.6385766313717,
+        "joint_mae_min": 73.15181513293781,
+        "n_nights": 2175,
+        "n_people": 315,
+        "averaging": "equal participant"
+      }
+    },
+    "comparisons": {
+      "v2_hybrid_vs_v2_physical": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 31.949760647396612,
+            "ci95": [
+              27.443804099678278,
+              36.455938238438065
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 12.279132393222373,
+            "ci95": [
+              9.941763869313556,
+              14.644761711458838
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 28.23815750477804,
+            "ci95": [
+              23.281779529320858,
+              33.46593140574508
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 22.114446520309492,
+            "ci95": [
+              19.524959640721125,
+              24.672719527608212
+            ]
+          }
+        }
+      },
+      "v2_hybrid_vs_v2_data": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": -0.10399193799036474,
+            "ci95": [
+              -0.2811172042994786,
+              0.0835227556533731
+            ]
+          },
+          "wake": {
+            "error_reduction_min": -0.14970632577464157,
+            "ci95": [
+              -0.33578283328508796,
+              0.02713085558201057
+            ]
+          },
+          "interval": {
+            "error_reduction_min": -0.11787434541381728,
+            "ci95": [
+              -0.3145840485895554,
+              0.0764309329792675
+            ]
+          },
+          "joint": {
+            "error_reduction_min": -0.1268491318825028,
+            "ci95": [
+              -0.24995517500127884,
+              -0.012297349508573288
+            ]
+          }
+        }
+      },
+      "v2_data_vs_v1_data": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 2.8452584119211966,
+            "ci95": [
+              1.6557452790374756,
+              4.017629369664223
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 2.1209310474908962,
+            "ci95": [
+              1.2393793672673203,
+              2.9882433286704497
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 0.10396981534981556,
+            "ci95": [
+              -1.141954750749656,
+              1.3468668823526837
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 2.4830947297060466,
+            "ci95": [
+              1.6336002698765437,
+              3.273735340546064
+            ]
+          }
+        }
+      },
+      "v2_selected_vs_v1_data": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 2.8452584119211966,
+            "ci95": [
+              1.6557452790374756,
+              4.017629369664223
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 2.1209310474908962,
+            "ci95": [
+              1.2393793672673203,
+              2.9882433286704497
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 0.10396981534981556,
+            "ci95": [
+              -1.141954750749656,
+              1.3468668823526837
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 2.4830947297060466,
+            "ci95": [
+              1.6336002698765437,
+              3.273735340546064
+            ]
+          }
+        }
+      },
+      "v2_hybrid_vs_v1_hybrid": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 2.6044345508511504,
+            "ci95": [
+              1.4237527787437831,
+              3.7631564913365585
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 1.6822046549438345,
+            "ci95": [
+              0.8371434708316187,
+              2.558141987060473
+            ]
+          },
+          "interval": {
+            "error_reduction_min": -0.0014183776656422884,
+            "ci95": [
+              -1.3154148385922875,
+              1.2551524502772493
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 2.1433196028974955,
+            "ci95": [
+              1.3153130535300042,
+              2.9356523047518825
+            ]
+          }
+        }
+      },
+      "v2_selected_vs_v1_hybrid": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 2.7084264888415146,
+            "ci95": [
+              1.5433665406733041,
+              3.888606927157071
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 1.8319109807184777,
+            "ci95": [
+              0.9720712676955714,
+              2.707797068914199
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 0.1164559677481749,
+            "ci95": [
+              -1.1551416500732834,
+              1.3568839382933773
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 2.2701687347799964,
+            "ci95": [
+              1.4335920173050358,
+              3.0744848336833566
+            ]
+          }
+        }
+      }
+    },
+    "qc": {
+      "definition": {
+        "center": [
+          211.0,
+          656.0
+        ],
+        "scale": [
+          93.40379999999999,
+          91.9212
+        ],
+        "threshold": 3.5,
+        "meaning": "statistical rarity, not a proven sensor error; no target removed"
+      },
+      "removed_rows": 0,
+      "split_flagged_counts": {
+        "train": 376,
+        "validation": 52,
+        "test": 98
+      },
+      "split_counts": {
+        "train": 10524,
+        "validation": 2062,
+        "test": 2175
+      }
+    },
+    "test_subgroups": {
+      "statistically_rare": {
+        "data": {
+          "onset_mae_min": 288.95386495464186,
+          "wake_mae_min": 218.30332822193512,
+          "interval_mae_min": 246.0558489202355,
+          "joint_mae_min": 253.62859658828853,
+          "n_nights": 98,
+          "n_people": 54,
+          "averaging": "equal participant"
+        },
+        "hybrid": {
+          "onset_mae_min": 289.2213477478875,
+          "wake_mae_min": 218.53166287913788,
+          "interval_mae_min": 245.4583505304381,
+          "joint_mae_min": 253.87650531351264,
+          "n_nights": 98,
+          "n_people": 54,
+          "averaging": "equal participant"
+        },
+        "physical": {
+          "onset_mae_min": 319.3726089964141,
+          "wake_mae_min": 249.39002067751113,
+          "interval_mae_min": 289.1393252613439,
+          "joint_mae_min": 284.3813148369626,
+          "n_nights": 98,
+          "n_people": 54,
+          "averaging": "equal participant"
+        },
+        "population_mean": {
+          "onset_mae_min": 320.51653113231856,
+          "wake_mae_min": 257.599905491985,
+          "interval_mae_min": 267.97084851930407,
+          "joint_mae_min": 289.0582183121517,
+          "n_nights": 98,
+          "n_people": 54,
+          "averaging": "equal participant"
+        },
+        "population_median": {
+          "onset_mae_min": 327.46666666666664,
+          "wake_mae_min": 257.5783950617284,
+          "interval_mae_min": 284.9345679012346,
+          "joint_mae_min": 292.52253086419756,
+          "n_nights": 98,
+          "n_people": 54,
+          "averaging": "equal participant"
+        },
+        "recent_median": {
+          "onset_mae_min": 281.5319434530018,
+          "wake_mae_min": 211.95687272705288,
+          "interval_mae_min": 219.01509660417528,
+          "joint_mae_min": 246.74440809002732,
+          "n_nights": 98,
+          "n_people": 54,
+          "averaging": "equal participant"
+        }
+      },
+      "other": {
+        "data": {
+          "onset_mae_min": 60.71775586540621,
+          "wake_mae_min": 60.680079160561434,
+          "interval_mae_min": 75.86798773296752,
+          "joint_mae_min": 60.6989175129838,
+          "n_nights": 2077,
+          "n_people": 315,
+          "averaging": "equal participant"
+        },
+        "hybrid": {
+          "onset_mae_min": 60.84194307264375,
+          "wake_mae_min": 60.86119673468494,
+          "interval_mae_min": 76.07719450964993,
+          "joint_mae_min": 60.85156990366434,
+          "n_nights": 2077,
+          "n_people": 315,
+          "averaging": "equal participant"
+        },
+        "physical": {
+          "onset_mae_min": 92.51516634426471,
+          "wake_mae_min": 71.69511128487268,
+          "interval_mae_min": 103.57758340406326,
+          "joint_mae_min": 82.10513881456873,
+          "n_nights": 2077,
+          "n_people": 315,
+          "averaging": "equal participant"
+        },
+        "population_mean": {
+          "onset_mae_min": 80.64874014811647,
+          "wake_mae_min": 77.99161565903677,
+          "interval_mae_min": 89.64915604979002,
+          "joint_mae_min": 79.32017790357673,
+          "n_nights": 2077,
+          "n_people": 315,
+          "averaging": "equal participant"
+        },
+        "population_median": {
+          "onset_mae_min": 78.53932665658853,
+          "wake_mae_min": 77.99203073822123,
+          "interval_mae_min": 88.50507117661886,
+          "joint_mae_min": 78.26567869740485,
+          "n_nights": 2077,
+          "n_people": 315,
+          "averaging": "equal participant"
+        },
+        "recent_median": {
+          "onset_mae_min": 68.92146858193803,
+          "wake_mae_min": 66.76374342214301,
+          "interval_mae_min": 81.59881047697944,
+          "joint_mae_min": 67.84260600204051,
+          "n_nights": 2077,
+          "n_people": 315,
+          "averaging": "equal participant"
+        }
+      }
+    },
+    "reload_max_error": {
+      "data": 0.0,
+      "hybrid": 0.0
+    }
+  },
+  "samsung": {
+    "cohort": "samsung",
+    "inner_selected": {
+      "data": "ridge1000",
+      "hybrid": "ridge1000",
+      "data_sensors": "ridge1000",
+      "hybrid_sensors": "ridge1000"
+    },
+    "train_cv_winner": "population_mean",
+    "validation": {
+      "data": {
+        "onset_mae_min": 116.3488753348949,
+        "wake_mae_min": 128.60336716081352,
+        "interval_mae_min": 158.86828783153146,
+        "joint_mae_min": 122.47612124785422,
+        "n_nights": 29,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "hybrid": {
+        "onset_mae_min": 116.20495555960076,
+        "wake_mae_min": 128.78484722042595,
+        "interval_mae_min": 159.39109147608252,
+        "joint_mae_min": 122.49490139001335,
+        "n_nights": 29,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "data_sensors": {
+        "onset_mae_min": 117.51577206316112,
+        "wake_mae_min": 124.27524674691641,
+        "interval_mae_min": 153.82293662739488,
+        "joint_mae_min": 120.89550940503877,
+        "n_nights": 29,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "hybrid_sensors": {
+        "onset_mae_min": 117.45692468899139,
+        "wake_mae_min": 124.42246613384432,
+        "interval_mae_min": 154.20089376328337,
+        "joint_mae_min": 120.93969541141787,
+        "n_nights": 29,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "physical": {
+        "onset_mae_min": 132.86206896551724,
+        "wake_mae_min": 139.24137931034483,
+        "interval_mae_min": 181.27586206896552,
+        "joint_mae_min": 136.05172413793105,
+        "n_nights": 29,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "population_mean": {
+        "onset_mae_min": 115.05864585955197,
+        "wake_mae_min": 133.42335766423358,
+        "interval_mae_min": 161.36244651396927,
+        "joint_mae_min": 124.24100176189278,
+        "n_nights": 29,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "population_median": {
+        "onset_mae_min": 116.75862068965517,
+        "wake_mae_min": 138.72413793103448,
+        "interval_mae_min": 175.20689655172413,
+        "joint_mae_min": 127.74137931034483,
+        "n_nights": 29,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "recent_median": {
+        "onset_mae_min": 114.44890510948906,
+        "wake_mae_min": 134.31663730178707,
+        "interval_mae_min": 110.62761137679335,
+        "joint_mae_min": 124.38277120563805,
+        "n_nights": 29,
+        "n_people": 1,
+        "averaging": "equal night"
+      }
+    },
+    "test": {
+      "data": {
+        "onset_mae_min": 156.88735861812705,
+        "wake_mae_min": 162.77355158351017,
+        "interval_mae_min": 159.46871196836503,
+        "joint_mae_min": 159.83045510081863,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "hybrid": {
+        "onset_mae_min": 156.70642958019837,
+        "wake_mae_min": 163.16339579628337,
+        "interval_mae_min": 161.1569349824831,
+        "joint_mae_min": 159.93491268824087,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "data_sensors": {
+        "onset_mae_min": 156.98455822946406,
+        "wake_mae_min": 163.19052781913146,
+        "interval_mae_min": 153.36318625123243,
+        "joint_mae_min": 160.08754302429776,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "hybrid_sensors": {
+        "onset_mae_min": 156.8865170019384,
+        "wake_mae_min": 163.44479986754558,
+        "interval_mae_min": 154.92956782862154,
+        "joint_mae_min": 160.16565843474197,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "physical": {
+        "onset_mae_min": 166.63806163828062,
+        "wake_mae_min": 162.2761719383617,
+        "interval_mae_min": 142.91423357664235,
+        "joint_mae_min": 164.45711678832114,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "population_mean": {
+        "onset_mae_min": 156.90243309002432,
+        "wake_mae_min": 167.7306569343066,
+        "interval_mae_min": 155.28734793187348,
+        "joint_mae_min": 162.31654501216545,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "population_median": {
+        "onset_mae_min": 157.5,
+        "wake_mae_min": 176.7,
+        "interval_mae_min": 175.16666666666666,
+        "joint_mae_min": 167.1,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "recent_median": {
+        "onset_mae_min": 191.51727493917275,
+        "wake_mae_min": 180.34774939172752,
+        "interval_mae_min": 125.87512165450123,
+        "joint_mae_min": 185.9325121654501,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      }
+    },
+    "comparisons": {
+      "v2_hybrid_vs_v2_physical": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 9.93163205808226,
+            "ci95": [
+              -6.587803074449794,
+              30.68087307759116
+            ]
+          },
+          "wake": {
+            "error_reduction_min": -0.8872238579216325,
+            "ci95": [
+              -10.438256601786822,
+              9.8180521753335
+            ]
+          },
+          "interval": {
+            "error_reduction_min": -18.242701405840755,
+            "ci95": [
+              -51.76522472601772,
+              12.088833772522971
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 4.52220410008031,
+            "ci95": [
+              -4.0453672808802645,
+              13.861852907073112
+            ]
+          }
+        }
+      },
+      "v2_hybrid_vs_v2_data": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 0.18092903792867787,
+            "ci95": [
+              -0.3694469402866973,
+              0.6321091902314048
+            ]
+          },
+          "wake": {
+            "error_reduction_min": -0.38984421277318687,
+            "ci95": [
+              -0.7192343008457445,
+              -0.026002577732052022
+            ]
+          },
+          "interval": {
+            "error_reduction_min": -1.6882230141180874,
+            "ci95": [
+              -2.435626558496395,
+              -0.9720021181093754
+            ]
+          },
+          "joint": {
+            "error_reduction_min": -0.1044575874222564,
+            "ci95": [
+              -0.3713906711903844,
+              0.17082434260725188
+            ]
+          }
+        }
+      },
+      "v2_hybrid_sensors_vs_v2_data_sensors": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 0.0980412275257038,
+            "ci95": [
+              -0.4919744134330205,
+              0.57871991367913
+            ]
+          },
+          "wake": {
+            "error_reduction_min": -0.2542720484141531,
+            "ci95": [
+              -0.5273126066991406,
+              0.03994026186399715
+            ]
+          },
+          "interval": {
+            "error_reduction_min": -1.5663815773891636,
+            "ci95": [
+              -2.2638054898628415,
+              -0.9009378059906034
+            ]
+          },
+          "joint": {
+            "error_reduction_min": -0.07811541044422464,
+            "ci95": [
+              -0.358816353966966,
+              0.19307873062920297
+            ]
+          }
+        }
+      },
+      "v2_hybrid_sensors_vs_v2_hybrid": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": -0.1800874217399591,
+            "ci95": [
+              -2.554117436158765,
+              1.525546119182597
+            ]
+          },
+          "wake": {
+            "error_reduction_min": -0.28140407126224243,
+            "ci95": [
+              -5.536182125619256,
+              5.137332684675078
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 6.227367153861541,
+            "ci95": [
+              2.5049552139749776,
+              9.92234140205942
+            ]
+          },
+          "joint": {
+            "error_reduction_min": -0.23074574650109697,
+            "ci95": [
+              -3.026259150612295,
+              2.559936354068954
+            ]
+          }
+        }
+      },
+      "v2_data_vs_v1_data": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 3.2809505512761516,
+            "ci95": [
+              -1.924579706974724,
+              10.005553416595674
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 5.198252499267024,
+            "ci95": [
+              1.2363627513543305,
+              9.181217468282787
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 13.431532445563343,
+            "ci95": [
+              1.090083889524936,
+              27.78126816567863
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 4.239601525271587,
+            "ci95": [
+              0.3793481642865169,
+              8.938143721264254
+            ]
+          }
+        }
+      },
+      "v2_selected_vs_v1_data": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 3.2658760793788644,
+            "ci95": [
+              -5.895557225009281,
+              14.006307796879804
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 0.24114714847059607,
+            "ci95": [
+              -6.002078720974697,
+              7.89004802562399
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 17.61289648205484,
+            "ci95": [
+              2.8521186857412415,
+              36.9350696363059
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 1.7535116139247302,
+            "ci95": [
+              -5.3114593018007605,
+              10.614383655315331
+            ]
+          }
+        }
+      },
+      "v2_hybrid_vs_v1_hybrid": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 4.09843309633877,
+            "ci95": [
+              -2.063942258951747,
+              12.11821199547351
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 4.124976290229309,
+            "ci95": [
+              0.07244985205478327,
+              8.339849832946998
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 13.184929183098062,
+            "ci95": [
+              -0.21565226852456262,
+              28.773514398466798
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 4.111704693284039,
+            "ci95": [
+              -0.2845863874300104,
+              9.471029944111782
+            ]
+          }
+        }
+      },
+      "v2_selected_vs_v1_hybrid": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 3.9024295865128047,
+            "ci95": [
+              -6.475645386959792,
+              16.18580390490471
+            ]
+          },
+          "wake": {
+            "error_reduction_min": -0.44228484779393207,
+            "ci95": [
+              -7.059661436339397,
+              7.371002931254503
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 19.054516233707652,
+            "ci95": [
+              2.753600377263977,
+              40.39433780202649
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 1.7300723693594382,
+            "ci95": [
+              -6.052693271436089,
+              11.551577167088036
+            ]
+          }
+        }
+      }
+    },
+    "qc": {
+      "definition": {
+        "center": [
+          361.0,
+          825.0
+        ],
+        "scale": [
+          77.09519999999999,
+          75.6126
+        ],
+        "threshold": 3.5,
+        "meaning": "statistical rarity, not a proven sensor error; no target removed"
+      },
+      "removed_rows": 0,
+      "split_flagged_counts": {
+        "train": 8,
+        "validation": 7,
+        "test": 7
+      },
+      "split_counts": {
+        "train": 137,
+        "validation": 29,
+        "test": 30
+      }
+    },
+    "test_subgroups": {
+      "statistically_rare": {
+        "data": {
+          "onset_mae_min": 401.24462342456735,
+          "wake_mae_min": 359.94678517462387,
+          "interval_mae_min": 255.80845287139033,
+          "joint_mae_min": 380.5957042995956,
+          "n_nights": 7,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "hybrid": {
+          "onset_mae_min": 401.40421190833547,
+          "wake_mae_min": 359.66126123780157,
+          "interval_mae_min": 256.9967411288739,
+          "joint_mae_min": 380.53273657306846,
+          "n_nights": 7,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "data_sensors": {
+          "onset_mae_min": 399.6629139922355,
+          "wake_mae_min": 365.7984781540984,
+          "interval_mae_min": 248.4943314192407,
+          "joint_mae_min": 382.73069607316694,
+          "n_nights": 7,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "hybrid_sensors": {
+          "onset_mae_min": 399.9044657457719,
+          "wake_mae_min": 365.57522841313664,
+          "interval_mae_min": 249.58788945917144,
+          "joint_mae_min": 382.7398470794542,
+          "n_nights": 7,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "physical": {
+          "onset_mae_min": 403.42857142857144,
+          "wake_mae_min": 373.0,
+          "interval_mae_min": 224.28571428571428,
+          "joint_mae_min": 388.2142857142857,
+          "n_nights": 7,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "population_mean": {
+          "onset_mae_min": 399.78832116788317,
+          "wake_mae_min": 361.8310740354536,
+          "interval_mae_min": 256.98644421272166,
+          "joint_mae_min": 380.80969760166835,
+          "n_nights": 7,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "population_median": {
+          "onset_mae_min": 400.42857142857144,
+          "wake_mae_min": 359.42857142857144,
+          "interval_mae_min": 278.2857142857143,
+          "joint_mae_min": 379.92857142857144,
+          "n_nights": 7,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "recent_median": {
+          "onset_mae_min": 329.85714285714283,
+          "wake_mae_min": 329.82142857142856,
+          "interval_mae_min": 171.09306569343067,
+          "joint_mae_min": 329.8392857142857,
+          "n_nights": 7,
+          "n_people": 1,
+          "averaging": "equal night"
+        }
+      },
+      "other": {
+        "data": {
+          "onset_mae_min": 82.51775628573216,
+          "wake_mae_min": 102.76430657751902,
+          "interval_mae_min": 130.14792125874857,
+          "joint_mae_min": 92.64103143162559,
+          "n_nights": 23,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "hybrid": {
+          "onset_mae_min": 82.23319148033055,
+          "wake_mae_min": 103.35969761843,
+          "interval_mae_min": 131.9882983292337,
+          "joint_mae_min": 92.79644454938025,
+          "n_nights": 23,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "data_sensors": {
+          "onset_mae_min": 83.12592821470749,
+          "wake_mae_min": 101.52723858675022,
+          "interval_mae_min": 124.4102290261864,
+          "joint_mae_min": 92.32658340072885,
+          "n_nights": 23,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "hybrid_sensors": {
+          "onset_mae_min": 82.92453260164112,
+          "wake_mae_min": 101.92684335367008,
+          "interval_mae_min": 126.12051341932374,
+          "joint_mae_min": 92.42568797765561,
+          "n_nights": 23,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "physical": {
+          "onset_mae_min": 94.5713847455834,
+          "wake_mae_min": 98.14283296308051,
+          "interval_mae_min": 118.14900031735958,
+          "joint_mae_min": 96.35710885433197,
+          "n_nights": 23,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "population_mean": {
+          "onset_mae_min": 82.98064106632815,
+          "wake_mae_min": 108.656616947001,
+          "interval_mae_min": 124.33544906378927,
+          "joint_mae_min": 95.81862900666455,
+          "n_nights": 23,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "population_median": {
+          "onset_mae_min": 83.56521739130434,
+          "wake_mae_min": 121.08695652173913,
+          "interval_mae_min": 143.7826086956522,
+          "joint_mae_min": 102.32608695652173,
+          "n_nights": 23,
+          "n_people": 1,
+          "averaging": "equal night"
+        },
+        "recent_median": {
+          "onset_mae_min": 149.41383687718186,
+          "wake_mae_min": 134.8557600761663,
+          "interval_mae_min": 112.1131386861314,
+          "joint_mae_min": 142.13479847667406,
+          "n_nights": 23,
+          "n_people": 1,
+          "averaging": "equal night"
+        }
+      }
+    },
+    "reload_max_error": {
+      "data": 0.0,
+      "hybrid": 0.0,
+      "data_sensors": 0.0,
+      "hybrid_sensors": 0.0
+    }
+  }
+}

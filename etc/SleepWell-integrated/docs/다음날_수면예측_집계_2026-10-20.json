@@ -1,0 +1,815 @@
+{
+  "cmi": {
+    "cohort": "cmi",
+    "n_people": 269,
+    "n_nights": 4627,
+    "split_nights": {
+      "train": 3263,
+      "validation": 691,
+      "test": 673
+    },
+    "split_people": {
+      "test": 44,
+      "train": 186,
+      "validation": 39
+    },
+    "selected": {
+      "data": "data/ridge_10",
+      "hybrid": "hybrid/ridge_100",
+      "hybrid_frozen": "hybrid_frozen/ridge_100"
+    },
+    "validation_winner": "hybrid/ridge_100",
+    "prior": {
+      "bed_offset": 179.49792672377424,
+      "wake_offset": 688.1611068861635,
+      "n_people": 186,
+      "n_nights": 3263,
+      "method": "equal-participant mean from Train nights only"
+    },
+    "test": {
+      "physical": {
+        "onset_mae_min": 73.87089249363852,
+        "wake_mae_min": 58.62898870932873,
+        "interval_mae_min": 72.81704940785961,
+        "joint_mae_min": 66.24994060148363,
+        "n_nights": 673,
+        "n_people": 44,
+        "averaging": "equal participant"
+      },
+      "data": {
+        "onset_mae_min": 53.79570945394847,
+        "wake_mae_min": 50.082877646693596,
+        "interval_mae_min": 62.601309807648185,
+        "joint_mae_min": 51.93929355032103,
+        "n_nights": 673,
+        "n_people": 44,
+        "averaging": "equal participant"
+      },
+      "hybrid": {
+        "onset_mae_min": 54.06804733766508,
+        "wake_mae_min": 50.03521566194855,
+        "interval_mae_min": 62.59757287851048,
+        "joint_mae_min": 52.0516314998068,
+        "n_nights": 673,
+        "n_people": 44,
+        "averaging": "equal participant"
+      },
+      "hybrid_frozen": {
+        "onset_mae_min": 54.5770290007878,
+        "wake_mae_min": 50.0377545237214,
+        "interval_mae_min": 63.18820212297492,
+        "joint_mae_min": 52.30739176225461,
+        "n_nights": 673,
+        "n_people": 44,
+        "averaging": "equal participant"
+      },
+      "population": {
+        "onset_mae_min": 78.39657287840389,
+        "wake_mae_min": 60.9797621375187,
+        "interval_mae_min": 72.53173756136756,
+        "joint_mae_min": 69.68816750796128,
+        "n_nights": 673,
+        "n_people": 44,
+        "averaging": "equal participant"
+      },
+      "recent_median": {
+        "onset_mae_min": 53.605801303391765,
+        "wake_mae_min": 53.502922741898715,
+        "interval_mae_min": 66.38594454544746,
+        "joint_mae_min": 53.55436202264524,
+        "n_nights": 673,
+        "n_people": 44,
+        "averaging": "equal participant"
+      }
+    },
+    "comparisons": {
+      "hybrid_vs_physical": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 19.802845155973433,
+            "ci95": [
+              12.353450186219058,
+              27.580372496998184
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 8.593773047380186,
+            "ci95": [
+              3.8802227772834303,
+              13.145295113432606
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 10.219476529349093,
+            "ci95": [
+              6.006320915849035,
+              14.426966654461031
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 14.198309101676807,
+            "ci95": [
+              9.069005040633897,
+              19.368911750520667
+            ]
+          }
+        }
+      },
+      "hybrid_vs_data": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": -0.2723378837166355,
+            "ci95": [
+              -0.919993277079135,
+              0.3441815255357388
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 0.04766198474503252,
+            "ci95": [
+              -0.4638171538972616,
+              0.5100616030953503
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 0.0037369291376969285,
+            "ci95": [
+              -0.3071802885129424,
+              0.4049245621818842
+            ]
+          },
+          "joint": {
+            "error_reduction_min": -0.11233794948580124,
+            "ci95": [
+              -0.44972930278167655,
+              0.22587086847784416
+            ]
+          }
+        }
+      },
+      "hybrid_vs_hybrid_frozen": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 0.5089816631227019,
+            "ci95": [
+              0.1179887034091859,
+              0.9138190856985423
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 0.0025388617728417827,
+            "ci95": [
+              -0.21371293860979826,
+              0.2430855557537791
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 0.5906292444643977,
+            "ci95": [
+              -0.030381842603815844,
+              1.235672242933936
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 0.2557602624477724,
+            "ci95": [
+              0.06439549778347513,
+              0.46872423410767144
+            ]
+          }
+        }
+      },
+      "hybrid_vs_recent_median": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": -0.46224603427333394,
+            "ci95": [
+              -3.191269701691935,
+              2.169117066686533
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 3.4677070799501606,
+            "ci95": [
+              -0.21500490614058912,
+              7.636665086814828
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 3.78837166693698,
+            "ci95": [
+              -0.32319575433041864,
+              8.559224096245066
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 1.5027305228384136,
+            "ci95": [
+              -1.0875580448816198,
+              4.384232498541075
+            ]
+          }
+        }
+      },
+      "hybrid_adaptation_same_coefficients": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 0.8628341493609195,
+            "ci95": [
+              0.420242003080319,
+              1.3854502056974263
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 0.18212308371636815,
+            "ci95": [
+              -0.007795309277069752,
+              0.43163605538128963
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 1.0659467553852577,
+            "ci95": [
+              0.5302883834838992,
+              1.6620804319415068
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 0.522478616538644,
+            "ci95": [
+              0.2687302279527587,
+              0.8135208377793589
+            ]
+          }
+        }
+      }
+    },
+    "physical_fallback_nights": 2,
+    "test_personalized_nights": 184,
+    "test_previously_seen_in_other_tasks": true,
+    "online_adaptation": "Earlier completed outcomes in the enrollment block may update personal state; Samsung resets at each split; population/model coefficients never update on Validation/Test.",
+    "limitations": [
+      "retrospective availability assumed at wake",
+      "main sleep interval, not PSG total sleep time",
+      "no recommendation-effect validation",
+      "fixed physiological tau; behavioral phase/threshold adaptation"
+    ]
+  },
+  "mesa": {
+    "cohort": "mesa",
+    "n_people": 2139,
+    "n_nights": 14761,
+    "split_nights": {
+      "train": 10524,
+      "test": 2175,
+      "validation": 2062
+    },
+    "split_people": {
+      "test": 315,
+      "train": 1525,
+      "validation": 299
+    },
+    "selected": {
+      "data": "data/ridge_1",
+      "hybrid": "hybrid/ridge_100",
+      "hybrid_frozen": "hybrid_frozen/ridge_100"
+    },
+    "validation_winner": "hybrid/ridge_100",
+    "prior": {
+      "bed_offset": 230.9124475269721,
+      "wake_offset": 652.422216747733,
+      "n_people": 1525,
+      "n_nights": 10524,
+      "method": "equal-participant mean from Train nights only"
+    },
+    "test": {
+      "physical": {
+        "onset_mae_min": 101.42412898482573,
+        "wake_mae_min": 79.28340410161731,
+        "interval_mae_min": 109.52526928699373,
+        "joint_mae_min": 90.35376654322154,
+        "n_nights": 2175,
+        "n_people": 315,
+        "averaging": "equal participant"
+      },
+      "data": {
+        "onset_mae_min": 72.21563481136002,
+        "wake_mae_min": 68.97549643011119,
+        "interval_mae_min": 81.2732072521517,
+        "joint_mae_min": 70.59556562073558,
+        "n_nights": 2175,
+        "n_people": 315,
+        "averaging": "equal participant"
+      },
+      "hybrid": {
+        "onset_mae_min": 72.07880288828026,
+        "wake_mae_min": 68.68647636333871,
+        "interval_mae_min": 81.28569340455009,
+        "joint_mae_min": 70.38263962580952,
+        "n_nights": 2175,
+        "n_people": 315,
+        "averaging": "equal participant"
+      },
+      "hybrid_frozen": {
+        "onset_mae_min": 72.07880288828026,
+        "wake_mae_min": 68.68647636333871,
+        "interval_mae_min": 81.28569340455009,
+        "joint_mae_min": 70.38263962580952,
+        "n_nights": 2175,
+        "n_people": 315,
+        "averaging": "equal participant"
+      },
+      "population": {
+        "onset_mae_min": 90.0749502608851,
+        "wake_mae_min": 85.63034921318473,
+        "interval_mae_min": 95.58258910677847,
+        "joint_mae_min": 87.85264973703505,
+        "n_nights": 2175,
+        "n_people": 315,
+        "averaging": "equal participant"
+      },
+      "recent_median": {
+        "onset_mae_min": 75.0603165351687,
+        "wake_mae_min": 71.23740544146527,
+        "interval_mae_min": 84.63266834213009,
+        "joint_mae_min": 73.14886098831701,
+        "n_nights": 2175,
+        "n_people": 315,
+        "averaging": "equal participant"
+      }
+    },
+    "comparisons": {
+      "hybrid_vs_physical": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 29.345326096545424,
+            "ci95": [
+              25.065038233324422,
+              33.87032540285596
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 10.596927738278533,
+            "ci95": [
+              8.390855438658145,
+              12.905485557976263
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 28.239575882443717,
+            "ci95": [
+              23.134356680154045,
+              33.70285531247862
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 19.971126917411997,
+            "ci95": [
+              17.445840472227545,
+              22.54392545864973
+            ]
+          }
+        }
+      },
+      "hybrid_vs_data": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 0.13683192307967806,
+            "ci95": [
+              -0.12353619530068828,
+              0.3887905592167732
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 0.2890200667724195,
+            "ci95": [
+              0.004274711159901326,
+              0.5661248844052004
+            ]
+          },
+          "interval": {
+            "error_reduction_min": -0.012486152398360064,
+            "ci95": [
+              -0.06746590910232059,
+              0.041311270332771405
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 0.21292599492604872,
+            "ci95": [
+              -0.02643081733742338,
+              0.43055238308604016
+            ]
+          }
+        }
+      },
+      "hybrid_vs_hybrid_frozen": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      },
+      "hybrid_vs_recent_median": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 2.9815136468884047,
+            "ci95": [
+              1.2939475821066566,
+              4.664537782748899
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 2.550929078126495,
+            "ci95": [
+              1.2264763336340494,
+              3.862446534752076
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 3.3469749375800757,
+            "ci95": [
+              1.7506409285186706,
+              4.9116891036998895
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 2.766221362507449,
+            "ci95": [
+              1.6104461351339998,
+              3.9346465047220955
+            ]
+          }
+        }
+      },
+      "hybrid_adaptation_same_coefficients": {
+        "method": "paired participant cluster bootstrap",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "interval": {
+            "error_reduction_min": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 0.0,
+            "ci95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "physical_fallback_nights": 21,
+    "test_personalized_nights": 0,
+    "test_previously_seen_in_other_tasks": true,
+    "online_adaptation": "Earlier completed outcomes in the enrollment block may update personal state; Samsung resets at each split; population/model coefficients never update on Validation/Test.",
+    "limitations": [
+      "retrospective availability assumed at wake",
+      "main sleep interval, not PSG total sleep time",
+      "no recommendation-effect validation",
+      "fixed physiological tau; behavioral phase/threshold adaptation"
+    ]
+  },
+  "samsung": {
+    "cohort": "samsung",
+    "n_people": 1,
+    "n_nights": 196,
+    "split_nights": {
+      "train": 137,
+      "test": 30,
+      "validation": 29
+    },
+    "split_people": {
+      "test": 1,
+      "train": 1,
+      "validation": 1
+    },
+    "selected": {
+      "data": "data/ridge_1000",
+      "hybrid": "hybrid/ridge_1000",
+      "hybrid_frozen": "hybrid_frozen/ridge_1000"
+    },
+    "validation_winner": "data/ridge_1000",
+    "prior": {
+      "bed_offset": 365.48175182481754,
+      "wake_offset": 808.1824817518249,
+      "n_people": 1,
+      "n_nights": 137,
+      "method": "equal-participant mean from Train nights only"
+    },
+    "test": {
+      "physical": {
+        "onset_mae_min": 166.63806163828062,
+        "wake_mae_min": 162.2761719383617,
+        "interval_mae_min": 142.91423357664235,
+        "joint_mae_min": 164.45711678832114,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "data": {
+        "onset_mae_min": 160.1683091694032,
+        "wake_mae_min": 167.97180408277717,
+        "interval_mae_min": 172.9002444139284,
+        "joint_mae_min": 164.07005662609018,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "hybrid": {
+        "onset_mae_min": 160.8048626765371,
+        "wake_mae_min": 167.28837208651262,
+        "interval_mae_min": 174.34186416558117,
+        "joint_mae_min": 164.0466173815249,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "hybrid_frozen": {
+        "onset_mae_min": 156.99406223024587,
+        "wake_mae_min": 167.27586991206087,
+        "interval_mae_min": 159.3314677432737,
+        "joint_mae_min": 162.1349660711534,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "population": {
+        "onset_mae_min": 156.90243309002432,
+        "wake_mae_min": 167.7306569343066,
+        "interval_mae_min": 155.28734793187348,
+        "joint_mae_min": 162.31654501216545,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      },
+      "recent_median": {
+        "onset_mae_min": 197.2006082725061,
+        "wake_mae_min": 185.48108272506087,
+        "interval_mae_min": 132.4051703163017,
+        "joint_mae_min": 191.34084549878344,
+        "n_nights": 30,
+        "n_people": 1,
+        "averaging": "equal night"
+      }
+    },
+    "comparisons": {
+      "hybrid_vs_physical": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 5.833198961743492,
+            "ci95": [
+              -14.67186694835701,
+              30.661790805754425
+            ]
+          },
+          "wake": {
+            "error_reduction_min": -5.012200148150941,
+            "ci95": [
+              -15.348889288084655,
+              5.02893304732366
+            ]
+          },
+          "interval": {
+            "error_reduction_min": -31.42763058893883,
+            "ci95": [
+              -80.51888687388539,
+              10.111466764419621
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 0.41049940679627167,
+            "ci95": [
+              -11.804628033684468,
+              12.196895350190662
+            ]
+          }
+        }
+      },
+      "hybrid_vs_data": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": -0.6365535071339328,
+            "ci95": [
+              -2.4281346011438703,
+              0.6149191171497974
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 0.6834319962645281,
+            "ci95": [
+              0.10471776795233277,
+              1.4598330181341648
+            ]
+          },
+          "interval": {
+            "error_reduction_min": -1.4416197516528086,
+            "ci95": [
+              -3.45402533188533,
+              0.12367593088160317
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 0.023439244565294833,
+            "ci95": [
+              -0.8609585935844777,
+              0.8105776662544729
+            ]
+          }
+        }
+      },
+      "hybrid_vs_hybrid_frozen": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": -3.810800446291275,
+            "ci95": [
+              -12.815851915830528,
+              3.060937249814763
+            ]
+          },
+          "wake": {
+            "error_reduction_min": -0.012502174451788051,
+            "ci95": [
+              -2.6946127832638163,
+              3.1905192667641935
+            ]
+          },
+          "interval": {
+            "error_reduction_min": -15.01039642230746,
+            "ci95": [
+              -26.857269055688125,
+              -5.371312861338319
+            ]
+          },
+          "joint": {
+            "error_reduction_min": -1.9116513103715371,
+            "ci95": [
+              -6.056513018387817,
+              2.1085333456393296
+            ]
+          }
+        }
+      },
+      "hybrid_vs_recent_median": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": 36.395745595968954,
+            "ci95": [
+              2.8502380766192292,
+              82.80440443292302
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 18.192710638548167,
+            "ci95": [
+              -12.246470108757405,
+              62.39903691675512
+            ]
+          },
+          "interval": {
+            "error_reduction_min": -41.936693849279465,
+            "ci95": [
+              -82.26897930095603,
+              -2.056037906210831
+            ]
+          },
+          "joint": {
+            "error_reduction_min": 27.29422811725856,
+            "ci95": [
+              -2.8180080849924085,
+              68.51300628347744
+            ]
+          }
+        }
+      },
+      "hybrid_adaptation_same_coefficients": {
+        "method": "circular blocks of 7 consecutive evaluated nights; one person",
+        "replicates": 2000,
+        "positive_means": "lower error for changed model",
+        "metrics": {
+          "onset": {
+            "error_reduction_min": -3.867247021969344,
+            "ci95": [
+              -13.020486395405968,
+              3.105749400795876
+            ]
+          },
+          "wake": {
+            "error_reduction_min": 2.2933695180546616,
+            "ci95": [
+              -0.07790979263722221,
+              5.574811033227159
+            ]
+          },
+          "interval": {
+            "error_reduction_min": -11.376539267481627,
+            "ci95": [
+              -23.364733212745207,
+              -1.538022578527047
+            ]
+          },
+          "joint": {
+            "error_reduction_min": -0.786938751957346,
+            "ci95": [
+              -5.333261509430878,
+              3.446675385941808
+            ]
+          }
+        }
+      }
+    },
+    "physical_fallback_nights": 1,
+    "test_personalized_nights": 16,
+    "test_previously_seen_in_other_tasks": true,
+    "online_adaptation": "Earlier completed outcomes in the enrollment block may update personal state; Samsung resets at each split; population/model coefficients never update on Validation/Test.",
+    "limitations": [
+      "retrospective availability assumed at wake",
+      "main sleep interval, not PSG total sleep time",
+      "no recommendation-effect validation",
+      "fixed physiological tau; behavioral phase/threshold adaptation"
+    ]
+  }
+}

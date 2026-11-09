@@ -1,0 +1,20 @@
+name: iOS build and core tests
+on:
+  push:
+    paths: ['ios-app/**', '.github/workflows/ios.yml']
+  pull_request:
+    paths: ['ios-app/**', '.github/workflows/ios.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Core tests
+        working-directory: ios-app
+        run: swift test
+      - name: Build for iOS Simulator
+        working-directory: ios-app
+        run: xcodebuild -project SleepWell.xcodeproj -scheme SleepWell -configuration Debug -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO build

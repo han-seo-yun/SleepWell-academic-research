@@ -1,0 +1,2384 @@
+{
+  "schema_version": 1,
+  "generator": "canonical web-app PortableCohortModel gradual_v1",
+  "model_version": "robust-next-night-research-v2",
+  "runtime_model_version": "robust-next-night-research-v2+gradual_v1",
+  "personalization_policy": "gradual_v1",
+  "feature_contract": "sleepwell_next_night_robust_v2",
+  "physical_provider": "two_process_fixed_v1",
+  "research_metrics_scope": "not_validated_for_gradual_v1_runtime",
+  "cases": [
+    {
+      "name": "history_0",
+      "profile": {
+        "age_band": "30-44",
+        "sex": "any",
+        "activity_minutes": 60,
+        "usual_bed": "23:00",
+        "usual_wake": "07:00",
+        "desired_sleep_minutes": 480,
+        "created_at": "2026-08-31T15:00:00Z"
+      },
+      "cutoff": "2026-10-20T20:00:00+09:00",
+      "records": [],
+      "expected": {
+        "snapshots": {
+          "cmi": {
+            "population_bed": 179.49792672377424,
+            "population_wake": 688.1611068861635,
+            "habit_bed": 179.49792672377424,
+            "habit_wake": 688.1611068861635,
+            "recent_bed": 179.49792672377424,
+            "recent_wake": 688.1611068861635,
+            "previous_bed": 179.49792672377424,
+            "previous_wake": 688.1611068861635,
+            "recent_duration": 508.6631801623892,
+            "bed_variability": 0.0,
+            "wake_variability": 0.0,
+            "history_count_7": 0.0,
+            "history_age_days": 28.0,
+            "personal_weight": 0.0,
+            "weekend": 0.0,
+            "current_s": 0.5382621583006415,
+            "current_c": -0.047489870409544575,
+            "sleep_threshold": 0.6749861560388024,
+            "wake_threshold": 0.14754391249052334,
+            "physical_bed": 180.0,
+            "physical_wake": 690.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 0.0,
+            "weekday_count": 0.0,
+            "median14_bed": 179.49792672377424,
+            "ew_bed": 179.49792672377424,
+            "weekday_bed": 179.49792672377424,
+            "bed_mad": 0.0,
+            "bed_trend": 0.0,
+            "median14_wake": 688.1611068861635,
+            "ew_wake": 688.1611068861635,
+            "weekday_wake": 688.1611068861635,
+            "wake_mad": 0.0,
+            "wake_trend": 0.0,
+            "duration_mad": 0.0,
+            "previous_duration": 508.6631801623892,
+            "gap_days_mean": 0.0
+          },
+          "mesa": {
+            "population_bed": 230.9124475269721,
+            "population_wake": 652.422216747733,
+            "habit_bed": 230.9124475269721,
+            "habit_wake": 652.422216747733,
+            "recent_bed": 230.9124475269721,
+            "recent_wake": 652.422216747733,
+            "previous_bed": 230.9124475269721,
+            "previous_wake": 652.422216747733,
+            "recent_duration": 421.509769220761,
+            "bed_variability": 0.0,
+            "wake_variability": 0.0,
+            "history_count_7": 0.0,
+            "history_age_days": 28.0,
+            "personal_weight": 0.0,
+            "weekend": 0.0,
+            "current_s": 0.5736180582255548,
+            "current_c": -0.05232710971577339,
+            "sleep_threshold": 0.7458069059617288,
+            "wake_threshold": 0.21387473561729808,
+            "physical_bed": 235.0,
+            "physical_wake": 655.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 0.0,
+            "weekday_count": 0.0,
+            "median14_bed": 230.9124475269721,
+            "ew_bed": 230.9124475269721,
+            "weekday_bed": 230.9124475269721,
+            "bed_mad": 0.0,
+            "bed_trend": 0.0,
+            "median14_wake": 652.422216747733,
+            "ew_wake": 652.422216747733,
+            "weekday_wake": 652.422216747733,
+            "wake_mad": 0.0,
+            "wake_trend": 0.0,
+            "duration_mad": 0.0,
+            "previous_duration": 421.509769220761,
+            "gap_days_mean": 0.0
+          }
+        },
+        "personalization": {
+          "cmi": {
+            "valid_days": 0,
+            "elapsed_days": 49,
+            "personal_weight": 0.0,
+            "mode": "population",
+            "habit_bed_offset": 179.49792672377424,
+            "habit_wake_offset": 688.1611068861635,
+            "phase_min": 193.829516804969,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.6749861560388024,
+            "wake_threshold": 0.14754391249052334,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          },
+          "mesa": {
+            "valid_days": 0,
+            "elapsed_days": 49,
+            "personal_weight": 0.0,
+            "mode": "population",
+            "habit_bed_offset": 230.9124475269721,
+            "habit_wake_offset": 652.422216747733,
+            "phase_min": 201.66733213735256,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.7458069059617288,
+            "wake_threshold": 0.21387473561729808,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          }
+        },
+        "predictions": {
+          "physical_cmi": {
+            "onset_offset_min": 180.0,
+            "wake_offset_min": 690.0
+          },
+          "data_cmi": {
+            "onset_offset_min": 161.1637500487975,
+            "wake_offset_min": 665.6572048847543
+          },
+          "hybrid_cmi": {
+            "onset_offset_min": 142.04257940157947,
+            "wake_offset_min": 657.8397106761714
+          },
+          "physical_mesa": {
+            "onset_offset_min": 235.0,
+            "wake_offset_min": 655.0
+          },
+          "data_mesa": {
+            "onset_offset_min": 186.31527801819936,
+            "wake_offset_min": 639.8916827710668
+          },
+          "hybrid_mesa": {
+            "onset_offset_min": 186.4741883478474,
+            "wake_offset_min": 640.3517720155231
+          }
+        }
+      }
+    },
+    {
+      "name": "history_1",
+      "profile": {
+        "age_band": "30-44",
+        "sex": "any",
+        "activity_minutes": 60,
+        "usual_bed": "23:00",
+        "usual_wake": "07:00",
+        "desired_sleep_minutes": 480,
+        "created_at": "2026-08-31T15:00:00Z"
+      },
+      "cutoff": "2026-10-20T20:00:00+09:00",
+      "records": [
+        {
+          "id": "regular:1:0",
+          "day": "2026-10-19",
+          "bedtime": "2026-10-19T14:30:00Z",
+          "wake_time": "2026-10-19T22:00:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-19T22:05:00Z"
+        }
+      ],
+      "expected": {
+        "snapshots": {
+          "cmi": {
+            "population_bed": 179.49792672377424,
+            "population_wake": 688.1611068861635,
+            "habit_bed": 181.53139827552263,
+            "habit_wake": 686.2836997604193,
+            "recent_bed": 210.0,
+            "recent_wake": 660.0,
+            "previous_bed": 210.0,
+            "previous_wake": 660.0,
+            "recent_duration": 450.0,
+            "bed_variability": 0.0,
+            "wake_variability": 0.0,
+            "history_count_7": 1.0,
+            "history_age_days": 0.5416666666666666,
+            "personal_weight": 0.06666666666666667,
+            "weekend": 0.0,
+            "current_s": 0.5613784439047954,
+            "current_c": -0.047538312448845245,
+            "sleep_threshold": 0.6781848786938038,
+            "wake_threshold": 0.15022882043201136,
+            "physical_bed": 165.0,
+            "physical_wake": 685.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 1.0,
+            "weekday_count": 1.0,
+            "median14_bed": 210.0,
+            "ew_bed": 210.0,
+            "weekday_bed": 210.0,
+            "bed_mad": 0.0,
+            "bed_trend": 0.0,
+            "median14_wake": 660.0,
+            "ew_wake": 660.0,
+            "weekday_wake": 660.0,
+            "wake_mad": 0.0,
+            "wake_trend": 0.0,
+            "duration_mad": 0.0,
+            "previous_duration": 450.0,
+            "gap_days_mean": 0.0
+          },
+          "mesa": {
+            "population_bed": 230.9124475269721,
+            "population_wake": 652.422216747733,
+            "habit_bed": 229.5182843585073,
+            "habit_wake": 652.9274022978842,
+            "recent_bed": 210.0,
+            "recent_wake": 660.0,
+            "previous_bed": 210.0,
+            "previous_wake": 660.0,
+            "recent_duration": 450.0,
+            "bed_variability": 0.0,
+            "wake_variability": 0.0,
+            "history_count_7": 1.0,
+            "history_age_days": 0.5416666666666666,
+            "personal_weight": 0.06666666666666667,
+            "weekend": 0.0,
+            "current_s": 0.5636166828714584,
+            "current_c": -0.05205436978302829,
+            "sleep_threshold": 0.7442705809541988,
+            "wake_threshold": 0.21226235862843673,
+            "physical_bed": 240.0,
+            "physical_wake": 660.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 1.0,
+            "weekday_count": 1.0,
+            "median14_bed": 210.0,
+            "ew_bed": 210.0,
+            "weekday_bed": 210.0,
+            "bed_mad": 0.0,
+            "bed_trend": 0.0,
+            "median14_wake": 660.0,
+            "ew_wake": 660.0,
+            "weekday_wake": 660.0,
+            "wake_mad": 0.0,
+            "wake_trend": 0.0,
+            "duration_mad": 0.0,
+            "previous_duration": 450.0,
+            "gap_days_mean": 0.0
+          }
+        },
+        "personalization": {
+          "cmi": {
+            "valid_days": 1,
+            "elapsed_days": 49,
+            "personal_weight": 0.06666666666666667,
+            "mode": "personalized",
+            "habit_bed_offset": 181.53139827552263,
+            "habit_wake_offset": 686.2836997604193,
+            "phase_min": 193.90754901797095,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.6781848786938038,
+            "wake_threshold": 0.15022882043201136,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          },
+          "mesa": {
+            "valid_days": 1,
+            "elapsed_days": 49,
+            "personal_weight": 0.06666666666666667,
+            "mode": "personalized",
+            "habit_bed_offset": 229.5182843585073,
+            "habit_wake_offset": 652.9274022978842,
+            "phase_min": 201.22284332819572,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.7442705809541988,
+            "wake_threshold": 0.21226235862843673,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          }
+        },
+        "predictions": {
+          "physical_cmi": {
+            "onset_offset_min": 165.0,
+            "wake_offset_min": 685.0
+          },
+          "data_cmi": {
+            "onset_offset_min": 185.64414779173333,
+            "wake_offset_min": 659.038576613652
+          },
+          "hybrid_cmi": {
+            "onset_offset_min": 174.98106727426938,
+            "wake_offset_min": 645.9596133114976
+          },
+          "physical_mesa": {
+            "onset_offset_min": 240.0,
+            "wake_offset_min": 660.0
+          },
+          "data_mesa": {
+            "onset_offset_min": 217.9925669370848,
+            "wake_offset_min": 663.1880592298542
+          },
+          "hybrid_mesa": {
+            "onset_offset_min": 217.633620640037,
+            "wake_offset_min": 663.3881559966078
+          }
+        }
+      }
+    },
+    {
+      "name": "history_5",
+      "profile": {
+        "age_band": "30-44",
+        "sex": "any",
+        "activity_minutes": 60,
+        "usual_bed": "23:00",
+        "usual_wake": "07:00",
+        "desired_sleep_minutes": 480,
+        "created_at": "2026-08-31T15:00:00Z"
+      },
+      "cutoff": "2026-10-20T20:00:00+09:00",
+      "records": [
+        {
+          "id": "regular:5:0",
+          "day": "2026-10-15",
+          "bedtime": "2026-10-15T14:30:00Z",
+          "wake_time": "2026-10-15T22:00:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-15T22:05:00Z"
+        },
+        {
+          "id": "regular:5:1",
+          "day": "2026-10-16",
+          "bedtime": "2026-10-16T14:29:00Z",
+          "wake_time": "2026-10-16T22:11:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-16T22:16:00Z"
+        },
+        {
+          "id": "regular:5:2",
+          "day": "2026-10-17",
+          "bedtime": "2026-10-17T14:28:00Z",
+          "wake_time": "2026-10-17T22:22:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-17T22:27:00Z"
+        },
+        {
+          "id": "regular:5:3",
+          "day": "2026-10-18",
+          "bedtime": "2026-10-18T14:27:00Z",
+          "wake_time": "2026-10-18T22:33:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-18T22:38:00Z"
+        },
+        {
+          "id": "regular:5:4",
+          "day": "2026-10-19",
+          "bedtime": "2026-10-19T13:49:00Z",
+          "wake_time": "2026-10-19T22:07:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-19T22:12:00Z"
+        }
+      ],
+      "expected": {
+        "snapshots": {
+          "cmi": {
+            "population_bed": 179.49792672377424,
+            "population_wake": 688.1611068861635,
+            "habit_bed": 185.0511039017284,
+            "habit_wake": 684.5923945476994,
+            "recent_bed": 208.0,
+            "recent_wake": 671.0,
+            "previous_bed": 169.0,
+            "previous_wake": 667.0,
+            "recent_duration": 474.0,
+            "bed_variability": 15.831613941730641,
+            "wake_variability": 11.637869220780924,
+            "history_count_7": 5.0,
+            "history_age_days": 0.5368055555555555,
+            "personal_weight": 0.2631578947368421,
+            "weekend": 0.0,
+            "current_s": 0.5487694384283353,
+            "current_c": -0.0481054317526177,
+            "sleep_threshold": 0.6824431902827512,
+            "wake_threshold": 0.15384342633032783,
+            "physical_bed": 180.0,
+            "physical_wake": 685.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 5.0,
+            "weekday_count": 3.0,
+            "median14_bed": 208.0,
+            "ew_bed": 208.0,
+            "weekday_bed": 207.57142857142856,
+            "bed_mad": 1.0,
+            "bed_trend": 0.0,
+            "median14_wake": 671.0,
+            "ew_wake": 671.0,
+            "weekday_wake": 669.2857142857142,
+            "wake_mad": 11.0,
+            "wake_trend": 0.0,
+            "duration_mad": 12.0,
+            "previous_duration": 498.0,
+            "gap_days_mean": 1.0012152777777779
+          },
+          "mesa": {
+            "population_bed": 230.9124475269721,
+            "population_wake": 652.422216747733,
+            "habit_bed": 222.93548765145314,
+            "habit_wake": 658.2584754983296,
+            "recent_bed": 208.0,
+            "recent_wake": 671.0,
+            "previous_bed": 169.0,
+            "previous_wake": 667.0,
+            "recent_duration": 474.0,
+            "bed_variability": 15.831613941730641,
+            "wake_variability": 11.637869220780924,
+            "history_count_7": 5.0,
+            "history_age_days": 0.5368055555555555,
+            "personal_weight": 0.2631578947368421,
+            "weekend": 0.0,
+            "current_s": 0.5487694637978646,
+            "current_c": -0.05167000705070696,
+            "sleep_threshold": 0.7346300493555746,
+            "wake_threshold": 0.20234024552322344,
+            "physical_bed": 245.0,
+            "physical_wake": 670.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 5.0,
+            "weekday_count": 3.0,
+            "median14_bed": 208.0,
+            "ew_bed": 208.0,
+            "weekday_bed": 207.57142857142856,
+            "bed_mad": 1.0,
+            "bed_trend": 0.0,
+            "median14_wake": 671.0,
+            "ew_wake": 671.0,
+            "weekday_wake": 669.2857142857142,
+            "wake_mad": 11.0,
+            "wake_trend": 0.0,
+            "duration_mad": 12.0,
+            "previous_duration": 498.0,
+            "gap_days_mean": 1.0012152777777779
+          }
+        },
+        "personalization": {
+          "cmi": {
+            "valid_days": 5,
+            "elapsed_days": 49,
+            "personal_weight": 0.2631578947368421,
+            "mode": "personalized",
+            "habit_bed_offset": 185.0511039017284,
+            "habit_wake_offset": 684.5923945476994,
+            "phase_min": 194.82174922471404,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.6824431902827512,
+            "wake_threshold": 0.15384342633032783,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          },
+          "mesa": {
+            "valid_days": 5,
+            "elapsed_days": 49,
+            "personal_weight": 0.2631578947368421,
+            "mode": "personalized",
+            "habit_bed_offset": 222.93548765145314,
+            "habit_wake_offset": 658.2584754983296,
+            "phase_min": 200.5969815748913,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.7346300493555746,
+            "wake_threshold": 0.20234024552322344,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          }
+        },
+        "predictions": {
+          "physical_cmi": {
+            "onset_offset_min": 180.0,
+            "wake_offset_min": 685.0
+          },
+          "data_cmi": {
+            "onset_offset_min": 185.03725317810276,
+            "wake_offset_min": 664.4283948439004
+          },
+          "hybrid_cmi": {
+            "onset_offset_min": 176.3992099326255,
+            "wake_offset_min": 651.1845452667512
+          },
+          "physical_mesa": {
+            "onset_offset_min": 245.0,
+            "wake_offset_min": 670.0
+          },
+          "data_mesa": {
+            "onset_offset_min": 208.775821141755,
+            "wake_offset_min": 670.2798329233158
+          },
+          "hybrid_mesa": {
+            "onset_offset_min": 209.71210383889465,
+            "wake_offset_min": 669.3373796494604
+          }
+        }
+      }
+    },
+    {
+      "name": "history_13",
+      "profile": {
+        "age_band": "30-44",
+        "sex": "any",
+        "activity_minutes": 60,
+        "usual_bed": "23:00",
+        "usual_wake": "07:00",
+        "desired_sleep_minutes": 480,
+        "created_at": "2026-08-31T15:00:00Z"
+      },
+      "cutoff": "2026-10-20T20:00:00+09:00",
+      "records": [
+        {
+          "id": "regular:13:0",
+          "day": "2026-10-07",
+          "bedtime": "2026-10-07T14:30:00Z",
+          "wake_time": "2026-10-07T22:00:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-07T22:05:00Z"
+        },
+        {
+          "id": "regular:13:1",
+          "day": "2026-10-08",
+          "bedtime": "2026-10-08T14:29:00Z",
+          "wake_time": "2026-10-08T22:11:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-08T22:16:00Z"
+        },
+        {
+          "id": "regular:13:2",
+          "day": "2026-10-09",
+          "bedtime": "2026-10-09T14:28:00Z",
+          "wake_time": "2026-10-09T22:22:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-09T22:27:00Z"
+        },
+        {
+          "id": "regular:13:3",
+          "day": "2026-10-10",
+          "bedtime": "2026-10-10T14:27:00Z",
+          "wake_time": "2026-10-10T22:33:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-10T22:38:00Z"
+        },
+        {
+          "id": "regular:13:4",
+          "day": "2026-10-11",
+          "bedtime": "2026-10-11T13:49:00Z",
+          "wake_time": "2026-10-11T22:07:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-11T22:12:00Z"
+        },
+        {
+          "id": "regular:13:5",
+          "day": "2026-10-12",
+          "bedtime": "2026-10-12T14:48:00Z",
+          "wake_time": "2026-10-12T22:18:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-12T22:23:00Z"
+        },
+        {
+          "id": "regular:13:6",
+          "day": "2026-10-13",
+          "bedtime": "2026-10-13T14:47:00Z",
+          "wake_time": "2026-10-13T22:29:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-13T22:34:00Z"
+        },
+        {
+          "id": "regular:13:7",
+          "day": "2026-10-14",
+          "bedtime": "2026-10-14T14:09:00Z",
+          "wake_time": "2026-10-14T22:03:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-14T22:08:00Z"
+        },
+        {
+          "id": "regular:13:8",
+          "day": "2026-10-15",
+          "bedtime": "2026-10-15T14:08:00Z",
+          "wake_time": "2026-10-15T22:14:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-15T22:19:00Z"
+        },
+        {
+          "id": "regular:13:9",
+          "day": "2026-10-16",
+          "bedtime": "2026-10-16T14:07:00Z",
+          "wake_time": "2026-10-16T22:25:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-16T22:30:00Z"
+        },
+        {
+          "id": "regular:13:10",
+          "day": "2026-10-17",
+          "bedtime": "2026-10-17T15:06:00Z",
+          "wake_time": "2026-10-17T22:36:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-17T22:41:00Z"
+        },
+        {
+          "id": "regular:13:11",
+          "day": "2026-10-18",
+          "bedtime": "2026-10-18T14:28:00Z",
+          "wake_time": "2026-10-18T22:10:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-18T22:15:00Z"
+        },
+        {
+          "id": "regular:13:12",
+          "day": "2026-10-19",
+          "bedtime": "2026-10-19T14:27:00Z",
+          "wake_time": "2026-10-19T22:21:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-19T22:26:00Z"
+        }
+      ],
+      "expected": {
+        "snapshots": {
+          "cmi": {
+            "population_bed": 179.49792672377424,
+            "population_wake": 688.1611068861635,
+            "habit_bed": 192.4433694123274,
+            "habit_wake": 683.0835369039366,
+            "recent_bed": 207.0,
+            "recent_wake": 681.0,
+            "previous_bed": 207.0,
+            "previous_wake": 681.0,
+            "recent_duration": 474.0,
+            "bed_variability": 20.72167355939285,
+            "wake_variability": 10.606120681868905,
+            "history_count_7": 7.0,
+            "history_age_days": 0.5270833333333333,
+            "personal_weight": 0.48148148148148145,
+            "weekend": 0.0,
+            "current_s": 0.5490483748087569,
+            "current_c": -0.04992506291316118,
+            "sleep_threshold": 0.6897073369575213,
+            "wake_threshold": 0.16011875648436674,
+            "physical_bed": 190.0,
+            "physical_wake": 685.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 13.0,
+            "weekday_count": 9.0,
+            "median14_bed": 208.0,
+            "ew_bed": 207.0,
+            "weekday_bed": 208.0,
+            "bed_mad": 19.0,
+            "bed_trend": 0.5,
+            "median14_wake": 678.0,
+            "ew_wake": 681.0,
+            "weekday_wake": 673.1538461538462,
+            "wake_mad": 8.0,
+            "wake_trend": 5.0,
+            "duration_mad": 12.0,
+            "previous_duration": 474.0,
+            "gap_days_mean": 1.0012152777777779
+          },
+          "mesa": {
+            "population_bed": 230.9124475269721,
+            "population_wake": 652.422216747733,
+            "habit_bed": 219.10275056954112,
+            "habit_wake": 664.5522605358616,
+            "recent_bed": 207.0,
+            "recent_wake": 681.0,
+            "previous_bed": 207.0,
+            "previous_wake": 681.0,
+            "recent_duration": 474.0,
+            "bed_variability": 20.72167355939285,
+            "wake_variability": 10.606120681868905,
+            "history_count_7": 7.0,
+            "history_age_days": 0.5270833333333333,
+            "personal_weight": 0.48148148148148145,
+            "weekend": 0.0,
+            "current_s": 0.5490483748087569,
+            "current_c": -0.052425344510352447,
+            "sleep_threshold": 0.7264289854388148,
+            "wake_threshold": 0.194155899746484,
+            "physical_bed": 235.0,
+            "physical_wake": 675.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 13.0,
+            "weekday_count": 9.0,
+            "median14_bed": 208.0,
+            "ew_bed": 207.0,
+            "weekday_bed": 208.0,
+            "bed_mad": 19.0,
+            "bed_trend": 0.5,
+            "median14_wake": 678.0,
+            "ew_wake": 681.0,
+            "weekday_wake": 673.1538461538462,
+            "wake_mad": 8.0,
+            "wake_trend": 5.0,
+            "duration_mad": 12.0,
+            "previous_duration": 474.0,
+            "gap_days_mean": 1.0012152777777779
+          }
+        },
+        "personalization": {
+          "cmi": {
+            "valid_days": 13,
+            "elapsed_days": 49,
+            "personal_weight": 0.48148148148148145,
+            "mode": "personalized",
+            "habit_bed_offset": 192.4433694123274,
+            "habit_wake_offset": 683.0835369039366,
+            "phase_min": 197.76345315813205,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.6897073369575213,
+            "wake_threshold": 0.16011875648436674,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          },
+          "mesa": {
+            "valid_days": 13,
+            "elapsed_days": 49,
+            "personal_weight": 0.48148148148148145,
+            "mode": "personalized",
+            "habit_bed_offset": 219.10275056954112,
+            "habit_wake_offset": 664.5522605358616,
+            "phase_min": 201.8275055527015,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.7264289854388148,
+            "wake_threshold": 0.194155899746484,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          }
+        },
+        "predictions": {
+          "physical_cmi": {
+            "onset_offset_min": 190.0,
+            "wake_offset_min": 685.0
+          },
+          "data_cmi": {
+            "onset_offset_min": 183.5130259335479,
+            "wake_offset_min": 668.4669328712063
+          },
+          "hybrid_cmi": {
+            "onset_offset_min": 186.52635583400206,
+            "wake_offset_min": 653.8501211317122
+          },
+          "physical_mesa": {
+            "onset_offset_min": 235.0,
+            "wake_offset_min": 675.0
+          },
+          "data_mesa": {
+            "onset_offset_min": 213.20957880770916,
+            "wake_offset_min": 672.3026097435785
+          },
+          "hybrid_mesa": {
+            "onset_offset_min": 212.05196517897346,
+            "wake_offset_min": 675.0720928208855
+          }
+        }
+      }
+    },
+    {
+      "name": "history_14",
+      "profile": {
+        "age_band": "30-44",
+        "sex": "any",
+        "activity_minutes": 60,
+        "usual_bed": "23:00",
+        "usual_wake": "07:00",
+        "desired_sleep_minutes": 480,
+        "created_at": "2026-08-31T15:00:00Z"
+      },
+      "cutoff": "2026-10-20T20:00:00+09:00",
+      "records": [
+        {
+          "id": "regular:14:0",
+          "day": "2026-10-06",
+          "bedtime": "2026-10-06T14:30:00Z",
+          "wake_time": "2026-10-06T22:00:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-06T22:05:00Z"
+        },
+        {
+          "id": "regular:14:1",
+          "day": "2026-10-07",
+          "bedtime": "2026-10-07T14:29:00Z",
+          "wake_time": "2026-10-07T22:11:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-07T22:16:00Z"
+        },
+        {
+          "id": "regular:14:2",
+          "day": "2026-10-08",
+          "bedtime": "2026-10-08T14:28:00Z",
+          "wake_time": "2026-10-08T22:22:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-08T22:27:00Z"
+        },
+        {
+          "id": "regular:14:3",
+          "day": "2026-10-09",
+          "bedtime": "2026-10-09T14:27:00Z",
+          "wake_time": "2026-10-09T22:33:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-09T22:38:00Z"
+        },
+        {
+          "id": "regular:14:4",
+          "day": "2026-10-10",
+          "bedtime": "2026-10-10T13:49:00Z",
+          "wake_time": "2026-10-10T22:07:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-10T22:12:00Z"
+        },
+        {
+          "id": "regular:14:5",
+          "day": "2026-10-11",
+          "bedtime": "2026-10-11T14:48:00Z",
+          "wake_time": "2026-10-11T22:18:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-11T22:23:00Z"
+        },
+        {
+          "id": "regular:14:6",
+          "day": "2026-10-12",
+          "bedtime": "2026-10-12T14:47:00Z",
+          "wake_time": "2026-10-12T22:29:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-12T22:34:00Z"
+        },
+        {
+          "id": "regular:14:7",
+          "day": "2026-10-13",
+          "bedtime": "2026-10-13T14:09:00Z",
+          "wake_time": "2026-10-13T22:03:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-13T22:08:00Z"
+        },
+        {
+          "id": "regular:14:8",
+          "day": "2026-10-14",
+          "bedtime": "2026-10-14T14:08:00Z",
+          "wake_time": "2026-10-14T22:14:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-14T22:19:00Z"
+        },
+        {
+          "id": "regular:14:9",
+          "day": "2026-10-15",
+          "bedtime": "2026-10-15T14:07:00Z",
+          "wake_time": "2026-10-15T22:25:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-15T22:30:00Z"
+        },
+        {
+          "id": "regular:14:10",
+          "day": "2026-10-16",
+          "bedtime": "2026-10-16T15:06:00Z",
+          "wake_time": "2026-10-16T22:36:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-16T22:41:00Z"
+        },
+        {
+          "id": "regular:14:11",
+          "day": "2026-10-17",
+          "bedtime": "2026-10-17T14:28:00Z",
+          "wake_time": "2026-10-17T22:10:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-17T22:15:00Z"
+        },
+        {
+          "id": "regular:14:12",
+          "day": "2026-10-18",
+          "bedtime": "2026-10-18T14:27:00Z",
+          "wake_time": "2026-10-18T22:21:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-18T22:26:00Z"
+        },
+        {
+          "id": "regular:14:13",
+          "day": "2026-10-19",
+          "bedtime": "2026-10-19T14:26:00Z",
+          "wake_time": "2026-10-19T22:32:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-19T22:37:00Z"
+        }
+      ],
+      "expected": {
+        "snapshots": {
+          "cmi": {
+            "population_bed": 179.49792672377424,
+            "population_wake": 688.1611068861635,
+            "habit_bed": 192.92753479045854,
+            "habit_wake": 683.4019820145103,
+            "recent_bed": 206.0,
+            "recent_wake": 681.0,
+            "previous_bed": 206.0,
+            "previous_wake": 692.0,
+            "recent_duration": 474.0,
+            "bed_variability": 19.130059688183657,
+            "wake_variability": 11.02501793232842,
+            "history_count_7": 7.0,
+            "history_age_days": 0.5194444444444445,
+            "personal_weight": 0.5,
+            "weekend": 0.0,
+            "current_s": 0.5418120748048965,
+            "current_c": -0.05017266485553715,
+            "sleep_threshold": 0.6898424687810648,
+            "wake_threshold": 0.16023682813826529,
+            "physical_bed": 195.0,
+            "physical_wake": 685.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 14.0,
+            "weekday_count": 10.0,
+            "median14_bed": 207.5,
+            "ew_bed": 207.0,
+            "weekday_bed": 207.5,
+            "bed_mad": 10.5,
+            "bed_trend": -1.0,
+            "median14_wake": 679.5,
+            "ew_wake": 681.0,
+            "weekday_wake": 679.5,
+            "wake_mad": 9.5,
+            "wake_trend": 3.0,
+            "duration_mad": 12.0,
+            "previous_duration": 486.0,
+            "gap_days_mean": 1.0017094017094017
+          },
+          "mesa": {
+            "population_bed": 230.9124475269721,
+            "population_wake": 652.422216747733,
+            "habit_bed": 218.63479519205748,
+            "habit_wake": 665.5325369452951,
+            "recent_bed": 206.0,
+            "recent_wake": 681.0,
+            "previous_bed": 206.0,
+            "previous_wake": 692.0,
+            "recent_duration": 474.0,
+            "bed_variability": 19.130059688183657,
+            "wake_variability": 11.02501793232842,
+            "history_count_7": 7.0,
+            "history_age_days": 0.5194444444444445,
+            "personal_weight": 0.5,
+            "weekend": 0.0,
+            "current_s": 0.5418120748048965,
+            "current_c": -0.05258239521379205,
+            "sleep_threshold": 0.725255487405183,
+            "wake_threshold": 0.1930033816916692,
+            "physical_bed": 240.0,
+            "physical_wake": 675.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 14.0,
+            "weekday_count": 10.0,
+            "median14_bed": 207.5,
+            "ew_bed": 207.0,
+            "weekday_bed": 207.5,
+            "bed_mad": 10.5,
+            "bed_trend": -1.0,
+            "median14_wake": 679.5,
+            "ew_wake": 681.0,
+            "weekday_wake": 679.5,
+            "wake_mad": 9.5,
+            "wake_trend": 3.0,
+            "duration_mad": 12.0,
+            "previous_duration": 486.0,
+            "gap_days_mean": 1.0017094017094017
+          }
+        },
+        "personalization": {
+          "cmi": {
+            "valid_days": 14,
+            "elapsed_days": 49,
+            "personal_weight": 0.5,
+            "mode": "personalized",
+            "habit_bed_offset": 192.92753479045854,
+            "habit_wake_offset": 683.4019820145103,
+            "phase_min": 198.1647584024845,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.6898424687810648,
+            "wake_threshold": 0.16023682813826529,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          },
+          "mesa": {
+            "valid_days": 14,
+            "elapsed_days": 49,
+            "personal_weight": 0.5,
+            "mode": "personalized",
+            "habit_bed_offset": 218.63479519205748,
+            "habit_wake_offset": 665.5325369452951,
+            "phase_min": 202.0836660686764,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.725255487405183,
+            "wake_threshold": 0.1930033816916692,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          }
+        },
+        "predictions": {
+          "physical_cmi": {
+            "onset_offset_min": 195.0,
+            "wake_offset_min": 685.0
+          },
+          "data_cmi": {
+            "onset_offset_min": 186.55669724384276,
+            "wake_offset_min": 675.5661809590891
+          },
+          "hybrid_cmi": {
+            "onset_offset_min": 189.77259593148682,
+            "wake_offset_min": 660.0236854863829
+          },
+          "physical_mesa": {
+            "onset_offset_min": 240.0,
+            "wake_offset_min": 675.0
+          },
+          "data_mesa": {
+            "onset_offset_min": 216.32875171472944,
+            "wake_offset_min": 677.0233909802281
+          },
+          "hybrid_mesa": {
+            "onset_offset_min": 215.39440581643504,
+            "wake_offset_min": 677.398655026053
+          }
+        }
+      }
+    },
+    {
+      "name": "history_30",
+      "profile": {
+        "age_band": "30-44",
+        "sex": "any",
+        "activity_minutes": 60,
+        "usual_bed": "23:00",
+        "usual_wake": "07:00",
+        "desired_sleep_minutes": 480,
+        "created_at": "2026-08-31T15:00:00Z"
+      },
+      "cutoff": "2026-10-20T20:00:00+09:00",
+      "records": [
+        {
+          "id": "regular:30:0",
+          "day": "2026-09-20",
+          "bedtime": "2026-09-20T14:30:00Z",
+          "wake_time": "2026-09-20T22:00:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-09-20T22:05:00Z"
+        },
+        {
+          "id": "regular:30:1",
+          "day": "2026-09-21",
+          "bedtime": "2026-09-21T14:29:00Z",
+          "wake_time": "2026-09-21T22:11:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-09-21T22:16:00Z"
+        },
+        {
+          "id": "regular:30:2",
+          "day": "2026-09-22",
+          "bedtime": "2026-09-22T14:28:00Z",
+          "wake_time": "2026-09-22T22:22:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-09-22T22:27:00Z"
+        },
+        {
+          "id": "regular:30:3",
+          "day": "2026-09-23",
+          "bedtime": "2026-09-23T14:27:00Z",
+          "wake_time": "2026-09-23T22:33:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-09-23T22:38:00Z"
+        },
+        {
+          "id": "regular:30:4",
+          "day": "2026-09-24",
+          "bedtime": "2026-09-24T13:49:00Z",
+          "wake_time": "2026-09-24T22:07:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-09-24T22:12:00Z"
+        },
+        {
+          "id": "regular:30:5",
+          "day": "2026-09-25",
+          "bedtime": "2026-09-25T14:48:00Z",
+          "wake_time": "2026-09-25T22:18:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-09-25T22:23:00Z"
+        },
+        {
+          "id": "regular:30:6",
+          "day": "2026-09-26",
+          "bedtime": "2026-09-26T14:47:00Z",
+          "wake_time": "2026-09-26T22:29:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-09-26T22:34:00Z"
+        },
+        {
+          "id": "regular:30:7",
+          "day": "2026-09-27",
+          "bedtime": "2026-09-27T14:09:00Z",
+          "wake_time": "2026-09-27T22:03:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-09-27T22:08:00Z"
+        },
+        {
+          "id": "regular:30:8",
+          "day": "2026-09-28",
+          "bedtime": "2026-09-28T14:08:00Z",
+          "wake_time": "2026-09-28T22:14:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-09-28T22:19:00Z"
+        },
+        {
+          "id": "regular:30:9",
+          "day": "2026-09-29",
+          "bedtime": "2026-09-29T14:07:00Z",
+          "wake_time": "2026-09-29T22:25:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-09-29T22:30:00Z"
+        },
+        {
+          "id": "regular:30:10",
+          "day": "2026-09-30",
+          "bedtime": "2026-09-30T15:06:00Z",
+          "wake_time": "2026-09-30T22:36:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-09-30T22:41:00Z"
+        },
+        {
+          "id": "regular:30:11",
+          "day": "2026-10-01",
+          "bedtime": "2026-10-01T14:28:00Z",
+          "wake_time": "2026-10-01T22:10:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-01T22:15:00Z"
+        },
+        {
+          "id": "regular:30:12",
+          "day": "2026-10-02",
+          "bedtime": "2026-10-02T14:27:00Z",
+          "wake_time": "2026-10-02T22:21:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-02T22:26:00Z"
+        },
+        {
+          "id": "regular:30:13",
+          "day": "2026-10-03",
+          "bedtime": "2026-10-03T14:26:00Z",
+          "wake_time": "2026-10-03T22:32:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-03T22:37:00Z"
+        },
+        {
+          "id": "regular:30:14",
+          "day": "2026-10-04",
+          "bedtime": "2026-10-04T13:48:00Z",
+          "wake_time": "2026-10-04T22:06:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-04T22:11:00Z"
+        },
+        {
+          "id": "regular:30:15",
+          "day": "2026-10-05",
+          "bedtime": "2026-10-05T14:47:00Z",
+          "wake_time": "2026-10-05T22:17:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-05T22:22:00Z"
+        },
+        {
+          "id": "regular:30:16",
+          "day": "2026-10-06",
+          "bedtime": "2026-10-06T14:46:00Z",
+          "wake_time": "2026-10-06T22:28:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-06T22:33:00Z"
+        },
+        {
+          "id": "regular:30:17",
+          "day": "2026-10-07",
+          "bedtime": "2026-10-07T14:08:00Z",
+          "wake_time": "2026-10-07T22:02:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-07T22:07:00Z"
+        },
+        {
+          "id": "regular:30:18",
+          "day": "2026-10-08",
+          "bedtime": "2026-10-08T14:07:00Z",
+          "wake_time": "2026-10-08T22:13:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-08T22:18:00Z"
+        },
+        {
+          "id": "regular:30:19",
+          "day": "2026-10-09",
+          "bedtime": "2026-10-09T14:06:00Z",
+          "wake_time": "2026-10-09T22:24:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-09T22:29:00Z"
+        },
+        {
+          "id": "regular:30:20",
+          "day": "2026-10-10",
+          "bedtime": "2026-10-10T15:05:00Z",
+          "wake_time": "2026-10-10T22:35:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-10T22:40:00Z"
+        },
+        {
+          "id": "regular:30:21",
+          "day": "2026-10-11",
+          "bedtime": "2026-10-11T14:27:00Z",
+          "wake_time": "2026-10-11T22:09:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-11T22:14:00Z"
+        },
+        {
+          "id": "regular:30:22",
+          "day": "2026-10-12",
+          "bedtime": "2026-10-12T14:26:00Z",
+          "wake_time": "2026-10-12T22:20:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-12T22:25:00Z"
+        },
+        {
+          "id": "regular:30:23",
+          "day": "2026-10-13",
+          "bedtime": "2026-10-13T14:25:00Z",
+          "wake_time": "2026-10-13T22:31:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-13T22:36:00Z"
+        },
+        {
+          "id": "regular:30:24",
+          "day": "2026-10-14",
+          "bedtime": "2026-10-14T13:47:00Z",
+          "wake_time": "2026-10-14T22:05:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-14T22:10:00Z"
+        },
+        {
+          "id": "regular:30:25",
+          "day": "2026-10-15",
+          "bedtime": "2026-10-15T14:46:00Z",
+          "wake_time": "2026-10-15T22:16:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-15T22:21:00Z"
+        },
+        {
+          "id": "regular:30:26",
+          "day": "2026-10-16",
+          "bedtime": "2026-10-16T14:45:00Z",
+          "wake_time": "2026-10-16T22:27:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-16T22:32:00Z"
+        },
+        {
+          "id": "regular:30:27",
+          "day": "2026-10-17",
+          "bedtime": "2026-10-17T14:07:00Z",
+          "wake_time": "2026-10-17T22:01:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-17T22:06:00Z"
+        },
+        {
+          "id": "regular:30:28",
+          "day": "2026-10-18",
+          "bedtime": "2026-10-18T14:06:00Z",
+          "wake_time": "2026-10-18T22:12:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-18T22:17:00Z"
+        },
+        {
+          "id": "regular:30:29",
+          "day": "2026-10-19",
+          "bedtime": "2026-10-19T14:05:00Z",
+          "wake_time": "2026-10-19T22:23:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-19T22:28:00Z"
+        }
+      ],
+      "expected": {
+        "snapshots": {
+          "cmi": {
+            "population_bed": 179.49792672377424,
+            "population_wake": 688.1611068861635,
+            "habit_bed": 195.9766130484736,
+            "habit_wake": 681.0058067365065,
+            "recent_bed": 187.0,
+            "recent_wake": 676.0,
+            "previous_bed": 185.0,
+            "previous_wake": 683.0,
+            "recent_duration": 486.0,
+            "bed_variability": 20.54065158038904,
+            "wake_variability": 10.390340883410389,
+            "history_count_7": 7.0,
+            "history_age_days": 0.5256944444444445,
+            "personal_weight": 0.6818181818181818,
+            "weekend": 0.0,
+            "current_s": 0.5430128833341519,
+            "current_c": -0.0503739692303738,
+            "sleep_threshold": 0.6942804637046825,
+            "wake_threshold": 0.16414223298774722,
+            "physical_bed": 200.0,
+            "physical_wake": 685.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 14.0,
+            "weekday_count": 10.0,
+            "median14_bed": 196.5,
+            "ew_bed": 187.0,
+            "weekday_bed": 196.5,
+            "bed_mad": 10.5,
+            "bed_trend": -20.0,
+            "median14_wake": 678.0,
+            "ew_wake": 676.0,
+            "weekday_wake": 675.5,
+            "wake_mad": 9.0,
+            "wake_trend": -8.0,
+            "duration_mad": 12.0,
+            "previous_duration": 498.0,
+            "gap_days_mean": 0.999732905982906
+          },
+          "mesa": {
+            "population_bed": 230.9124475269721,
+            "population_wake": 652.422216747733,
+            "habit_bed": 212.33577875858202,
+            "habit_wake": 669.6343416924606,
+            "recent_bed": 187.0,
+            "recent_wake": 676.0,
+            "previous_bed": 185.0,
+            "previous_wake": 683.0,
+            "recent_duration": 486.0,
+            "bed_variability": 20.54065158038904,
+            "wake_variability": 10.390340883410389,
+            "history_count_7": 7.0,
+            "history_age_days": 0.5256944444444445,
+            "personal_weight": 0.6818181818181818,
+            "weekend": 0.0,
+            "current_s": 0.5430128833341519,
+            "current_c": -0.051908384760588365,
+            "sleep_threshold": 0.7168223044233284,
+            "wake_threshold": 0.18485332891281453,
+            "physical_bed": 230.0,
+            "physical_wake": 680.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 14.0,
+            "weekday_count": 10.0,
+            "median14_bed": 196.5,
+            "ew_bed": 187.0,
+            "weekday_bed": 196.5,
+            "bed_mad": 10.5,
+            "bed_trend": -20.0,
+            "median14_wake": 678.0,
+            "ew_wake": 676.0,
+            "weekday_wake": 675.5,
+            "wake_mad": 9.0,
+            "wake_trend": -8.0,
+            "duration_mad": 12.0,
+            "previous_duration": 498.0,
+            "gap_days_mean": 0.999732905982906
+          }
+        },
+        "personalization": {
+          "cmi": {
+            "valid_days": 30,
+            "elapsed_days": 49,
+            "personal_weight": 0.6818181818181818,
+            "mode": "personalized",
+            "habit_bed_offset": 195.9766130484736,
+            "habit_wake_offset": 681.0058067365065,
+            "phase_min": 198.49120989249013,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.6942804637046825,
+            "wake_threshold": 0.16414223298774722,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          },
+          "mesa": {
+            "valid_days": 30,
+            "elapsed_days": 49,
+            "personal_weight": 0.6818181818181818,
+            "mode": "personalized",
+            "habit_bed_offset": 212.33577875858202,
+            "habit_wake_offset": 669.6343416924606,
+            "phase_min": 200.98506022552124,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.7168223044233284,
+            "wake_threshold": 0.18485332891281453,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          }
+        },
+        "predictions": {
+          "physical_cmi": {
+            "onset_offset_min": 200.0,
+            "wake_offset_min": 685.0
+          },
+          "data_cmi": {
+            "onset_offset_min": 168.47519338841354,
+            "wake_offset_min": 671.9335535738084
+          },
+          "hybrid_cmi": {
+            "onset_offset_min": 179.49449305321096,
+            "wake_offset_min": 651.4044385145926
+          },
+          "physical_mesa": {
+            "onset_offset_min": 230.0,
+            "wake_offset_min": 680.0
+          },
+          "data_mesa": {
+            "onset_offset_min": 204.4827727119927,
+            "wake_offset_min": 672.8608134079361
+          },
+          "hybrid_mesa": {
+            "onset_offset_min": 204.26319931821985,
+            "wake_offset_min": 671.4022774737625
+          }
+        }
+      }
+    },
+    {
+      "name": "missing_fields",
+      "profile": {
+        "age_band": "30-44",
+        "sex": "any",
+        "activity_minutes": 60,
+        "usual_bed": "23:00",
+        "usual_wake": "07:00",
+        "desired_sleep_minutes": 480,
+        "created_at": "2026-08-31T15:00:00Z"
+      },
+      "cutoff": "2026-10-20T20:00:00+09:00",
+      "records": [
+        {
+          "id": "regular:5:0",
+          "day": "2026-10-15",
+          "bedtime": "2026-10-15T14:30:00Z",
+          "wake_time": "2026-10-15T22:00:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-15T22:05:00Z"
+        },
+        {
+          "id": "regular:5:1",
+          "day": "2026-10-16",
+          "bedtime": "2026-10-16T14:29:00Z",
+          "wake_time": "2026-10-16T22:11:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-16T22:16:00Z"
+        },
+        {
+          "id": "regular:5:2",
+          "day": "2026-10-17",
+          "bedtime": "2026-10-17T14:28:00Z",
+          "wake_time": "2026-10-17T22:22:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-17T22:27:00Z"
+        },
+        {
+          "id": "regular:5:3",
+          "day": "2026-10-18",
+          "bedtime": "2026-10-18T14:27:00Z",
+          "wake_time": "2026-10-18T22:33:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-18T22:38:00Z"
+        },
+        {
+          "id": "regular:5:4",
+          "day": "2026-10-19",
+          "bedtime": "2026-10-19T13:49:00Z",
+          "wake_time": "2026-10-19T22:07:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-19T22:12:00Z"
+        },
+        {
+          "id": "missing:observed",
+          "day": "2026-10-12",
+          "bedtime": "2026-10-12T14:00:00Z",
+          "wake_time": "2026-10-12T22:00:00Z",
+          "duration_minutes": 480,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": null
+        },
+        {
+          "id": "missing:bed",
+          "day": "invalid",
+          "bedtime": "",
+          "wake_time": "2026-10-13T07:00:00+09:00",
+          "duration_minutes": 0,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-12T22:05:00Z"
+        }
+      ],
+      "expected": {
+        "snapshots": {
+          "cmi": {
+            "population_bed": 179.49792672377424,
+            "population_wake": 688.1611068861635,
+            "habit_bed": 185.0511039017284,
+            "habit_wake": 684.5923945476994,
+            "recent_bed": 208.0,
+            "recent_wake": 671.0,
+            "previous_bed": 169.0,
+            "previous_wake": 667.0,
+            "recent_duration": 474.0,
+            "bed_variability": 15.831613941730641,
+            "wake_variability": 11.637869220780924,
+            "history_count_7": 5.0,
+            "history_age_days": 0.5368055555555555,
+            "personal_weight": 0.2631578947368421,
+            "weekend": 0.0,
+            "current_s": 0.5487694384283353,
+            "current_c": -0.0481054317526177,
+            "sleep_threshold": 0.6824431902827512,
+            "wake_threshold": 0.15384342633032783,
+            "physical_bed": 180.0,
+            "physical_wake": 685.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 5.0,
+            "weekday_count": 3.0,
+            "median14_bed": 208.0,
+            "ew_bed": 208.0,
+            "weekday_bed": 207.57142857142856,
+            "bed_mad": 1.0,
+            "bed_trend": 0.0,
+            "median14_wake": 671.0,
+            "ew_wake": 671.0,
+            "weekday_wake": 669.2857142857142,
+            "wake_mad": 11.0,
+            "wake_trend": 0.0,
+            "duration_mad": 12.0,
+            "previous_duration": 498.0,
+            "gap_days_mean": 1.0012152777777779
+          },
+          "mesa": {
+            "population_bed": 230.9124475269721,
+            "population_wake": 652.422216747733,
+            "habit_bed": 222.93548765145314,
+            "habit_wake": 658.2584754983296,
+            "recent_bed": 208.0,
+            "recent_wake": 671.0,
+            "previous_bed": 169.0,
+            "previous_wake": 667.0,
+            "recent_duration": 474.0,
+            "bed_variability": 15.831613941730641,
+            "wake_variability": 11.637869220780924,
+            "history_count_7": 5.0,
+            "history_age_days": 0.5368055555555555,
+            "personal_weight": 0.2631578947368421,
+            "weekend": 0.0,
+            "current_s": 0.5487694637978646,
+            "current_c": -0.05167000705070696,
+            "sleep_threshold": 0.7346300493555746,
+            "wake_threshold": 0.20234024552322344,
+            "physical_bed": 245.0,
+            "physical_wake": 670.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 5.0,
+            "weekday_count": 3.0,
+            "median14_bed": 208.0,
+            "ew_bed": 208.0,
+            "weekday_bed": 207.57142857142856,
+            "bed_mad": 1.0,
+            "bed_trend": 0.0,
+            "median14_wake": 671.0,
+            "ew_wake": 671.0,
+            "weekday_wake": 669.2857142857142,
+            "wake_mad": 11.0,
+            "wake_trend": 0.0,
+            "duration_mad": 12.0,
+            "previous_duration": 498.0,
+            "gap_days_mean": 1.0012152777777779
+          }
+        },
+        "personalization": {
+          "cmi": {
+            "valid_days": 5,
+            "elapsed_days": 49,
+            "personal_weight": 0.2631578947368421,
+            "mode": "personalized",
+            "habit_bed_offset": 185.0511039017284,
+            "habit_wake_offset": 684.5923945476994,
+            "phase_min": 194.82174922471404,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.6824431902827512,
+            "wake_threshold": 0.15384342633032783,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          },
+          "mesa": {
+            "valid_days": 5,
+            "elapsed_days": 49,
+            "personal_weight": 0.2631578947368421,
+            "mode": "personalized",
+            "habit_bed_offset": 222.93548765145314,
+            "habit_wake_offset": 658.2584754983296,
+            "phase_min": 200.5969815748913,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.7346300493555746,
+            "wake_threshold": 0.20234024552322344,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          }
+        },
+        "predictions": {
+          "physical_cmi": {
+            "onset_offset_min": 180.0,
+            "wake_offset_min": 685.0
+          },
+          "data_cmi": {
+            "onset_offset_min": 185.03725317810276,
+            "wake_offset_min": 664.4283948439004
+          },
+          "hybrid_cmi": {
+            "onset_offset_min": 176.3992099326255,
+            "wake_offset_min": 651.1845452667512
+          },
+          "physical_mesa": {
+            "onset_offset_min": 245.0,
+            "wake_offset_min": 670.0
+          },
+          "data_mesa": {
+            "onset_offset_min": 208.775821141755,
+            "wake_offset_min": 670.2798329233158
+          },
+          "hybrid_mesa": {
+            "onset_offset_min": 209.71210383889465,
+            "wake_offset_min": 669.3373796494604
+          }
+        }
+      }
+    },
+    {
+      "name": "irregular_gaps",
+      "profile": {
+        "age_band": "30-44",
+        "sex": "any",
+        "activity_minutes": 60,
+        "usual_bed": "23:00",
+        "usual_wake": "07:00",
+        "desired_sleep_minutes": 480,
+        "created_at": "2026-08-31T15:00:00Z"
+      },
+      "cutoff": "2026-10-20T20:00:00+09:00",
+      "records": [
+        {
+          "id": "irregular:0",
+          "day": "2026-09-23",
+          "bedtime": "2026-09-23T13:40:00Z",
+          "wake_time": "2026-09-23T20:50:00Z",
+          "duration_minutes": 430,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-09-23T20:59:00Z"
+        },
+        {
+          "id": "irregular:1",
+          "day": "2026-10-04",
+          "bedtime": "2026-10-04T15:05:00Z",
+          "wake_time": "2026-10-04T21:35:00Z",
+          "duration_minutes": 390,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-04T21:44:00Z"
+        },
+        {
+          "id": "irregular:2",
+          "day": "2026-10-12",
+          "bedtime": "2026-10-12T14:20:00Z",
+          "wake_time": "2026-10-12T22:50:00Z",
+          "duration_minutes": 510,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-12T22:59:00Z"
+        },
+        {
+          "id": "irregular:3",
+          "day": "2026-10-16",
+          "bedtime": "2026-10-16T16:10:00Z",
+          "wake_time": "2026-10-16T22:10:00Z",
+          "duration_minutes": 360,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-16T22:19:00Z"
+        },
+        {
+          "id": "irregular:4",
+          "day": "2026-10-19",
+          "bedtime": "2026-10-19T13:55:00Z",
+          "wake_time": "2026-10-19T21:50:00Z",
+          "duration_minutes": 475,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-19T21:59:00Z"
+        }
+      ],
+      "expected": {
+        "snapshots": {
+          "cmi": {
+            "population_bed": 179.49792672377424,
+            "population_wake": 688.1611068861635,
+            "habit_bed": 189.63005127014947,
+            "habit_wake": 678.38186823191,
+            "recent_bed": 200.0,
+            "recent_wake": 650.0,
+            "previous_bed": 175.0,
+            "previous_wake": 650.0,
+            "recent_duration": 430.0,
+            "bed_variability": 54.27706698044764,
+            "wake_variability": 39.54743986657038,
+            "history_count_7": 5.0,
+            "history_age_days": 0.5486111111111112,
+            "personal_weight": 0.2631578947368421,
+            "weekend": 0.0,
+            "current_s": 0.5601239412575961,
+            "current_c": -0.047599397521371024,
+            "sleep_threshold": 0.6912469035569504,
+            "wake_threshold": 0.16146688935445436,
+            "physical_bed": 180.0,
+            "physical_wake": 680.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 5.0,
+            "weekday_count": 4.0,
+            "median14_bed": 200.0,
+            "ew_bed": 200.0,
+            "weekday_bed": 193.75,
+            "bed_mad": 40.0,
+            "bed_trend": 0.0,
+            "median14_wake": 650.0,
+            "ew_wake": 650.0,
+            "weekday_wake": 646.25,
+            "wake_mad": 20.0,
+            "wake_trend": 0.0,
+            "duration_mad": 45.0,
+            "previous_duration": 475.0,
+            "gap_days_mean": 6.510416666666667
+          },
+          "mesa": {
+            "population_bed": 230.9124475269721,
+            "population_wake": 652.422216747733,
+            "habit_bed": 227.5144350198742,
+            "habit_wake": 652.0479491825402,
+            "recent_bed": 200.0,
+            "recent_wake": 650.0,
+            "previous_bed": 175.0,
+            "previous_wake": 650.0,
+            "recent_duration": 430.0,
+            "bed_variability": 54.27706698044764,
+            "wake_variability": 39.54743986657038,
+            "history_count_7": 5.0,
+            "history_age_days": 0.5486111111111112,
+            "personal_weight": 0.2631578947368421,
+            "weekend": 0.0,
+            "current_s": 0.5617805497627903,
+            "current_c": -0.05116842528854689,
+            "sleep_threshold": 0.7433610257602447,
+            "wake_threshold": 0.21131188342882096,
+            "physical_bed": 240.0,
+            "physical_wake": 660.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 5.0,
+            "weekday_count": 4.0,
+            "median14_bed": 200.0,
+            "ew_bed": 200.0,
+            "weekday_bed": 193.75,
+            "bed_mad": 40.0,
+            "bed_trend": 0.0,
+            "median14_wake": 650.0,
+            "ew_wake": 650.0,
+            "weekday_wake": 646.25,
+            "wake_mad": 20.0,
+            "wake_trend": 0.0,
+            "duration_mad": 45.0,
+            "previous_duration": 475.0,
+            "gap_days_mean": 6.510416666666667
+          }
+        },
+        "personalization": {
+          "cmi": {
+            "valid_days": 5,
+            "elapsed_days": 49,
+            "personal_weight": 0.2631578947368421,
+            "mode": "personalized",
+            "habit_bed_offset": 189.63005127014947,
+            "habit_wake_offset": 678.38186823191,
+            "phase_min": 194.00595975102965,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.6912469035569504,
+            "wake_threshold": 0.16146688935445436,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          },
+          "mesa": {
+            "valid_days": 5,
+            "elapsed_days": 49,
+            "personal_weight": 0.2631578947368421,
+            "mode": "personalized",
+            "habit_bed_offset": 227.5144350198742,
+            "habit_wake_offset": 652.0479491825402,
+            "phase_min": 199.78119210120713,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.7433610257602447,
+            "wake_threshold": 0.21131188342882096,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          }
+        },
+        "predictions": {
+          "physical_cmi": {
+            "onset_offset_min": 180.0,
+            "wake_offset_min": 680.0
+          },
+          "data_cmi": {
+            "onset_offset_min": 166.66439822012717,
+            "wake_offset_min": 649.807655737852
+          },
+          "hybrid_cmi": {
+            "onset_offset_min": 185.2081538275834,
+            "wake_offset_min": 649.7511059323054
+          },
+          "physical_mesa": {
+            "onset_offset_min": 240.0,
+            "wake_offset_min": 660.0
+          },
+          "data_mesa": {
+            "onset_offset_min": 205.4086622983656,
+            "wake_offset_min": 640.5639591064368
+          },
+          "hybrid_mesa": {
+            "onset_offset_min": 205.30366700667358,
+            "wake_offset_min": 640.3968363604514
+          }
+        }
+      }
+    },
+    {
+      "name": "causal_future_and_late",
+      "profile": {
+        "age_band": "30-44",
+        "sex": "any",
+        "activity_minutes": 60,
+        "usual_bed": "23:00",
+        "usual_wake": "07:00",
+        "desired_sleep_minutes": 480,
+        "created_at": "2026-08-31T15:00:00Z"
+      },
+      "cutoff": "2026-10-20T20:00:00+09:00",
+      "records": [
+        {
+          "id": "regular:5:0",
+          "day": "2026-10-15",
+          "bedtime": "2026-10-15T14:30:00Z",
+          "wake_time": "2026-10-15T22:00:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-15T22:05:00Z"
+        },
+        {
+          "id": "regular:5:1",
+          "day": "2026-10-16",
+          "bedtime": "2026-10-16T14:29:00Z",
+          "wake_time": "2026-10-16T22:11:00Z",
+          "duration_minutes": 462,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-16T22:16:00Z"
+        },
+        {
+          "id": "regular:5:2",
+          "day": "2026-10-17",
+          "bedtime": "2026-10-17T14:28:00Z",
+          "wake_time": "2026-10-17T22:22:00Z",
+          "duration_minutes": 474,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-17T22:27:00Z"
+        },
+        {
+          "id": "regular:5:3",
+          "day": "2026-10-18",
+          "bedtime": "2026-10-18T14:27:00Z",
+          "wake_time": "2026-10-18T22:33:00Z",
+          "duration_minutes": 486,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-18T22:38:00Z"
+        },
+        {
+          "id": "regular:5:4",
+          "day": "2026-10-19",
+          "bedtime": "2026-10-19T13:49:00Z",
+          "wake_time": "2026-10-19T22:07:00Z",
+          "duration_minutes": 498,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-19T22:12:00Z"
+        },
+        {
+          "id": "causal:late-observation",
+          "day": "2026-10-15",
+          "bedtime": "2026-10-19T12:00:00Z",
+          "wake_time": "2026-10-15T22:00:00Z",
+          "duration_minutes": 450,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-20T11:00:01Z"
+        },
+        {
+          "id": "causal:future-wake",
+          "day": "2026-10-20",
+          "bedtime": "2026-10-20T12:00:00Z",
+          "wake_time": "2026-10-20T20:00:00Z",
+          "duration_minutes": 480,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-10-20T10:59:00Z"
+        },
+        {
+          "id": "causal:pre-enrollment",
+          "day": "2026-08-20",
+          "bedtime": "2026-08-20T14:00:00Z",
+          "wake_time": "2026-08-20T22:00:00Z",
+          "duration_minutes": 480,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "diary",
+          "modified_at": "2026-08-20T22:05:00Z"
+        },
+        {
+          "id": "causal:archive",
+          "day": "2026-10-17",
+          "bedtime": "2026-10-17T15:00:00Z",
+          "wake_time": "2026-10-17T23:00:00Z",
+          "duration_minutes": 480,
+          "rested": 3,
+          "fatigue": 3,
+          "source": "archive",
+          "modified_at": "2026-10-18T00:00:00Z"
+        }
+      ],
+      "expected": {
+        "snapshots": {
+          "cmi": {
+            "population_bed": 179.49792672377424,
+            "population_wake": 688.1611068861635,
+            "habit_bed": 185.0511039017284,
+            "habit_wake": 684.5923945476994,
+            "recent_bed": 208.0,
+            "recent_wake": 671.0,
+            "previous_bed": 169.0,
+            "previous_wake": 667.0,
+            "recent_duration": 474.0,
+            "bed_variability": 15.831613941730641,
+            "wake_variability": 11.637869220780924,
+            "history_count_7": 5.0,
+            "history_age_days": 0.5368055555555555,
+            "personal_weight": 0.2631578947368421,
+            "weekend": 0.0,
+            "current_s": 0.5487694384283353,
+            "current_c": -0.0481054317526177,
+            "sleep_threshold": 0.6824431902827512,
+            "wake_threshold": 0.15384342633032783,
+            "physical_bed": 180.0,
+            "physical_wake": 685.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 5.0,
+            "weekday_count": 3.0,
+            "median14_bed": 208.0,
+            "ew_bed": 208.0,
+            "weekday_bed": 207.57142857142856,
+            "bed_mad": 1.0,
+            "bed_trend": 0.0,
+            "median14_wake": 671.0,
+            "ew_wake": 671.0,
+            "weekday_wake": 669.2857142857142,
+            "wake_mad": 11.0,
+            "wake_trend": 0.0,
+            "duration_mad": 12.0,
+            "previous_duration": 498.0,
+            "gap_days_mean": 1.0012152777777779
+          },
+          "mesa": {
+            "population_bed": 230.9124475269721,
+            "population_wake": 652.422216747733,
+            "habit_bed": 222.93548765145314,
+            "habit_wake": 658.2584754983296,
+            "recent_bed": 208.0,
+            "recent_wake": 671.0,
+            "previous_bed": 169.0,
+            "previous_wake": 667.0,
+            "recent_duration": 474.0,
+            "bed_variability": 15.831613941730641,
+            "wake_variability": 11.637869220780924,
+            "history_count_7": 5.0,
+            "history_age_days": 0.5368055555555555,
+            "personal_weight": 0.2631578947368421,
+            "weekend": 0.0,
+            "current_s": 0.5487694637978646,
+            "current_c": -0.05167000705070696,
+            "sleep_threshold": 0.7346300493555746,
+            "wake_threshold": 0.20234024552322344,
+            "physical_bed": 245.0,
+            "physical_wake": 670.0,
+            "next_day_sin": 0.9749279121818236,
+            "next_day_cos": -0.22252093395631434,
+            "next_day_weekend": 0.0,
+            "recent_count14": 5.0,
+            "weekday_count": 3.0,
+            "median14_bed": 208.0,
+            "ew_bed": 208.0,
+            "weekday_bed": 207.57142857142856,
+            "bed_mad": 1.0,
+            "bed_trend": 0.0,
+            "median14_wake": 671.0,
+            "ew_wake": 671.0,
+            "weekday_wake": 669.2857142857142,
+            "wake_mad": 11.0,
+            "wake_trend": 0.0,
+            "duration_mad": 12.0,
+            "previous_duration": 498.0,
+            "gap_days_mean": 1.0012152777777779
+          }
+        },
+        "personalization": {
+          "cmi": {
+            "valid_days": 5,
+            "elapsed_days": 49,
+            "personal_weight": 0.2631578947368421,
+            "mode": "personalized",
+            "habit_bed_offset": 185.0511039017284,
+            "habit_wake_offset": 684.5923945476994,
+            "phase_min": 194.82174922471404,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.6824431902827512,
+            "wake_threshold": 0.15384342633032783,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          },
+          "mesa": {
+            "valid_days": 5,
+            "elapsed_days": 49,
+            "personal_weight": 0.2631578947368421,
+            "mode": "personalized",
+            "habit_bed_offset": 222.93548765145314,
+            "habit_wake_offset": 658.2584754983296,
+            "phase_min": 200.5969815748913,
+            "tau_wake_h": 18.2,
+            "tau_sleep_h": 4.2,
+            "sleep_threshold": 0.7346300493555746,
+            "wake_threshold": 0.20234024552322344,
+            "physical_fallback": false,
+            "note": "행동 기록으로 보정한 위상·전환 기준. 생리 시간상수는 고정이며 측정된 개인 생리값이 아닙니다.",
+            "personalization_policy": "gradual_v1"
+          }
+        },
+        "predictions": {
+          "physical_cmi": {
+            "onset_offset_min": 180.0,
+            "wake_offset_min": 685.0
+          },
+          "data_cmi": {
+            "onset_offset_min": 185.03725317810276,
+            "wake_offset_min": 664.4283948439004
+          },
+          "hybrid_cmi": {
+            "onset_offset_min": 176.3992099326255,
+            "wake_offset_min": 651.1845452667512
+          },
+          "physical_mesa": {
+            "onset_offset_min": 245.0,
+            "wake_offset_min": 670.0
+          },
+          "data_mesa": {
+            "onset_offset_min": 208.775821141755,
+            "wake_offset_min": 670.2798329233158
+          },
+          "hybrid_mesa": {
+            "onset_offset_min": 209.71210383889465,
+            "wake_offset_min": 669.3373796494604
+          }
+        }
+      }
+    }
+  ]
+}

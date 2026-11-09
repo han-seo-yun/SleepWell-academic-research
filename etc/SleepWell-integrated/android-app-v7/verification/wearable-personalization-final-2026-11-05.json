@@ -1,0 +1,13 @@
+{
+  "instrumentation_tests_passed": 99,
+  "original_files_restored_byte_for_byte": 4,
+  "fixture_files_removed": 3,
+  "apk_sha256": "15cb31438b915391117d1e6ceb5402cc64ec77848ca4b873b829a48953737eed",
+  "ui_checked": [
+    "8 imported sleeps, 0 manual diaries",
+    "watch-only prediction and recommendation",
+    "questionnaire linked to selected sleep",
+    "sleep and survey persistence after restart"
+  ],
+  "live_samsung_device_checked": false
+}

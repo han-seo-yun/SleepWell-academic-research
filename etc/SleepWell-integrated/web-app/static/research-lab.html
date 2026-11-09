@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>SleepWell 연구 분석실</title>
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/tokens.css">
+  <link rel="stylesheet" href="/research-lab.css">
+  <script src="/research-lab.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#lab-main">본문으로 건너뛰기</a>
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">SLEEPWELL · 연구 분석실 · 로컬 검토</p>
+      <h1>SleepWell 연구 분석실</h1>
+      <p class="header-copy">실제 후향 입력 또는 명시적 가상 데이터로, 같은 모델 엔진의 예측과 개인화 상태를 비교합니다.</p>
+    </div>
+    <div class="header-actions">
+      <a id="back-to-app" class="button button-back" data-app-return href="/app">← 연구자 홈</a>
+      <div id="session-state" class="session-state" role="status" aria-live="polite">로컬 세션 확인 중</div>
+    </div>
+  </header>
+
+
+  <nav class="section-nav" aria-label="연구 분석실 빠른 이동">
+    <a class="section-nav-home" data-app-return href="/app">← 홈</a>
+    <a href="#input-title">입력</a>
+    <a href="#results-title">핵심 결과</a>
+    <a href="#metric-title">모델 성능</a>
+    <a href="#chart-title">논문용 그림</a>
+    <a href="#observation-title">관측 데이터</a>
+    <a href="#diagnostics-title">진단 상세</a>
+  </nav>
+
+  <main id="lab-main" class="layout">
+    <aside class="control-column" aria-label="평가 입력">
+      <section class="panel notice-panel" aria-labelledby="isolation-title">
+        <h2 id="isolation-title">연동된 연구 검토 공간</h2>
+        <p><strong>본 앱 기록은 읽기 전용 스냅샷으로 가져와 분석합니다.</strong></p>
+        <p>가져온 자료나 모델 파일은 변경하지 않으며, 평가 결과는 이 세션에서만 계산합니다.</p>
+        <div class="integration-row">
+          <span id="integration-state" class="integration-state">본 앱 연결 상태 확인 중</span>
+          <label class="compact-select" for="integration-source">분석 원천
+            <select id="integration-source" aria-label="분석 원천"></select>
+          </label>
+          <button id="import-app-records" class="button button-secondary" type="button" disabled>연동 기록 불러오기</button>
+        </div>
+        <div id="import-summary" class="import-summary" hidden></div>
+      </section>
+
+      <section class="panel" aria-labelledby="input-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-index">01</p>
+            <h2 id="input-title">실험 입력</h2>
+          </div>
+          <button id="download-template" class="button button-quiet" type="button">CSV 스키마 받기</button>
+        </div>
+
+        <fieldset>
+          <legend>입력 근거</legend>
+          <div class="segmented">
+            <label><input type="radio" name="mode" value="real" data-payload checked><span>실제 후향 입력</span></label>
+            <label><input type="radio" name="mode" value="synthetic" data-payload><span>가상 데이터</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>비교할 코호트 모델</legend>
+          <div class="check-row">
+            <label class="check-card"><input id="cohort-cmi" type="checkbox" value="cmi" data-payload checked><span><strong>CMI</strong><small>CMI 고정·개인·데이터·융합</small></span></label>
+            <label class="check-card"><input id="cohort-mesa" type="checkbox" value="mesa" data-payload checked><span><strong>MESA</strong><small>MESA 고정·개인·데이터·융합</small></span></label>
+          </div>
+        </fieldset>
+
+        <div id="real-panel">
+          <fieldset>
+            <legend>실제 데이터 형식</legend>
+            <div class="segmented compact">
+              <label><input type="radio" name="real-format" value="csv" data-payload checked><span>CSV</span></label>
+              <label><input type="radio" name="real-format" value="json" data-payload><span>JSON 배열</span></label>
+            </div>
+          </fieldset>
+
+          <div id="csv-input-panel">
+            <label class="file-label" for="csv-file">CSV 파일을 브라우저에서 읽기</label>
+            <input id="csv-file" type="file" accept=".csv,text/csv">
+            <label for="csv-text">CSV 내용</label>
+            <textarea id="csv-text" rows="10" spellcheck="false" data-payload placeholder="participant_id,cutoff,sleep_start,sleep_end,observed_at"></textarea>
+          </div>
+
+          <div id="json-input-panel" hidden>
+            <label for="records-json">레코드 JSON 배열</label>
+            <textarea id="records-json" rows="14" spellcheck="false" data-payload placeholder="JSON 배열 또는 연동 스냅샷 객체를 붙여넣으세요."></textarea>
+          </div>
+
+          <details class="contract-details">
+            <summary>실제 입력 규칙</summary>
+            <ul>
+              <li>열은 participant_id, cutoff, sleep_start, sleep_end, observed_at 다섯 개입니다.</li>
+              <li>시간은 UTC 오프셋을 포함해야 하며 cutoff는 해당 야간의 20:00입니다.</li>
+              <li>정답이 없는 예측 전용 행은 sleep_start, sleep_end, observed_at을 모두 비웁니다.</li>
+              <li>참가자 ID는 가명이어야 하며 파일 경로, URL, 메모, 자격 증명을 넣지 마세요.</li>
+            </ul>
+          </details>
+        </div>
+
+        <div id="synthetic-panel" hidden>
+          <div class="field-grid">
+            <label>야간 수<input id="syn-n-nights" type="number" min="1" max="365" step="1" value="42" data-payload></label>
+            <label>난수 시드<input id="syn-seed" type="number" min="0" max="4294967295" step="1" value="42" data-payload></label>
+            <label>시작일<input id="syn-start-date" type="date" value="2026-01-01" data-payload></label>
+            <label>취침 중심 시각<input id="syn-bed-hour" type="number" min="0" max="23.99" step="0.25" value="23.5" data-payload></label>
+            <label>수면 시간<input id="syn-duration-hours" type="number" min="1" max="16" step="0.25" value="8" data-payload></label>
+            <label>변동 폭(분)<input id="syn-jitter-minutes" type="number" min="0" max="360" step="1" value="45" data-payload></label>
+            <label>위상 이동(분)<input id="syn-phase-shift-minutes" type="number" min="-720" max="720" step="1" value="60" data-payload></label>
+            <label>이동 시작 야간<input id="syn-shift-after-night" type="number" min="0" max="365" step="1" value="21" data-payload></label>
+            <label>누락 주기(0=없음)<input id="syn-missing-every" type="number" min="0" max="365" step="1" value="0" data-payload></label>
+            <label>보고 지연(시간)<input id="syn-report-delay-hours" type="number" min="0" max="168" step="0.5" value="1" data-payload></label>
+          </div>
+        </div>
+
+        <div class="run-controls">
+          <label class="auto-label"><input id="auto-run" type="checkbox"> 입력 변경 후 자동 재계산</label>
+          <button id="run-evaluation" class="button button-primary" type="button" disabled>현재 입력 평가</button>
+        </div>
+        <p id="input-error" class="error-message" role="alert" hidden></p>
+        <p id="run-status" class="run-status" aria-live="polite">세션을 불러온 뒤 평가할 수 있습니다.</p>
+      </section>
+
+    </aside>
+
+    <section class="results-column" aria-labelledby="results-title">
+      <section class="panel results-intro">
+        <div class="section-heading results-heading">
+          <div>
+            <p class="section-index">03</p>
+            <h2 id="results-title">모델 비교 결과</h2>
+          </div>
+          <div class="result-actions">
+            <button id="download-publication" class="button button-primary" type="button" disabled>논문용 그림·데이터 받기</button>
+            <button id="download-result" class="button button-quiet" type="button" disabled>평가 JSON 받기</button>
+          </div>
+        </div>
+        <p id="current-result-state" class="current-state">현재 입력에 연결된 결과가 없습니다.</p>
+        <p class="help-text">현재 예측은 첫 유효 기록부터 개인화 값을 점진 반영합니다. 기존 동결 가중치에 추론 개인화 정책을 변경했으므로 별도 검증이 필요하며, 기존 저장 Test 성능은 이전 정책의 결과입니다.</p>
+        <div id="summary-cards" class="summary-grid"></div>
+        <div id="prediction-only-note" class="inline-alert" hidden></div>
+      </section>
+
+      <section id="metric-panel" class="panel result-panel" aria-labelledby="metric-title" hidden>
+        <h3 id="metric-title">동일 야간 성능 비교</h3>
+        <p class="help-text">모든 모델에 정답이 있는 같은 야간만 비교하고 참가자를 동일 가중합니다. n과 참가자 수를 오차와 함께 해석하세요.</p>
+        <div id="metrics" class="table-region"></div>
+      </section>
+
+      <section id="chart-panel" class="panel result-panel" aria-labelledby="chart-title" hidden>
+        <div class="section-heading">
+          <div>
+            <h3 id="chart-title">논문용 모델 진단 그림</h3>
+            <p class="help-text">현재 실행에서 Python Matplotlib로 생성했습니다. 화면 PNG와 함께 벡터 그림·원자료·재현 정보를 묶어 받을 수 있습니다.</p>
+          </div>
+          <label class="compact-select">그림 참가자
+            <select id="chart-participant" disabled></select>
+          </label>
+        </div>
+        <div id="charts" class="chart-grid"></div>
+      </section>
+
+      <section id="observation-panel" class="panel result-panel" aria-labelledby="observation-title" hidden>
+        <div class="section-heading">
+          <div>
+            <h3 id="observation-title">관측 데이터 진단</h3>
+            <p class="help-text">입력된 관측 수면 자체의 규칙성과 완결성입니다. 모델 예측과 독립적으로 계산합니다.</p>
+          </div>
+          <span class="observation-badge">기술통계</span>
+        </div>
+        <h4 class="subsection-title">수면 규칙성</h4>
+        <p class="help-text">SRI는 24시간 간격 같은 분의 수면·각성 일치도(−100~100), IS·IV는 시간별 수면 비율의 일간 안정성·일내 변동입니다. 주 수면만 입력되므로 낮잠은 반영되지 않습니다.</p>
+        <div id="observation-regularity" class="table-region"></div>
+        <h4 class="subsection-title">데이터 완결성·입력 시점</h4>
+        <p class="help-text">‘다음 20시 전 입력’은 관측 결과가 다음 날 예측 이력에 들어갈 수 있었던 밤입니다. 늦게 입력된 밤은 다음 예측에 쓰이지 않습니다.</p>
+        <div id="observation-completeness" class="table-region"></div>
+        <div id="observation-charts" class="chart-grid"></div>
+        <details class="contract-details">
+          <summary>계산 가정</summary>
+          <ul id="observation-assumptions" class="assumption-list"></ul>
+        </details>
+      </section>
+
+      <section class="diagnostics-group" aria-labelledby="diagnostics-title">
+        <div class="diagnostics-heading">
+          <p class="section-index">04</p>
+          <h2 id="diagnostics-title">재현·진단 상세</h2>
+          <p class="help-text">핵심 성능 그림과 중복되거나 모델 내부 확인에만 필요한 표는 아래에 접어 두었습니다.</p>
+        </div>
+
+        <details id="model-results-panel" class="panel result-panel diagnostic-disclosure" hidden>
+          <summary id="model-results-title">실행 모델·표본·artifact 해시</summary>
+          <div id="model-results" class="table-region"></div>
+          <details class="available-metrics-details">
+            <summary>공통 야간 성능의 전체 진단 지표</summary>
+            <p class="help-text">핵심 표에서 생략한 구간 MAE·RMSE를 포함합니다. 동일한 공통 야간과 참가자 동일 가중 조건입니다.</p>
+            <div id="metrics-detail" class="table-region"></div>
+          </details>
+          <details class="available-metrics-details">
+            <summary>공통 야간 제한 전 모델별 가용 지표</summary>
+            <p class="help-text">모델마다 평가 가능한 야간 구성이 다를 수 있어 핵심 모델 순위 비교에는 사용하지 않습니다.</p>
+            <div id="available-metrics" class="table-region"></div>
+          </details>
+        </details>
+
+        <details id="diagnostic-charts-panel" class="panel result-panel diagnostic-disclosure" hidden>
+          <summary>모델 내부 개인화 궤적 그림</summary>
+          <p class="help-text">성능 순위와 직접 같은 질문을 답하지 않는 모델 내부 진단 그림입니다.</p>
+          <div id="diagnostic-charts" class="chart-grid"></div>
+        </details>
+
+        <details class="panel diagnostic-disclosure">
+          <summary><span id="model-status-title">로컬 모델 버전·해시</span></summary>
+          <p class="help-text">재현성 점검에 필요한 모델 상태입니다. 성능 결과는 위의 동일 야간 비교에서 확인합니다.</p>
+          <div id="model-status" class="table-region" aria-live="polite">
+            <p class="empty-state">모델 상태를 확인하고 있습니다.</p>
+          </div>
+        </details>
+
+        <details id="context-panel" class="panel result-panel diagnostic-disclosure" hidden>
+          <summary id="context-title">보조 맥락 자료 품질·가용성</summary>
+          <p class="help-text">수신 건수와 분석 가능한 야간을 구분합니다. 기록이 존재한다는 사실만으로 효과나 연관성을 뜻하지 않습니다.</p>
+          <div id="context-summary" class="table-region"></div>
+        </details>
+
+        <details id="personalization-panel" class="panel result-panel diagnostic-disclosure" hidden>
+          <summary id="personalization-title">개인화 입력·특징·상태</summary>
+          <p class="help-text">모델 계산에 전달된 robust feature와 night_core 상태입니다. 새로 적합한 생리 상수가 아닙니다.</p>
+          <div class="selector-row">
+            <label>참가자<select id="personalization-participant"></select></label>
+            <label>cutoff<select id="personalization-cutoff"></select></label>
+          </div>
+          <div id="personalization" class="table-region"></div>
+        </details>
+      </section>
+    </section>
+  </main>
+
+  <noscript><p class="noscript">이 로컬 분석실은 입력 검증과 결과 표시를 위해 JavaScript가 필요합니다.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "artifact_type": "sleepwell_continuous_constants_validation",
+  "version": "2026-10-25-v2",
+  "test_status": "retrospective_reused_test",
+  "interpretation": "첫 기록부터 갱신하는 행동 기반 상수의 연구 비교. 기존 시험자료를 재사용한 후향 검증이며 생리 시간상수 추정이나 추천 효과 검증이 아닙니다.",
+  "cohorts": {
+    "cmi": {
+      "selected_policy": "daily_pattern_h14_l14",
+      "n_people": 44,
+      "n_nights": 673,
+      "legacy_active_nights": 184,
+      "daily_active_nights": 629,
+      "max_history": 30,
+      "scores": {
+        "legacy": {
+          "data": 47.52426317063632,
+          "hybrid": 47.468219292379416,
+          "physical": 66.24994060148363
+        },
+        "daily": {
+          "data": 47.31443689515833,
+          "hybrid": 47.52749749678126,
+          "physical": 60.71246077980291
+        }
+      },
+      "comparisons": {
+        "data": {
+          "gain_min": 0.2098262754779779,
+          "ci95_min": [
+            -0.08494924246580837,
+            0.5182750974362098
+          ],
+          "holm_p": 1
+        },
+        "hybrid": {
+          "gain_min": -0.059278204401857,
+          "ci95_min": [
+            -0.4128462801817987,
+            0.28915292626495587
+          ],
+          "holm_p": 1
+        }
+      },
+      "validation_gate": false,
+      "validation_gain_min": -0.049532362640709045,
+      "physics_addition": {
+        "gain_min": -0.21306060162293053,
+        "ci95_min": [
+          -0.5764111543819436,
+          0.17908528238945398
+        ]
+      }
+    },
+    "mesa": {
+      "selected_policy": "daily_mean_h28_l28",
+      "n_people": 315,
+      "n_nights": 2175,
+      "legacy_active_nights": 0,
+      "daily_active_nights": 1860,
+      "max_history": 8,
+      "scores": {
+        "legacy": {
+          "data": 67.88816510849166,
+          "hybrid": 67.92394610020058,
+          "physical": 90.35376654322154
+        },
+        "daily": {
+          "data": 67.9337221197768,
+          "hybrid": 68.0937579048422,
+          "physical": 86.65892863901047
+        }
+      },
+      "comparisons": {
+        "data": {
+          "gain_min": -0.04555701128512195,
+          "ci95_min": [
+            -0.2564752108203394,
+            0.15723484768234888
+          ],
+          "holm_p": 1
+        },
+        "hybrid": {
+          "gain_min": -0.16981180464161627,
+          "ci95_min": [
+            -0.39889276984253064,
+            0.061204224959138354
+          ],
+          "holm_p": 1
+        }
+      },
+      "validation_gate": false,
+      "validation_gain_min": -0.040626565245463105,
+      "physics_addition": {
+        "gain_min": -0.16003578506538935,
+        "ci95_min": [
+          -0.37051626056886505,
+          0.04459783344372817
+        ]
+      }
+    }
+  },
+  "no_service_promotion": true
+}

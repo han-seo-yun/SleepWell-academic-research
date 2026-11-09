@@ -1,0 +1,10 @@
+{
+  "user_data_files_preserved": true,
+  "user_data_file_count": 3,
+  "changed_user_files": [],
+  "runtime_marker_changed": true,
+  "runtime_marker_explanation": "Android ProfileInstaller optimization marker is not a user sleep record",
+  "new_files": [
+    "shared_prefs/background_sleep_sync.xml"
+  ]
+}

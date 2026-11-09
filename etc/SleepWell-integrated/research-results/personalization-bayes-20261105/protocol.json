@@ -1,0 +1,67 @@
+{
+  "schema": "sleepwell.personalization_bayes_protocol.v1",
+  "specified_at": "2026-11-05",
+  "status": "locally_prespecified_before_comparison",
+  "scope": "frozen gradual_v1 onset/wake residual calibration only; no physiological-constant or recommendation-benefit inference",
+  "data_status": "retrospective_reused_holdout",
+  "cohorts": ["cmi", "mesa"],
+  "arms": ["data", "hybrid"],
+  "current": "current_h14_lambda14",
+  "selectable_candidates": [
+    "eb_static_intercept",
+    "eb_h14_intercept",
+    "kalman_random_walk_q01",
+    "kalman_ou_h14",
+    "train_global_affine",
+    "individual_bayes_affine_h14"
+  ],
+  "controls": ["disabled_correction", "train_population_mean"],
+  "train_hyperparameters": {
+    "groups": "separate cohort, arm, and onset/wake channel",
+    "residual_clip_min": 180.0,
+    "variance_floor_min2": 1.0,
+    "mu": "equal mean of participant clipped-residual means",
+    "R": "equal mean of within-participant sample variances among participants with n>=2; if none exist use the 1 min^2 floor and flag the fallback",
+    "T": "max(sample variance of participant means - R*mean(1/n), 1)",
+    "affine_x": "(frozen prediction - participant-balanced Train centre) / max(participant-balanced Train SD, 60 minutes)",
+    "affine_loss": "sum over participants of participant mean squared error plus 1*L2 squared coefficient penalty toward zero",
+    "individual_affine_prior": "Train global affine mean with diagonal covariance diag(T,T); engineering prior, not a slope variance-component estimate"
+  },
+  "candidate_formulas": {
+    "eb_static_intercept": "Gaussian posterior N(mu,T) with unweighted eligible personal residual likelihood variance R",
+    "eb_h14_intercept": "Gaussian posterior with 14-day exponential weights treated as fractional likelihood",
+    "kalman_random_walk_q01": "scalar state prior N(mu,T), process variance 0.01*R*elapsed calendar days, observation variance R",
+    "kalman_ou_h14": "mean-reverting scalar state F=2^(-elapsed_days/14), process variance T*(1-F^2), observation variance R",
+    "train_global_affine": "Train-only ridge correction beta0 + beta1*x",
+    "individual_bayes_affine_h14": "Train affine coefficient prior updated with eligible personal z=[1,x] residuals using 14-day fractional likelihood"
+  },
+  "fixed_bounds": {
+    "residual_clip_min": 180.0,
+    "correction_cap_min": 60.0,
+    "final_schedule_constraint": "production night_core.constrain"
+  },
+  "selection": {
+    "split": "validation",
+    "metric": "equal mean of participant-macro joint MAE across cmi/mesa and data/hybrid",
+    "rule": "largest aggregate gain versus current",
+    "validation_gate": "aggregate gain >= 1 minute and no worsening in any of four cohort-arm cells"
+  },
+  "locked_test_gate": {
+    "split": "test",
+    "bootstrap_unit": "participant with shared sampled indices across data and hybrid within cohort",
+    "replicates": 10000,
+    "seed": 20261105,
+    "multiplicity": "Bonferroni familywise 95% across four cohort-arm cells",
+    "cell_interval": "two-sided 98.75% paired participant bootstrap CI",
+    "pass": "validation gate passes, Test aggregate gain >= 1 minute, and every cell CI lower bound > 0"
+  },
+  "interpretation_limits": [
+    "Gaussian updates after residual clipping and fractional recency weights are approximate empirical-Bayes calculations, not calibrated posterior probabilities.",
+    "Frozen-model Train residuals may be optimistic because the models were developed from related Train data.",
+    "Short and sparse within-person histories limit individual slope identification, especially in MESA.",
+    "These methods estimate residual calibration only and cannot identify individual tau_w, tau_s, circadian phase, light sensitivity, or recommendation benefit.",
+    "In the normalized CMI/MESA input observed_at equals wake; this is an offline availability assumption, not validation of real reporting, upload, or synchronization delay.",
+    "MESA includes PSG staging, but these inputs do not contain the repeated EEG/SWA, PVT, or DLMO observations needed to fit individual physiological time constants.",
+    "Validation and Test have been reused in prior analyses and are not fresh external or prospective confirmation."
+  ]
+}
